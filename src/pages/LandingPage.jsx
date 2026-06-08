@@ -1,6 +1,7 @@
 import {
   ArrowRight,
   CalendarCheck,
+  Car,
   CheckCircle2,
   ClipboardCheck,
   HeartPulse,
@@ -23,7 +24,14 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import { trackButtonClick } from "../lib/analytics";
 
 const serviceIcons = [Stethoscope, Microscope, Users, ClipboardCheck, Sparkles];
-const advantageIcons = [Microscope, CheckCircle2, Languages, LockKeyhole, ShieldCheck];
+const advantageIcons = [
+  Microscope,
+  CheckCircle2,
+  Languages,
+  LockKeyhole,
+  ShieldCheck,
+  Car,
+];
 const trustIcons = [LockKeyhole, ShieldCheck, Languages, CheckCircle2];
 const processIcons = [MessageCircle, ClipboardCheck, Stethoscope, Plane, CalendarCheck];
 
@@ -142,7 +150,7 @@ export default function LandingPage({ language }) {
             <h2>{t("advantages.title")}</h2>
             <p>{t("advantages.subtitle")}</p>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {advantages.map((advantage, index) => {
               const Icon = advantageIcons[index] || ShieldCheck;
               return (

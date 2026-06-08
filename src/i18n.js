@@ -116,6 +116,11 @@ const resources = {
             description:
               "Japan's healthcare environment is built around reliability, process discipline, and patient safety.",
           },
+          {
+            title: "Alphard transfer support",
+            description:
+              "VIP transfers can be coordinated from airport to hotel and from hotel back to airport, subject to package and availability.",
+          },
         ],
       },
       process: {
@@ -142,7 +147,7 @@ const resources = {
           {
             title: "Confirm Japan arrangements",
             description:
-              "The travel window, required documents, and support needs are aligned.",
+              "The travel window, required documents, hotel details, and Alphard transfer needs are aligned.",
           },
           {
             title: "Complete the service",
@@ -170,7 +175,7 @@ const resources = {
           {
             title: "International support",
             description:
-              "Coordination can include language support and travel-related planning.",
+              "Coordination can include language support, Alphard airport-hotel transfers, and travel-related planning.",
           },
           {
             title: "Secure payment readiness",
@@ -213,7 +218,7 @@ const resources = {
           {
             question: "Can transportation be arranged?",
             answer:
-              "VIP support may include airport, hotel, or clinic transfer coordination depending on the package.",
+              "VIP support may include Alphard transfers from airport to hotel, from hotel to airport, and selected clinic transfers depending on the package.",
           },
           {
             question: "Can medical interpreters be arranged?",
@@ -386,6 +391,11 @@ const resources = {
             title: "高標準醫療體系",
             description: "日本醫療環境重視可靠性、流程紀律與患者安全。",
           },
+          {
+            title: "全程阿爾法接送",
+            description:
+              "可按方案協調機場到酒店、酒店到機場的 VIP 阿爾法接送，亦可討論醫療機構往返安排。",
+          },
         ],
       },
       process: {
@@ -408,7 +418,8 @@ const resources = {
           },
           {
             title: "確認赴日安排",
-            description: "協調行程窗口、所需資料及語言支援安排。",
+            description:
+              "協調行程窗口、所需資料、酒店資訊、語言支援及阿爾法接送安排。",
           },
           {
             title: "完成體檢或醫療服務",
@@ -432,7 +443,8 @@ const resources = {
           },
           {
             title: "國際患者支援",
-            description: "可協調語言支援、赴日行程及相關準備事項。",
+            description:
+              "可協調語言支援、赴日行程、機場酒店阿爾法接送及相關準備事項。",
           },
           {
             title: "安全支付準備",
@@ -474,7 +486,7 @@ const resources = {
           {
             question: "是否可以安排接送服務？",
             answer:
-              "視乎套餐與地點，可協調機場、酒店或醫療機構接送。",
+              "可以按方案協調全程阿爾法接送，包括機場到酒店、酒店到機場；如需前往醫療機構，也可一併討論安排。",
           },
           {
             question: "是否可以安排醫療翻譯？",
@@ -651,6 +663,11 @@ const resources = {
             description:
               "بيئة الرعاية في اليابان مبنية على الموثوقية والانضباط وسلامة المرضى.",
           },
+          {
+            title: "دعم نقل Alphard كامل",
+            description:
+              "يمكن تنسيق انتقال VIP بسيارة Alphard من المطار إلى الفندق ومن الفندق إلى المطار حسب الباقة والتوفر.",
+          },
         ],
       },
       process: {
@@ -673,7 +690,8 @@ const resources = {
           },
           {
             title: "تأكيد ترتيبات السفر",
-            description: "يتم تنسيق فترة السفر والوثائق المطلوبة واحتياجات الدعم.",
+            description:
+              "يتم تنسيق فترة السفر والوثائق والفندق واحتياجات النقل بسيارة Alphard.",
           },
           {
             title: "إكمال الخدمة",
@@ -697,7 +715,8 @@ const resources = {
           },
           {
             title: "دعم دولي",
-            description: "يمكن أن يشمل التنسيق دعما لغويا وتخطيطا للسفر.",
+            description:
+              "يمكن أن يشمل التنسيق دعما لغويا ونقل Alphard بين المطار والفندق وتخطيطا للسفر.",
           },
           {
             title: "جاهزية دفع آمن",
@@ -739,7 +758,7 @@ const resources = {
           {
             question: "هل يمكن ترتيب خدمة النقل؟",
             answer:
-              "قد يشمل دعم VIP تنسيق النقل من المطار أو الفندق أو العيادة حسب الباقة.",
+              "قد يشمل دعم VIP تنسيق سيارة Alphard من المطار إلى الفندق ومن الفندق إلى المطار، إضافة إلى بعض تنقلات العيادة حسب الباقة.",
           },
           {
             question: "هل يمكن ترتيب مترجم طبي؟",
