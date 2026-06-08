@@ -15,6 +15,8 @@ const resources = {
         title: "Premium Medical Checkups in Japan",
         subtitle:
           "Personalized health screening and VIP medical concierge services for international clients.",
+        transfer:
+          "VIP Alphard transfer coordination: airport to hotel, hotel to airport.",
         stats: [
           { value: "3", label: "Languages for international clients" },
           { value: "5", label: "Focused medical consultation services" },
@@ -315,6 +317,8 @@ const resources = {
         title: "日本高端精密體檢諮詢",
         subtitle:
           "為國際客戶提供個人化健康篩查諮詢與 VIP 日本醫療資源對接支援。",
+        transfer:
+          "全程阿爾法接送安排：機場到酒店、酒店到機場。",
         stats: [
           { value: "3", label: "支援國際客戶語言" },
           { value: "5", label: "核心醫療諮詢服務" },
@@ -582,6 +586,8 @@ const resources = {
         title: "فحوصات طبية راقية في اليابان",
         subtitle:
           "استشارات فحص صحي شخصية وخدمات تنسيق طبي لكبار العملاء الدوليين.",
+        transfer:
+          "تنسيق نقل VIP بسيارة Alphard: من المطار إلى الفندق ومن الفندق إلى المطار.",
         stats: [
           { value: "3", label: "لغات لدعم العملاء الدوليين" },
           { value: "5", label: "مسارات استشارة طبية مركزة" },
