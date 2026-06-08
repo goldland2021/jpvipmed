@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: theme("fontFamily.sans");
+    background: #ffffff;
+    color: #172033;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply px-4 py-16 sm:px-6 sm:py-20 lg:px-8;
+  }
+
+  .section-shell > * {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .section-heading {
+    @apply mx-auto max-w-3xl text-center;
+  }
+
+  .section-heading h2 {
+    @apply mt-3 text-3xl font-semibold text-midnight sm:text-4xl;
+  }
+
+  .section-heading p:last-child {
+    @apply mt-4 text-base leading-8 text-slate-600;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-gold;
+  }
+
+  .btn-primary,
+  .btn-secondary-dark,
+  .btn-secondary-light,
+  .btn-card {
+    @apply inline-flex min-h-12 items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply bg-gold text-midnight hover:bg-[#d7bb82];
+  }
+
+  .btn-secondary-dark {
+    @apply border border-white/30 bg-white/10 text-white hover:bg-white/20;
+  }
+
+  .btn-secondary-light {
+    @apply border border-slate-300 bg-white text-midnight hover:border-gold hover:text-midnight;
+  }
+
+  .btn-card {
+    @apply mt-auto justify-center border border-gold/50 bg-white text-midnight hover:bg-gold/10;
+  }
+
+  .service-card,
+  .advantage-tile,
+  .process-step,
+  .trust-item {
+    @apply rounded-md border p-5;
+  }
+
+  .service-card {
+    @apply flex min-h-[360px] flex-col border-slate-200 bg-white shadow-soft;
+  }
+
+  .service-card h3,
+  .advantage-tile h3,
+  .process-step h3,
+  .trust-item h3 {
+    @apply mt-4 text-lg font-semibold text-midnight;
+  }
+
+  .service-card p,
+  .advantage-tile p,
+  .process-step p {
+    @apply mt-3 text-sm leading-7 text-slate-600;
+  }
+
+  .service-card ul {
+    @apply my-5 space-y-2 text-sm text-slate-700;
+  }
+
+  .service-card li {
+    @apply flex items-start gap-2;
+  }
+
+  .service-card li svg {
+    @apply mt-1 shrink-0 text-sage;
+  }
+
+  .advantage-tile {
+    @apply border-white bg-white;
+  }
+
+  .process-step {
+    @apply border-slate-200 bg-white;
+  }
+
+  .process-step > span {
+    @apply grid h-9 w-9 place-items-center rounded-md bg-midnight text-sm font-semibold text-white;
+  }
+
+  .trust-item {
+    @apply border-white/10 bg-white/10;
+  }
+
+  .trust-item h3 {
+    @apply text-white;
+  }
+
+  .trust-item p {
+    @apply mt-3 text-sm leading-7 text-white/70;
+  }
+
+  .faq-row {
+    @apply bg-white px-5 py-4;
+  }
+
+  .faq-row summary {
+    @apply cursor-pointer text-base font-semibold text-midnight marker:text-gold;
+  }
+
+  .faq-row p {
+    @apply mt-3 leading-7 text-slate-600;
+  }
+
+  .lead-form {
+    @apply text-start;
+  }
+
+  .form-field {
+    @apply block text-sm font-semibold text-midnight;
+  }
+
+  .form-field span {
+    @apply mb-2 block;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    @apply w-full rounded-md border border-slate-300 bg-white px-3 py-3 text-sm font-normal text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30;
+  }
+
+  .admin-table {
+    @apply min-w-full divide-y divide-slate-200 text-left text-sm;
+  }
+
+  .admin-table th {
+    @apply whitespace-nowrap bg-midnight px-4 py-3 font-semibold text-white;
+  }
+
+  .admin-table td {
+    @apply whitespace-nowrap px-4 py-3 align-top text-slate-700;
+  }
+
+  .admin-table tbody tr {
+    @apply border-b border-slate-100;
+  }
+
+  .admin-table select {
+    @apply rounded-md border border-slate-300 bg-white px-2 py-2 text-sm outline-none focus:border-gold;
+  }
+}
+
+html[dir="rtl"] .section-heading,
+html[dir="rtl"] .lead-form {
+  text-align: right;
+}
+
+html[dir="rtl"] .admin-table {
+  text-align: left;
+}
