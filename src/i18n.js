@@ -4,170 +4,152 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
+      brand: {
+        name: "JP VIP Charter",
+      },
       seo: {
-        title:
-          "Japan Medical Checkup & VIP Medical Concierge | JPVIPMedical",
+        title: "Japan VIP Private Charter & Chauffeur Service | JP VIP Charter",
         description:
-          "Premium medical checkup consultation in Japan, including PET-CT cancer screening, executive health screening, family checkups, and VIP medical concierge support.",
+          "Premium Japan private charter service for Fuji tours, medical visits, study-abroad inspections, business inspections, airport transfers, and custom VIP travel.",
       },
       hero: {
-        eyebrow: "Japan premium medical concierge",
-        title: "Premium Medical Checkups in Japan",
+        eyebrow: "Premium Japan private charter service",
+        title: "VIP Private Charter in Japan",
         subtitle:
-          "Personalized health screening and VIP medical concierge services for international clients.",
+          "Private chauffeur service for Fuji tours, medical visits, study-abroad inspections, business inspections, airport transfers, and custom Japan itineraries.",
         transfer:
-          "Complimentary VIP Alphard transfers: airport to hotel, hotel to health checkup center.",
+          "Airport pickup, hotel transfers, Fuji day trips, medical center visits, school visits, and business site visits can be arranged by private charter.",
         stats: [
-          { value: "3", label: "Languages for international clients" },
-          { value: "5", label: "Focused medical consultation services" },
-          { value: "24h", label: "WhatsApp first-response goal" },
+          { value: "5", label: "Core VIP charter services" },
+          { value: "24h", label: "WhatsApp response target" },
+          { value: "3", label: "Languages for overseas clients" },
         ],
       },
       cta: {
         whatsapp: "Consult on WhatsApp",
         whatsappShort: "WhatsApp",
-        request: "Request Medical Consultation",
+        request: "Request Charter Consultation",
         card: "Ask on WhatsApp",
       },
       services: {
-        eyebrow: "Services",
-        title: "High-value consultation paths for Japan medical care",
+        eyebrow: "Charter services",
+        title: "Private charter options for high-value Japan travel",
         subtitle:
-          "We assist clients in connecting with Japanese medical resources and medical coordination services. We are not a hospital and do not provide diagnosis.",
+          "We provide premium point-to-point, hourly, full-day, and custom itinerary charter consultation for overseas clients visiting Japan.",
         items: [
           {
-            title: "Executive Precision Checkup",
+            title: "Premium Private Charter",
             description:
-              "Comprehensive screening coordination for clients who want a structured, premium health review in Japan.",
-            points: [
-              "Executive-focused planning",
-              "Hospital and package matching",
-              "International patient support",
-            ],
+              "High-end chauffeur arrangements for airport pickup, hotel transfers, city travel, shopping, dining, and custom itineraries.",
+            points: ["VIP vehicle matching", "Flexible hourly or full-day plans", "Private and comfortable travel"],
           },
           {
-            title: "PET-CT Cancer Screening",
+            title: "Fuji Private Tour Charter",
             description:
-              "Consultation support for clients interested in PET-CT and broader cancer screening options in Japan.",
-            points: [
-              "Screening plan guidance",
-              "Clear schedule coordination",
-              "Report support options",
-            ],
+              "Private charter routes for Mount Fuji, Lake Kawaguchi, Oshino Hakkai, Gotemba, and seasonal scenic spots.",
+            points: ["Custom Fuji route planning", "Photo-stop friendly itinerary", "Family and group friendly"],
           },
           {
-            title: "Family Health Checkup",
+            title: "Premium Medical Charter",
             description:
-              "Coordinated medical checkup planning for couples, parents, and family members traveling together.",
-            points: [
-              "Family itinerary planning",
-              "Companion support",
-              "Flexible checkup matching",
-            ],
+              "Dedicated car service for clients visiting hospitals, checkup centers, clinics, pharmacies, or wellness facilities.",
+            points: ["Hotel to medical center transfers", "Quiet and private cabin", "Schedule-focused coordination"],
           },
           {
-            title: "Second Medical Opinion",
+            title: "Study-Abroad Inspection Charter",
             description:
-              "Consultation coordination for clients seeking access to Japanese medical specialists for review pathways.",
-            points: [
-              "Document preparation guidance",
-              "Specialist matching support",
-              "Translation coordination",
-            ],
+              "Private car support for families visiting schools, universities, dormitories, neighborhoods, and education agencies.",
+            points: ["School visit route planning", "Parent-friendly itinerary", "Multi-stop day charter"],
           },
           {
-            title: "Anti-aging & Health Management",
+            title: "Business Inspection Charter",
             description:
-              "Personalized wellness and preventive health program consultation for long-term health management.",
-            points: [
-              "Preventive health focus",
-              "Lifestyle-oriented programs",
-              "VIP concierge support",
-            ],
+              "Professional private chauffeur support for company visits, factory tours, exhibitions, investor meetings, and client hosting.",
+            points: ["Business schedule support", "Airport-hotel-meeting transfers", "Discreet VIP reception"],
           },
         ],
       },
       advantages: {
-        eyebrow: "Why Japan",
-        title: "Why international clients choose Japan medical services",
+        eyebrow: "Why choose us",
+        title: "A quiet, reliable charter experience in Japan",
         subtitle:
-          "Japan is known for advanced equipment, meticulous medical standards, and strong privacy expectations for patients.",
+          "The service is designed for overseas clients who need efficient communication, predictable routes, and a premium travel experience.",
         items: [
           {
-            title: "Advanced equipment",
+            title: "Premium vehicles",
             description:
-              "Access pathways may include modern imaging, screening, and specialist facilities.",
+              "Vehicle options can include Alphard-style premium vans, executive cars, and group-friendly arrangements.",
           },
           {
-            title: "High-precision diagnosis",
+            title: "Custom itinerary planning",
             description:
-              "Japanese medical institutions are recognized for detailed clinical workflows and careful reporting.",
+              "Routes can be planned around hotels, airports, Fuji tourism, medical centers, schools, and business sites.",
           },
           {
-            title: "International patient support",
+            title: "International client support",
             description:
-              "We coordinate communication support for English, Traditional Chinese, and Arabic clients.",
+              "Communication support is available for English, Traditional Chinese, and Arabic clients.",
           },
           {
-            title: "Privacy protection",
+            title: "Professional chauffeurs",
             description:
-              "Client information is handled with sensitivity and shared only for coordination purposes.",
+              "Experienced drivers help keep your day organized, calm, and punctual.",
           },
           {
-            title: "High medical standards",
+            title: "Privacy and comfort",
             description:
-              "Japan's healthcare environment is built around reliability, process discipline, and patient safety.",
+              "Private cabin travel is suitable for families, executives, medical visits, and VIP guests.",
           },
           {
-            title: "Complimentary Alphard transfers",
+            title: "Clear quotation",
             description:
-              "Complimentary VIP Alphard transfers can be coordinated from airport to hotel and from hotel to the health checkup center.",
+              "Fees are confirmed before the trip based on route, vehicle type, usage time, and special requirements.",
           },
         ],
       },
       process: {
         eyebrow: "Process",
-        title: "A clear path from inquiry to Japan arrangements",
+        title: "From WhatsApp inquiry to private charter confirmation",
         subtitle:
-          "The V1 service flow stays simple so clients can quickly understand options and continue on WhatsApp.",
+          "Share your travel needs first. We keep the process simple so the right route and vehicle can be confirmed quickly.",
         items: [
           {
-            title: "Submit consultation needs",
+            title: "Submit charter needs",
             description:
-              "Share your preferred service, travel timing, and basic requirements.",
+              "Tell us your date, number of passengers, luggage, pickup point, and destination.",
           },
           {
-            title: "Initial coordinator review",
+            title: "Initial route review",
             description:
-              "A medical coordination team reviews your request and confirms key details.",
+              "We review route feasibility, travel time, vehicle suitability, and special requirements.",
           },
           {
-            title: "Plan recommendation",
+            title: "Vehicle and itinerary proposal",
             description:
-              "You receive suitable hospital or checkup plan options for discussion.",
+              "You receive a recommended vehicle, route plan, and quotation for confirmation.",
           },
           {
-            title: "Confirm Japan arrangements",
+            title: "Confirm driver arrangement",
             description:
-              "The travel window, required documents, hotel details, and complimentary Alphard transfer needs are aligned.",
+              "Pickup details, driver contact, meeting point, and schedule are aligned before service.",
           },
           {
-            title: "Complete the service",
+            title: "Complete the trip",
             description:
-              "Clients proceed with the arranged checkup or medical support in Japan.",
+              "Enjoy a private, comfortable, and organized charter experience in Japan.",
           },
         ],
       },
       trust: {
-        eyebrow: "Trust and privacy",
-        title: "Built for sensitive health inquiries",
+        eyebrow: "Trust and service",
+        title: "Built for overseas VIP travel needs",
         subtitle:
-          "We assist clients in connecting with Japanese medical resources and medical coordination services. We do not represent ourselves as a hospital and do not provide medical diagnosis.",
+          "We assist overseas clients with premium Japan charter coordination. We are not a medical provider, school, travel agency, or investment adviser.",
         items: [
           {
-            title: "Medical privacy",
+            title: "Private itinerary handling",
             description:
-              "Health needs and personal details are treated as sensitive information.",
+              "Travel plans, passenger details, and contact information are handled carefully.",
           },
           {
             title: "Secure data storage",
@@ -175,116 +157,116 @@ const resources = {
               "Lead records are stored in Supabase with row-level security policies.",
           },
           {
-            title: "International support",
+            title: "Multilingual communication",
             description:
-              "Coordination can include language support, complimentary airport-hotel and hotel-checkup center Alphard transfers, and travel-related planning.",
+              "WhatsApp consultation can support English, Traditional Chinese, and Arabic inquiries.",
           },
           {
-            title: "Secure payment readiness",
+            title: "No hidden booking system",
             description:
-              "Stripe is planned for secure payment workflows in a later phase.",
+              "V1 focuses on fast WhatsApp consultation and human confirmation of route and price.",
           },
         ],
       },
       faq: {
         eyebrow: "FAQ",
-        title: "Common questions before consulting",
+        title: "Common questions before booking a private charter",
         subtitle:
-          "These answers are general coordination information. Specific medical advice should come from qualified healthcare professionals.",
+          "These answers are general charter service information. Final details depend on date, route, vehicle, and availability.",
         items: [
           {
-            question: "Can foreigners receive medical checkups in Japan?",
+            question: "Can airport pickup and hotel transfer be arranged?",
             answer:
-              "Yes. Many institutions support international patients when scheduling, documentation, language, and payment requirements are prepared in advance.",
+              "Yes. Airport pickup, hotel transfer, and luggage-friendly vehicle matching can be discussed through WhatsApp.",
           },
           {
-            question: "How long does a PET-CT check usually take?",
+            question: "Can I book a private charter to Mount Fuji?",
             answer:
-              "Timing depends on the facility and package. Many screening visits are planned within one day, while reporting may take additional time.",
+              "Yes. Fuji routes can include Lake Kawaguchi, Oshino Hakkai, Gotemba, seasonal viewpoints, and custom stops.",
           },
           {
-            question: "Can reports be provided in Chinese or English?",
+            question: "Can medical visit transportation be arranged?",
             answer:
-              "Some facilities offer English reports or translation support. We confirm available report options during coordination.",
+              "Yes. We can coordinate private transportation to hospitals, checkup centers, clinics, pharmacies, or wellness facilities.",
           },
           {
-            question: "Do I need to speak Japanese?",
+            question: "Do you support study-abroad inspection trips?",
             answer:
-              "Not necessarily. We can help coordinate medical translation or international patient support when available.",
+              "Yes. Families can arrange school, university, dormitory, agency, and neighborhood visits in one itinerary.",
           },
           {
-            question: "Can family members accompany me?",
+            question: "Can business inspection trips be supported?",
             answer:
-              "In many cases, companions are possible. Facility policies and room limits are confirmed before final arrangements.",
+              "Yes. Business routes can include company visits, factories, exhibitions, meetings, and client hosting.",
           },
           {
-            question: "Can transportation be arranged?",
+            question: "What vehicle types are available?",
             answer:
-              "Yes. VIP support includes complimentary Alphard transfers from airport to hotel and from hotel to the health checkup center for arranged checkup visits.",
+              "Vehicle options depend on date and route. Premium vans, executive cars, and larger group vehicles can be discussed.",
           },
           {
-            question: "Can medical interpreters be arranged?",
+            question: "Can the itinerary be customized?",
             answer:
-              "Yes, interpreter coordination can be discussed based on language, location, and medical service type.",
+              "Yes. Please share your must-visit locations, pickup time, hotel, and passenger count.",
           },
           {
             question: "How are fees confirmed?",
             answer:
-              "Fees are confirmed after the service type, facility, schedule, and support requirements are reviewed.",
+              "Fees are quoted after reviewing route, date, vehicle type, usage time, luggage, and special requirements.",
           },
           {
             question: "Can I consult through WhatsApp?",
             answer:
-              "Yes. WhatsApp is the primary channel for V1 consultation and follow-up communication.",
+              "Yes. WhatsApp is the primary consultation channel for route planning and quotation.",
           },
           {
-            question: "Can cancer screening be arranged?",
+            question: "Do drivers speak English or Chinese?",
             answer:
-              "We can assist with consultation pathways for cancer screening options such as PET-CT, subject to facility availability.",
+              "Language support depends on availability. We confirm communication options before final arrangement.",
           },
           {
-            question: "Are premium checkup packages supported?",
+            question: "Can family members travel together?",
             answer:
-              "Yes. Executive and high-end checkup package coordination is a core service path.",
+              "Yes. Please share passenger count, luggage volume, and child seat needs if any.",
           },
           {
-            question: "Do you support second medical opinions?",
+            question: "Can multi-day charter be arranged?",
             answer:
-              "We can help coordinate review pathways with appropriate Japanese medical resources when documents and case details are available.",
+              "Yes. Multi-day travel can be discussed for Fuji, Kansai, business inspection, or education inspection routes.",
           },
           {
-            question: "How far in advance should I inquire?",
+            question: "How early should I inquire?",
             answer:
-              "Earlier is better. Many clients begin consultation several weeks before their preferred travel month.",
+              "Earlier is better, especially during holidays, cherry blossom season, autumn foliage season, and Fuji travel peaks.",
           },
           {
-            question: "Do I need a visa?",
+            question: "Can you arrange hotel-to-meeting transfers?",
             answer:
-              "Visa requirements depend on your passport, travel purpose, and length of stay. We can discuss general preparation, but final visa advice should come from official sources.",
+              "Yes. Business transfers between airport, hotel, office, exhibition venue, and meeting location can be arranged.",
           },
           {
-            question: "Can arrangements be made for multiple family members?",
+            question: "Can the driver wait during visits?",
             answer:
-              "Yes. Please share the number of family members, ages, preferred month, and service interests.",
+              "Waiting time can be included depending on the selected hourly or full-day charter plan.",
           },
         ],
       },
       form: {
-        eyebrow: "Consultation form",
-        title: "Submit your request and continue on WhatsApp",
+        eyebrow: "Charter inquiry form",
+        title: "Submit your route and continue on WhatsApp",
         subtitle:
-          "Share basic details so the coordinator can understand your needs before the WhatsApp conversation starts.",
+          "Share the basic trip details so we can understand your needs before the WhatsApp conversation starts.",
         notice:
-          "Please avoid sending urgent medical emergencies through this form. This website supports consultation and coordination only.",
+          "Please include pickup city, destination, passenger count, luggage, and preferred date if already known.",
         fields: {
           name: "Name",
           country: "Country or region",
           whatsapp: "WhatsApp number",
-          month: "Preferred month in Japan",
-          service: "Service type",
-          message: "Message",
+          month: "Preferred travel month",
+          service: "Charter service type",
+          message: "Route or message",
         },
-        servicePlaceholder: "Select a service",
+        servicePlaceholder: "Select a charter service",
         submit: "Submit & Consult on WhatsApp",
         sending: "Submitting your request...",
         errors: {
@@ -292,7 +274,7 @@ const resources = {
           country: "Please enter your country or region.",
           whatsapp: "Please enter a valid WhatsApp number.",
           month: "Please select your preferred month.",
-          service: "Please select a service type.",
+          service: "Please select a charter service type.",
           message: "Message must be under 1000 characters.",
           spam: "Submission could not be accepted. Please try again.",
           supabase: "Supabase is not configured yet.",
@@ -301,260 +283,275 @@ const resources = {
       },
       footer: {
         disclaimer:
-          "Consultation and coordination service only. Not a hospital or online diagnosis platform.",
+          "Premium private charter coordination service. Routes, vehicles, and prices are confirmed manually through WhatsApp.",
       },
     },
   },
   "zh-hk": {
     translation: {
+      brand: {
+        name: "JP VIP Charter",
+      },
       seo: {
-        title: "日本高端體檢與醫療禮賓諮詢 | JPVIPMedical",
+        title: "日本高端包車與私人司機服務 | JP VIP Charter",
         description:
-          "日本高端體檢諮詢服務，協助海外客戶了解 PET-CT 癌症篩查、東京精密體檢、家庭健康檢查及 VIP 醫療禮賓支援。",
+          "日本高端包車服務，支援富士山包車旅遊、高端醫療包車、留學考察包車、商務考察包車、機場接送與 VIP 定制行程。",
       },
       hero: {
-        eyebrow: "日本高端醫療禮賓諮詢",
-        title: "日本高端精密體檢諮詢",
+        eyebrow: "日本高端包車服務",
+        title: "日本高端包車與定制行程",
         subtitle:
-          "為國際客戶提供個人化健康篩查諮詢與 VIP 日本醫療資源對接支援。",
+          "面向海外客戶提供 VIP 私人司機服務，覆蓋富士山旅遊、醫療出行、留學考察、商務考察、機場接送與日本定制行程。",
         transfer:
-          "全程免費阿爾法接送：機場到酒店、酒店到體檢中心。",
+          "機場接送、酒店接送、富士山一日遊、體檢中心、學校考察與商務拜訪，均可按需求安排私人包車。",
         stats: [
-          { value: "3", label: "支援國際客戶語言" },
-          { value: "5", label: "核心醫療諮詢服務" },
+          { value: "5", label: "核心高端包車服務" },
           { value: "24h", label: "WhatsApp 初步回覆目標" },
+          { value: "3", label: "支援國際客戶語言" },
         ],
       },
       cta: {
         whatsapp: "通過 WhatsApp 諮詢",
         whatsappShort: "WhatsApp",
-        request: "提交醫療諮詢需求",
+        request: "提交包車諮詢需求",
         card: "WhatsApp 諮詢",
       },
       services: {
         eyebrow: "服務項目",
-        title: "面向赴日醫療需求的高價值諮詢方案",
+        title: "適合高價值日本行程的私人包車方案",
         subtitle:
-          "我們協助客戶對接日本醫療資源與醫療協調服務。我們不是醫院，亦不提供醫療診斷。",
+          "提供點對點、按小時、全天及定制行程包車諮詢，協助海外客戶高效安排在日本的出行需求。",
         items: [
           {
-            title: "高端精密體檢",
+            title: "高端包車",
             description:
-              "為希望在日本進行全面健康評估的客戶，協助規劃高端體檢方案。",
-            points: ["高端客戶需求規劃", "醫院與套餐匹配", "國際患者支援"],
+              "適合機場接送、酒店往返、市區移動、購物餐飲、家庭出行與 VIP 定制行程。",
+            points: ["高端車型匹配", "按小時或全天安排", "私密舒適出行"],
           },
           {
-            title: "PET-CT 癌症篩查",
+            title: "包車富士山旅遊",
             description:
-              "協助有 PET-CT 與癌症篩查需求的客戶了解日本可選方案與安排流程。",
-            points: ["篩查方案諮詢", "清晰行程協調", "報告支援選項"],
+              "可安排富士山、河口湖、忍野八海、御殿場及季節景點的私人包車路線。",
+            points: ["富士山路線規劃", "彈性停留拍照", "適合家庭與團體"],
           },
           {
-            title: "家族健康體檢",
+            title: "高端醫療包車",
             description:
-              "為夫妻、父母及家庭成員共同赴日體檢提供協調與行程支援。",
-            points: ["家庭行程規劃", "陪同需求支援", "彈性體檢匹配"],
+              "適合前往醫院、體檢中心、診所、藥局、康養設施等需要安靜私密出行的客戶。",
+            points: ["酒店到體檢中心", "安靜私密車廂", "重視時間安排"],
           },
           {
-            title: "第二醫療意見諮詢",
+            title: "留學考察包車",
             description:
-              "協助有需要的客戶對接日本醫療專家或相關醫療資源作進一步評估路徑。",
-            points: ["資料準備指引", "專科資源匹配", "醫療翻譯協調"],
+              "為家長與學生安排學校、大學、宿舍、周邊環境、教育機構等多站考察行程。",
+            points: ["學校考察路線", "家長友好行程", "多站全天包車"],
           },
           {
-            title: "抗衰與健康管理項目",
+            title: "商務考察包車",
             description:
-              "針對長期健康管理與預防醫學需求，協助了解合適的日本健康管理方案。",
-            points: ["預防健康導向", "生活方式管理", "VIP 禮賓支援"],
+              "支援企業拜訪、工廠考察、展會參觀、投資會議、客戶接待等商務出行。",
+            points: ["商務日程支援", "機場酒店會議往返", "低調 VIP 接待"],
           },
         ],
       },
       advantages: {
-        eyebrow: "為何選擇日本",
-        title: "國際客戶選擇日本醫療服務的原因",
+        eyebrow: "為何選擇我們",
+        title: "安靜、可靠、有質感的日本包車體驗",
         subtitle:
-          "日本以先進設備、嚴謹流程及對患者隱私的重視而受到國際客戶關注。",
+          "服務面向需要高效溝通、穩定路線、私密空間與高端體驗的海外客戶。",
         items: [
           {
-            title: "先進醫療設備",
-            description: "可協助了解現代影像、篩查及專科設施的相關資源。",
-          },
-          {
-            title: "高精度診斷",
-            description: "日本醫療機構以細緻流程與嚴謹報告標準見稱。",
-          },
-          {
-            title: "國際患者支援",
-            description: "可為英文、繁體中文及阿拉伯語客戶協調溝通支援。",
-          },
-          {
-            title: "隱私保護",
-            description: "客戶資料將以敏感資訊處理，僅為協調目的使用。",
-          },
-          {
-            title: "高標準醫療體系",
-            description: "日本醫療環境重視可靠性、流程紀律與患者安全。",
-          },
-          {
-            title: "全程免費阿爾法接送",
+            title: "高端車型",
             description:
-              "可提供全程免費 VIP 阿爾法接送：機場到酒店、酒店到體檢中心。",
+              "可按需求協調阿爾法類高端商務車、行政轎車及團體出行車型。",
+          },
+          {
+            title: "定制行程規劃",
+            description:
+              "可圍繞酒店、機場、富士山、體檢中心、學校與商務地點規劃路線。",
+          },
+          {
+            title: "國際客戶支援",
+            description:
+              "可支援英文、繁體中文及阿拉伯語客戶的諮詢與溝通。",
+          },
+          {
+            title: "專業司機服務",
+            description:
+              "經驗司機協助保持行程有序、準時、舒適。",
+          },
+          {
+            title: "私密與舒適",
+            description:
+              "私人車廂適合家庭、企業高管、醫療出行及 VIP 客戶接待。",
+          },
+          {
+            title: "清晰報價",
+            description:
+              "根據路線、車型、用車時間、行李及特殊需求人工確認費用。",
           },
         ],
       },
       process: {
         eyebrow: "服務流程",
-        title: "由諮詢到赴日安排的清晰流程",
+        title: "由 WhatsApp 諮詢到包車確認",
         subtitle:
-          "V1 流程保持簡潔，讓客戶快速了解方向並轉入 WhatsApp 溝通。",
+          "先提供行程需求，我們會快速確認路線與車型，讓出行安排更清晰。",
         items: [
           {
-            title: "提交諮詢需求",
-            description: "提供服務意向、預計赴日時間及基本需求。",
-          },
-          {
-            title: "醫療協調初步評估",
-            description: "醫療協調人員了解需求並確認關鍵資訊。",
-          },
-          {
-            title: "推薦醫院或體檢方案",
-            description: "根據需求提供合適醫院或體檢方案供進一步討論。",
-          },
-          {
-            title: "確認赴日安排",
+            title: "提交包車需求",
             description:
-              "協調行程窗口、所需資料、酒店資訊、語言支援及免費阿爾法接送安排。",
+              "提供日期、人數、行李、上車地點、目的地及服務類型。",
           },
           {
-            title: "完成體檢或醫療服務",
-            description: "客戶按確認安排在日本完成相關服務。",
+            title: "初步路線評估",
+            description:
+              "評估路線可行性、預計時間、車型匹配及特殊需求。",
+          },
+          {
+            title: "推薦車型與行程",
+            description:
+              "提供合適車型、路線方案與報價供您確認。",
+          },
+          {
+            title: "確認司機安排",
+            description:
+              "確認上車時間、集合地點、司機聯絡方式與行程細節。",
+          },
+          {
+            title: "完成包車服務",
+            description:
+              "按確認安排完成舒適、私密、有序的日本包車行程。",
           },
         ],
       },
       trust: {
-        eyebrow: "信任與隱私",
-        title: "為敏感健康需求而設計",
+        eyebrow: "信任與服務",
+        title: "為海外 VIP 日本出行而設計",
         subtitle:
-          "我們協助客戶對接日本醫療資源與醫療協調服務。我們不聲稱自己是醫院，亦不提供醫療診斷。",
+          "我們協助海外客戶協調日本高端包車服務。我們不是醫療機構、學校、旅行社或投資顧問。",
         items: [
           {
-            title: "醫療隱私保護",
-            description: "健康需求與個人資料均作敏感資訊處理。",
+            title: "行程隱私處理",
+            description:
+              "客戶行程、乘客資料與聯絡方式均會謹慎處理。",
           },
           {
             title: "資料安全存儲",
-            description: "線索資料儲存於 Supabase，並配合 RLS 權限策略。",
-          },
-          {
-            title: "國際患者支援",
             description:
-              "可協調語言支援、赴日行程、機場到酒店與酒店到體檢中心的免費阿爾法接送。",
+              "線索資料儲存於 Supabase，並配合 RLS 權限策略。",
           },
           {
-            title: "安全支付準備",
-            description: "Stripe 安全支付流程將於後續階段加入。",
+            title: "多語溝通",
+            description:
+              "WhatsApp 諮詢可支援英文、繁體中文及阿拉伯語需求。",
+          },
+          {
+            title: "人工確認",
+            description:
+              "V1 聚焦快速 WhatsApp 諮詢，由人工確認路線、車型與價格。",
           },
         ],
       },
       faq: {
         eyebrow: "常見問題",
-        title: "諮詢前常見問題",
+        title: "預訂包車前常見問題",
         subtitle:
-          "以下為一般協調資訊，具體醫療建議應由合資格醫療專業人士提供。",
+          "以下為一般包車資訊，最終安排需根據日期、路線、車型及可用情況確認。",
         items: [
           {
-            question: "外國人可以在日本做體檢嗎？",
+            question: "可以安排機場接送和酒店接送嗎？",
             answer:
-              "可以。許多機構可接待國際患者，但需要提前準備預約、文件、語言及付款安排。",
+              "可以。可通過 WhatsApp 討論機場接送、酒店接送及適合行李數量的車型。",
           },
           {
-            question: "PET-CT 檢查通常需要多久？",
+            question: "可以包車去富士山旅遊嗎？",
             answer:
-              "視乎設施及套餐而定。部分篩查可安排於一天內完成，報告時間則可能另行計算。",
+              "可以。富士山路線可包括河口湖、忍野八海、御殿場、季節景點及定制停留點。",
           },
           {
-            question: "是否可以提供中文或英文報告？",
+            question: "可以安排醫療出行包車嗎？",
             answer:
-              "部分機構可提供英文報告或翻譯支援，我們會在協調時確認可用選項。",
+              "可以。可協調前往醫院、體檢中心、診所、藥局或康養設施的私人包車。",
           },
           {
-            question: "是否需要會日語？",
+            question: "是否支援留學考察包車？",
             answer:
-              "不一定。可按需要協調醫療翻譯或國際患者支援。",
+              "支援。可安排學校、大學、宿舍、教育機構及周邊環境的一日多站行程。",
           },
           {
-            question: "家屬可以陪同嗎？",
+            question: "是否支援商務考察包車？",
             answer:
-              "多數情況可討論陪同安排，具體取決於機構政策及場地限制。",
+              "支援。可安排企業拜訪、工廠考察、展會、會議及客戶接待出行。",
           },
           {
-            question: "是否可以安排接送服務？",
+            question: "有哪些車型可以選？",
             answer:
-              "可以。赴日體檢安排可提供全程免費阿爾法接送，包括機場到酒店、酒店到體檢中心。",
+              "車型需根據日期和路線確認，可討論高端商務車、行政轎車及團體車型。",
           },
           {
-            question: "是否可以安排醫療翻譯？",
+            question: "行程可以定制嗎？",
             answer:
-              "可以討論醫療翻譯安排，需視乎語言、地點及服務類型。",
+              "可以。請提供必去地點、上車時間、酒店地址、人數與行李數量。",
           },
           {
             question: "費用如何確認？",
             answer:
-              "費用需在確認服務類型、機構、時間及支援需求後再作核實。",
+              "費用會根據路線、日期、車型、用車時間、行李及特殊需求確認。",
           },
           {
             question: "是否可以通過 WhatsApp 諮詢？",
             answer:
-              "可以。WhatsApp 是 V1 版本的主要諮詢與跟進渠道。",
+              "可以。WhatsApp 是路線規劃與報價溝通的主要渠道。",
           },
           {
-            question: "是否可以預約癌症篩查？",
+            question: "司機會英文或中文嗎？",
             answer:
-              "我們可協助了解 PET-CT 等癌症篩查方案的諮詢路徑，實際安排視機構可用情況而定。",
+              "語言支援需視可用情況確認，我們會在最終安排前說明溝通方式。",
           },
           {
-            question: "是否支援高端體檢套餐？",
+            question: "家庭成員可以一起乘坐嗎？",
             answer:
-              "支援。高端及行政級體檢套餐是核心服務方向之一。",
+              "可以。請提供人數、行李數量，如有兒童座椅需求也請提前說明。",
           },
           {
-            question: "是否支援第二診療意見？",
+            question: "可以安排多日包車嗎？",
             answer:
-              "可協助在資料齊備後對接合適的日本醫療資源作進一步評估路徑。",
+              "可以。富士山、關西、商務考察、留學考察等多日行程均可討論。",
           },
           {
-            question: "預約需要提前多久？",
+            question: "需要提前多久預訂？",
             answer:
-              "建議越早越好，許多客戶會於預計赴日前數週開始諮詢。",
+              "越早越好，尤其是假期、櫻花季、紅葉季和富士山熱門出行時段。",
           },
           {
-            question: "是否需要簽證？",
+            question: "可以安排酒店到會議地點嗎？",
             answer:
-              "簽證要求取決於護照、赴日目的及停留時間，最終資訊應以官方渠道為準。",
+              "可以。可安排機場、酒店、辦公室、展館、會議地點之間的商務接送。",
           },
           {
-            question: "是否可以為家庭成員一起安排？",
+            question: "司機可以等待嗎？",
             answer:
-              "可以。請提供家庭成員人數、年齡、預計月份及感興趣服務。",
+              "可以按小時或全天包車方案安排等待時間，具體以方案確認為準。",
           },
         ],
       },
       form: {
-        eyebrow: "線索表單",
-        title: "提交需求並通過 WhatsApp 繼續諮詢",
+        eyebrow: "包車諮詢表單",
+        title: "提交路線需求並通過 WhatsApp 溝通",
         subtitle:
-          "提供基本資料後，協調人員可在 WhatsApp 溝通前更快了解您的需求。",
+          "提供基本行程資料後，我們可在 WhatsApp 溝通前更快了解您的用車需求。",
         notice:
-          "請勿透過此表單提交緊急醫療情況。本網站只提供諮詢與協調支援。",
+          "如已確定日期，請留下上車城市、目的地、人數、行李數量及偏好車型。",
         fields: {
           name: "姓名",
           country: "國家或地區",
           whatsapp: "WhatsApp 號碼",
-          month: "預計赴日月份",
-          service: "服務類型",
-          message: "留言內容",
+          month: "預計用車月份",
+          service: "包車服務類型",
+          message: "路線或留言內容",
         },
-        servicePlaceholder: "選擇服務",
+        servicePlaceholder: "選擇包車服務",
         submit: "提交並通過 WhatsApp 諮詢",
         sending: "正在提交您的需求...",
         errors: {
@@ -562,7 +559,7 @@ const resources = {
           country: "請輸入國家或地區。",
           whatsapp: "請輸入有效的 WhatsApp 號碼。",
           month: "請選擇預計月份。",
-          service: "請選擇服務類型。",
+          service: "請選擇包車服務類型。",
           message: "留言不可超過 1000 字。",
           spam: "提交未能接受，請稍後再試。",
           supabase: "尚未設定 Supabase。",
@@ -570,265 +567,276 @@ const resources = {
         },
       },
       footer: {
-        disclaimer: "僅提供諮詢與協調服務。不是醫院，亦不是線上診療平台。",
+        disclaimer:
+          "高端私人包車協調服務。路線、車型及價格均通過 WhatsApp 人工確認。",
       },
     },
   },
   ar: {
     translation: {
+      brand: {
+        name: "JP VIP Charter",
+      },
       seo: {
-        title: "فحوصات طبية راقية في اليابان | JPVIPMedical",
+        title: "خدمة تأجير سيارة خاصة فاخرة في اليابان | JP VIP Charter",
         description:
-          "استشارات فحوصات طبية راقية في اليابان، تشمل PET-CT، فحص السرطان، فحوصات تنفيذية، وخدمات تنسيق طبي لكبار العملاء الدوليين.",
+          "خدمة سيارة خاصة فاخرة في اليابان لرحلات فوجي، الزيارات الطبية، جولات دراسة المدارس، زيارات الأعمال، النقل من المطار، وبرامج VIP مخصصة.",
       },
       hero: {
-        eyebrow: "خدمة تنسيق طبي راقية في اليابان",
-        title: "فحوصات طبية راقية في اليابان",
+        eyebrow: "خدمة سيارة خاصة فاخرة في اليابان",
+        title: "سيارة خاصة VIP في اليابان",
         subtitle:
-          "استشارات فحص صحي شخصية وخدمات تنسيق طبي لكبار العملاء الدوليين.",
+          "خدمة سائق خاص لرحلات فوجي، الزيارات الطبية، جولات الدراسة، زيارات الأعمال، النقل من المطار، وبرامج اليابان المخصصة.",
         transfer:
-          "نقل VIP مجاني بسيارة Alphard: من المطار إلى الفندق ومن الفندق إلى مركز الفحص الطبي.",
+          "يمكن ترتيب النقل من المطار والفندق ورحلات فوجي وزيارات المراكز الطبية والمدارس ومواقع الأعمال بسيارة خاصة.",
         stats: [
-          { value: "3", label: "لغات لدعم العملاء الدوليين" },
-          { value: "5", label: "مسارات استشارة طبية مركزة" },
-          { value: "24h", label: "هدف الرد الأول عبر واتساب" },
+          { value: "5", label: "خدمات سيارة خاصة أساسية" },
+          { value: "24h", label: "هدف الرد عبر واتساب" },
+          { value: "3", label: "لغات للعملاء الدوليين" },
         ],
       },
       cta: {
         whatsapp: "استشر عبر واتساب",
         whatsappShort: "واتساب",
-        request: "طلب استشارة طبية",
+        request: "طلب استشارة سيارة خاصة",
         card: "اسأل عبر واتساب",
       },
       services: {
         eyebrow: "الخدمات",
-        title: "مسارات استشارة عالية القيمة للرعاية الطبية في اليابان",
+        title: "خيارات سيارة خاصة لرحلات اليابان المهمة",
         subtitle:
-          "نساعد العملاء على التواصل مع الموارد الطبية وخدمات التنسيق الطبي في اليابان. لسنا مستشفى ولا نقدم تشخيصا طبيا.",
+          "نوفر استشارة لسيارة خاصة من نقطة إلى نقطة، بالساعة، ليوم كامل، أو حسب برنامج مخصص للعملاء القادمين إلى اليابان.",
         items: [
           {
-            title: "فحص طبي تنفيذي دقيق",
+            title: "سيارة خاصة فاخرة",
             description:
-              "تنسيق فحوصات شاملة للعملاء الذين يرغبون في تقييم صحي راق ومنظم في اليابان.",
-            points: ["تخطيط للمديرين وكبار العملاء", "مطابقة المستشفى والباقة", "دعم المرضى الدوليين"],
+              "مناسبة للنقل من المطار والفندق والتنقل داخل المدينة والتسوق والمطاعم والبرامج الخاصة.",
+            points: ["مطابقة سيارة VIP", "بالساعة أو اليوم الكامل", "راحة وخصوصية"],
           },
           {
-            title: "فحص السرطان PET-CT",
+            title: "رحلة فوجي بسيارة خاصة",
             description:
-              "دعم استشاري للعملاء المهتمين بفحوصات PET-CT وخيارات فحص السرطان في اليابان.",
-            points: ["إرشاد حول خطة الفحص", "تنسيق جدول واضح", "خيارات دعم التقارير"],
+              "برامج خاصة لجبل فوجي وبحيرة كاواغوتشي وأوشينو هاكاي وغوتيمبا ونقاط موسمية.",
+            points: ["تخطيط طريق فوجي", "توقفات مرنة للتصوير", "مناسبة للعائلات والمجموعات"],
           },
           {
-            title: "فحص صحي للعائلة",
+            title: "سيارة خاصة للزيارات الطبية",
             description:
-              "تخطيط منسق للأزواج والوالدين وأفراد العائلة الذين يسافرون معا إلى اليابان.",
-            points: ["تخطيط برنامج العائلة", "دعم المرافقين", "مطابقة مرنة للفحوصات"],
+              "خدمة مخصصة لزيارة المستشفيات ومراكز الفحص والعيادات والصيدليات ومرافق العافية.",
+            points: ["من الفندق إلى مركز الفحص", "مقصورة هادئة وخاصة", "تنسيق دقيق للوقت"],
           },
           {
-            title: "استشارة رأي طبي ثان",
+            title: "سيارة خاصة لجولات الدراسة",
             description:
-              "تنسيق مسارات مراجعة للعملاء الذين يرغبون في الوصول إلى موارد طبية متخصصة في اليابان.",
-            points: ["إرشاد لتحضير الوثائق", "دعم مطابقة التخصص", "تنسيق الترجمة الطبية"],
+              "دعم للعائلات لزيارة المدارس والجامعات والسكن والأحياء ومكاتب التعليم.",
+            points: ["تخطيط زيارات المدارس", "برنامج مناسب للوالدين", "عدة محطات في اليوم"],
           },
           {
-            title: "مكافحة الشيخوخة وإدارة الصحة",
+            title: "سيارة خاصة لزيارات الأعمال",
             description:
-              "استشارات حول برامج الوقاية وإدارة الصحة طويلة الأمد في اليابان.",
-            points: ["تركيز على الوقاية", "برامج مرتبطة بنمط الحياة", "دعم VIP"],
+              "دعم للزيارات الشركات والمصانع والمعارض والاجتماعات واستقبال العملاء.",
+            points: ["دعم جدول الأعمال", "نقل مطار-فندق-اجتماع", "استقبال VIP هادئ"],
           },
         ],
       },
       advantages: {
-        eyebrow: "لماذا اليابان",
-        title: "لماذا يختار العملاء الدوليون الخدمات الطبية في اليابان",
+        eyebrow: "لماذا نحن",
+        title: "تجربة سيارة خاصة هادئة وموثوقة في اليابان",
         subtitle:
-          "تشتهر اليابان بالمعدات المتقدمة، ودقة الإجراءات، والاهتمام العالي بخصوصية المرضى.",
+          "الخدمة مصممة للعملاء الدوليين الذين يحتاجون إلى تواصل واضح ومسارات دقيقة وتجربة سفر راقية.",
         items: [
           {
-            title: "معدات طبية متقدمة",
+            title: "سيارات فاخرة",
             description:
-              "قد تشمل مسارات الوصول مرافق تصوير وفحص وتخصص حديثة.",
+              "يمكن مناقشة سيارات فاخرة على طراز Alphard وسيارات تنفيذية وخيارات للمجموعات.",
           },
           {
-            title: "دقة عالية في التشخيص",
+            title: "تخطيط برنامج مخصص",
             description:
-              "تعرف المؤسسات الطبية اليابانية بسير عمل دقيق وتقارير مفصلة.",
+              "يمكن تخطيط الطريق حول الفندق والمطار وفوجي والمراكز الطبية والمدارس ومواقع الأعمال.",
           },
           {
-            title: "دعم المرضى الدوليين",
+            title: "دعم العملاء الدوليين",
             description:
-              "ننسق دعما للتواصل بالإنجليزية والصينية التقليدية والعربية.",
+              "يتوفر دعم للتواصل باللغة الإنجليزية والصينية التقليدية والعربية.",
           },
           {
-            title: "حماية الخصوصية",
+            title: "سائقون محترفون",
             description:
-              "يتم التعامل مع معلومات العميل بحساسية ولا تستخدم إلا لأغراض التنسيق.",
+              "يساعد السائقون ذوو الخبرة على جعل اليوم منظما وهادئا وفي الوقت المحدد.",
           },
           {
-            title: "نظام طبي عالي المعايير",
+            title: "خصوصية وراحة",
             description:
-              "بيئة الرعاية في اليابان مبنية على الموثوقية والانضباط وسلامة المرضى.",
+              "السفر في مقصورة خاصة مناسب للعائلات والمديرين والزيارات الطبية وضيوف VIP.",
           },
           {
-            title: "دعم نقل Alphard مجاني",
+            title: "عرض سعر واضح",
             description:
-              "يمكن تنسيق نقل VIP مجاني بسيارة Alphard من المطار إلى الفندق ومن الفندق إلى مركز الفحص الطبي.",
+              "يتم تأكيد السعر حسب الطريق ونوع السيارة ووقت الاستخدام والطلبات الخاصة.",
           },
         ],
       },
       process: {
         eyebrow: "الخطوات",
-        title: "مسار واضح من الاستفسار إلى ترتيبات اليابان",
+        title: "من استفسار واتساب إلى تأكيد السيارة الخاصة",
         subtitle:
-          "يبقى مسار V1 بسيطا حتى يفهم العميل الخيارات بسرعة ويتابع عبر واتساب.",
+          "شارك احتياجات الرحلة أولا، وسنساعدك في تأكيد الطريق والسيارة بسرعة.",
         items: [
           {
-            title: "إرسال طلب الاستشارة",
-            description: "شارك نوع الخدمة المفضل وموعد السفر المتوقع والمتطلبات الأساسية.",
-          },
-          {
-            title: "مراجعة أولية من المنسق",
-            description: "يقوم فريق التنسيق الطبي بمراجعة الطلب وتأكيد التفاصيل الرئيسية.",
-          },
-          {
-            title: "توصية بالخطة",
-            description: "تحصل على خيارات مناسبة للمستشفى أو باقة الفحص للمناقشة.",
-          },
-          {
-            title: "تأكيد ترتيبات السفر",
+            title: "إرسال احتياجات الرحلة",
             description:
-              "يتم تنسيق فترة السفر والوثائق والفندق واحتياجات النقل المجاني بسيارة Alphard.",
+              "أرسل التاريخ وعدد الركاب والأمتعة ومكان الانطلاق والوجهة.",
           },
           {
-            title: "إكمال الخدمة",
-            description: "يتابع العميل الفحص أو الدعم الطبي المرتب له في اليابان.",
+            title: "مراجعة أولية للطريق",
+            description:
+              "نراجع إمكانية الطريق والوقت المتوقع وملاءمة السيارة والطلبات الخاصة.",
+          },
+          {
+            title: "اقتراح السيارة والبرنامج",
+            description:
+              "تحصل على سيارة مقترحة وخطة طريق وسعر للتأكيد.",
+          },
+          {
+            title: "تأكيد ترتيب السائق",
+            description:
+              "يتم تأكيد وقت الالتقاء ومكانه وتواصل السائق وتفاصيل الجدول.",
+          },
+          {
+            title: "إكمال الرحلة",
+            description:
+              "استمتع بتجربة سيارة خاصة مريحة ومنظمة في اليابان.",
           },
         ],
       },
       trust: {
-        eyebrow: "الثقة والخصوصية",
-        title: "مصمم للاستفسارات الصحية الحساسة",
+        eyebrow: "الثقة والخدمة",
+        title: "مصمم لاحتياجات سفر VIP في اليابان",
         subtitle:
-          "نساعد العملاء على التواصل مع الموارد الطبية وخدمات التنسيق الطبي في اليابان. لا نقدم أنفسنا كمستشفى ولا نقدم تشخيصا طبيا.",
+          "نساعد العملاء الدوليين في تنسيق خدمة سيارة خاصة فاخرة في اليابان. لسنا جهة طبية أو مدرسة أو وكالة سفر أو مستشار استثمار.",
         items: [
           {
-            title: "خصوصية طبية",
-            description: "تعامل الاحتياجات الصحية والتفاصيل الشخصية كمعلومات حساسة.",
+            title: "تعامل خاص مع البرنامج",
+            description:
+              "يتم التعامل بعناية مع تفاصيل الرحلة والركاب ومعلومات التواصل.",
           },
           {
             title: "تخزين آمن للبيانات",
-            description: "تخزن بيانات العملاء في Supabase مع سياسات أمان RLS.",
-          },
-          {
-            title: "دعم دولي",
             description:
-              "يمكن أن يشمل التنسيق دعما لغويا ونقل Alphard مجانيا من المطار إلى الفندق ومن الفندق إلى مركز الفحص الطبي.",
+              "تخزن بيانات العملاء في Supabase مع سياسات أمان RLS.",
           },
           {
-            title: "جاهزية دفع آمن",
-            description: "سيتم إضافة Stripe لاحقا لمسارات الدفع الآمنة في مرحلة أخرى.",
+            title: "تواصل متعدد اللغات",
+            description:
+              "يمكن دعم الاستفسارات عبر واتساب بالإنجليزية والصينية التقليدية والعربية.",
+          },
+          {
+            title: "تأكيد بشري",
+            description:
+              "تركز نسخة V1 على استشارة واتساب سريعة وتأكيد الطريق والسيارة والسعر يدويا.",
           },
         ],
       },
       faq: {
         eyebrow: "الأسئلة الشائعة",
-        title: "أسئلة شائعة قبل الاستشارة",
+        title: "أسئلة شائعة قبل حجز سيارة خاصة",
         subtitle:
-          "هذه معلومات عامة للتنسيق. يجب أن تأتي النصائح الطبية المحددة من مختصين مؤهلين.",
+          "هذه معلومات عامة. التفاصيل النهائية تعتمد على التاريخ والطريق والسيارة والتوفر.",
         items: [
           {
-            question: "هل يمكن للأجانب إجراء فحوصات طبية في اليابان؟",
+            question: "هل يمكن ترتيب النقل من المطار إلى الفندق؟",
             answer:
-              "نعم. تدعم العديد من المؤسسات المرضى الدوليين عند تجهيز الموعد والوثائق واللغة والدفع مسبقا.",
+              "نعم. يمكن مناقشة النقل من المطار والفندق وحجم السيارة المناسب للأمتعة عبر واتساب.",
           },
           {
-            question: "كم يستغرق فحص PET-CT عادة؟",
+            question: "هل يمكن حجز سيارة خاصة إلى جبل فوجي؟",
             answer:
-              "يعتمد ذلك على المنشأة والباقة. قد يتم التخطيط لكثير من الزيارات خلال يوم واحد، بينما يحتاج التقرير وقتا إضافيا.",
+              "نعم. يمكن أن تشمل الرحلة بحيرة كاواغوتشي وأوشينو هاكاي وغوتيمبا ونقاطا مخصصة.",
           },
           {
-            question: "هل يمكن توفير التقارير بالصينية أو الإنجليزية؟",
+            question: "هل يمكن ترتيب سيارة للزيارات الطبية؟",
             answer:
-              "توفر بعض المنشآت تقارير باللغة الإنجليزية أو دعما للترجمة. نؤكد الخيارات أثناء التنسيق.",
+              "نعم. يمكن تنسيق النقل إلى المستشفيات ومراكز الفحص والعيادات والصيدليات ومرافق العافية.",
           },
           {
-            question: "هل أحتاج إلى التحدث باليابانية؟",
+            question: "هل تدعمون جولات دراسة المدارس؟",
             answer:
-              "ليس بالضرورة. يمكننا تنسيق الترجمة الطبية أو دعم المرضى الدوليين عند توفره.",
+              "نعم. يمكن ترتيب زيارات المدارس والجامعات والسكن ومكاتب التعليم والأحياء في يوم واحد.",
           },
           {
-            question: "هل يمكن للعائلة مرافقتي؟",
+            question: "هل تدعمون زيارات الأعمال؟",
             answer:
-              "في حالات كثيرة يمكن ذلك. يتم تأكيد سياسات المنشأة وحدود المكان قبل الترتيب النهائي.",
+              "نعم. يمكن ترتيب زيارات الشركات والمصانع والمعارض والاجتماعات واستقبال العملاء.",
           },
           {
-            question: "هل يمكن ترتيب خدمة النقل؟",
+            question: "ما أنواع السيارات المتاحة؟",
             answer:
-              "نعم. يمكن أن تشمل ترتيبات الفحص نقل Alphard مجانيا من المطار إلى الفندق ومن الفندق إلى مركز الفحص الطبي.",
+              "تعتمد السيارات على التاريخ والطريق. يمكن مناقشة سيارات فاخرة وتنفيذية وخيارات للمجموعات.",
           },
           {
-            question: "هل يمكن ترتيب مترجم طبي؟",
+            question: "هل يمكن تخصيص البرنامج؟",
             answer:
-              "نعم، يمكن مناقشة تنسيق مترجم حسب اللغة والموقع ونوع الخدمة الطبية.",
+              "نعم. يرجى إرسال المواقع المطلوبة ووقت الانطلاق والفندق وعدد الركاب والأمتعة.",
           },
           {
-            question: "كيف يتم تأكيد الرسوم؟",
+            question: "كيف يتم تأكيد السعر؟",
             answer:
-              "يتم تأكيد الرسوم بعد مراجعة نوع الخدمة والمنشأة والجدول واحتياجات الدعم.",
+              "يتم عرض السعر بعد مراجعة الطريق والتاريخ ونوع السيارة ووقت الاستخدام والأمتعة والطلبات الخاصة.",
           },
           {
-            question: "هل يمكنني الاستشارة عبر واتساب؟",
+            question: "هل يمكن الاستشارة عبر واتساب؟",
             answer:
-              "نعم. واتساب هو القناة الأساسية للاستشارة والمتابعة في نسخة V1.",
+              "نعم. واتساب هو قناة الاستشارة الرئيسية لتخطيط الطريق والسعر.",
           },
           {
-            question: "هل يمكن ترتيب فحص السرطان؟",
+            question: "هل يتحدث السائق الإنجليزية أو الصينية؟",
             answer:
-              "يمكننا المساعدة في مسارات الاستشارة لفحوصات السرطان مثل PET-CT، حسب توفر المنشأة.",
+              "يعتمد الدعم اللغوي على التوفر، ونوضح طريقة التواصل قبل التأكيد النهائي.",
           },
           {
-            question: "هل تدعمون باقات الفحص الطبي الراقية؟",
+            question: "هل يمكن للعائلة السفر معا؟",
             answer:
-              "نعم. تنسيق الفحوصات التنفيذية والراقية هو مسار خدمة أساسي.",
+              "نعم. يرجى مشاركة عدد الركاب وحجم الأمتعة واحتياجات مقعد الأطفال إن وجدت.",
           },
           {
-            question: "هل تدعمون الرأي الطبي الثاني؟",
+            question: "هل يمكن ترتيب سيارة لعدة أيام؟",
             answer:
-              "يمكننا تنسيق مسارات مراجعة مع موارد طبية يابانية مناسبة عند توفر الوثائق والتفاصيل.",
+              "نعم. يمكن مناقشة الرحلات متعددة الأيام لفوجي أو كانساي أو الأعمال أو الدراسة.",
           },
           {
             question: "كم يلزم الحجز مسبقا؟",
             answer:
-              "كلما كان أبكر كان أفضل. يبدأ كثير من العملاء الاستشارة قبل شهر السفر المفضل بعدة أسابيع.",
+              "كلما كان أبكر كان أفضل، خاصة في العطلات وموسم الساكورا وأوراق الخريف وفترات فوجي المزدحمة.",
           },
           {
-            question: "هل أحتاج إلى تأشيرة؟",
+            question: "هل يمكن النقل من الفندق إلى موقع الاجتماع؟",
             answer:
-              "تعتمد متطلبات التأشيرة على جواز السفر والغرض من السفر ومدة الإقامة. يجب تأكيد التفاصيل من المصادر الرسمية.",
+              "نعم. يمكن ترتيب التنقل بين المطار والفندق والمكتب والمعرض ومكان الاجتماع.",
           },
           {
-            question: "هل يمكن ترتيب الخدمة لعدة أفراد من العائلة؟",
+            question: "هل يمكن للسائق الانتظار أثناء الزيارة؟",
             answer:
-              "نعم. يرجى مشاركة عدد أفراد العائلة والأعمار والشهر المفضل ونوع الخدمة المطلوبة.",
+              "يمكن تضمين وقت الانتظار حسب خطة الساعة أو اليوم الكامل المختارة.",
           },
         ],
       },
       form: {
-        eyebrow: "نموذج الاستشارة",
-        title: "أرسل طلبك وتابع عبر واتساب",
+        eyebrow: "نموذج استفسار السيارة الخاصة",
+        title: "أرسل الطريق وتابع عبر واتساب",
         subtitle:
-          "شارك التفاصيل الأساسية حتى يفهم المنسق احتياجاتك قبل بدء محادثة واتساب.",
+          "شارك تفاصيل الرحلة الأساسية حتى نفهم احتياجاتك قبل محادثة واتساب.",
         notice:
-          "يرجى عدم إرسال الحالات الطبية الطارئة عبر هذا النموذج. الموقع يدعم الاستشارة والتنسيق فقط.",
+          "إذا كان التاريخ معروفا، يرجى ذكر مدينة الانطلاق والوجهة وعدد الركاب والأمتعة ونوع السيارة المفضل.",
         fields: {
           name: "الاسم",
           country: "الدولة أو المنطقة",
           whatsapp: "رقم واتساب",
-          month: "الشهر المتوقع في اليابان",
-          service: "نوع الخدمة",
-          message: "الرسالة",
+          month: "شهر السفر المفضل",
+          service: "نوع خدمة السيارة الخاصة",
+          message: "الطريق أو الرسالة",
         },
-        servicePlaceholder: "اختر خدمة",
+        servicePlaceholder: "اختر خدمة سيارة خاصة",
         submit: "إرسال واستشارة عبر واتساب",
         sending: "جار إرسال طلبك...",
         errors: {
@@ -836,7 +844,7 @@ const resources = {
           country: "يرجى إدخال الدولة أو المنطقة.",
           whatsapp: "يرجى إدخال رقم واتساب صحيح.",
           month: "يرجى اختيار الشهر المفضل.",
-          service: "يرجى اختيار نوع الخدمة.",
+          service: "يرجى اختيار نوع خدمة السيارة.",
           message: "يجب ألا تتجاوز الرسالة 1000 حرف.",
           spam: "تعذر قبول الطلب. يرجى المحاولة مرة أخرى.",
           supabase: "لم يتم إعداد Supabase بعد.",
@@ -845,7 +853,7 @@ const resources = {
       },
       footer: {
         disclaimer:
-          "خدمة استشارة وتنسيق فقط. لسنا مستشفى أو منصة تشخيص عبر الإنترنت.",
+          "خدمة تنسيق سيارة خاصة فاخرة. يتم تأكيد الطريق والسيارة والسعر يدويا عبر واتساب.",
       },
     },
   },

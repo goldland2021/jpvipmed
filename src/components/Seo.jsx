@@ -54,7 +54,7 @@ export default function Seo({ language }) {
     const title = t("seo.title");
     const description = t("seo.description");
     const url = `${siteConfig.siteUrl}/${language}`;
-    const imageUrl = `${siteConfig.siteUrl}/images/hero-medical-concierge.jpg`;
+    const imageUrl = `${siteConfig.siteUrl}/images/hero-charter-japan.jpg`;
 
     document.title = title;
     document.documentElement.lang = language === "zh-hk" ? "zh-HK" : language;
@@ -101,12 +101,12 @@ export default function Seo({ language }) {
     schema.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      name: "JPVIPMedical",
+      name: t("brand.name"),
       url,
       image: imageUrl,
       description,
       serviceType:
-        "Japan medical checkup consultation and international patient coordination",
+        "Japan premium private charter, chauffeur, Fuji tour, medical visit, study inspection, and business inspection transportation",
       areaServed: [
         "Hong Kong",
         "Taiwan",

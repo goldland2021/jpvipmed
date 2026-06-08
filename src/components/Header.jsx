@@ -10,10 +10,10 @@ export default function Header({ language }) {
     <header className="absolute inset-x-0 top-0 z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a href={`/${language}`} className="flex items-center gap-3 text-white">
-          <span className="grid h-10 w-10 place-items-center rounded-md border border-gold/40 bg-midnight/80 text-gold">
-            +
+          <span className="grid h-10 w-10 place-items-center rounded-md border border-gold/40 bg-midnight/80 text-sm font-semibold text-gold">
+            VIP
           </span>
-          <span className="font-semibold">JPVIPMedical</span>
+          <span className="font-semibold">{t("brand.name")}</span>
         </a>
         <div className="flex items-center gap-3">
           <LanguageSwitcher currentLanguage={language} />

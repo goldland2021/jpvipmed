@@ -45,7 +45,7 @@ function exportCsv(rows) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `jpvipmedical-leads-${new Date().toISOString().slice(0, 10)}.csv`;
+  link.download = `jp-vip-charter-leads-${new Date().toISOString().slice(0, 10)}.csv`;
   link.click();
   URL.revokeObjectURL(url);
 }
@@ -137,7 +137,7 @@ export default function AdminPage() {
   }
 
   useEffect(() => {
-    document.title = "Lead Admin | JPVIPMedical";
+    document.title = "Lead Admin | JP VIP Charter";
     document.documentElement.dir = "ltr";
     document.documentElement.lang = "en";
   }, []);

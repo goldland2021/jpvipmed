@@ -1,19 +1,17 @@
 import {
   ArrowRight,
+  BriefcaseBusiness,
   CalendarCheck,
   Car,
   CheckCircle2,
   ClipboardCheck,
+  GraduationCap,
   HeartPulse,
   Languages,
   LockKeyhole,
   MessageCircle,
-  Microscope,
-  Plane,
+  Mountain,
   ShieldCheck,
-  Sparkles,
-  Stethoscope,
-  Users,
 } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -23,17 +21,17 @@ import Seo from "../components/Seo";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { trackButtonClick } from "../lib/analytics";
 
-const serviceIcons = [Stethoscope, Microscope, Users, ClipboardCheck, Sparkles];
+const serviceIcons = [Car, Mountain, HeartPulse, GraduationCap, BriefcaseBusiness];
 const advantageIcons = [
-  Microscope,
-  CheckCircle2,
-  Languages,
-  LockKeyhole,
-  ShieldCheck,
   Car,
+  CalendarCheck,
+  Languages,
+  ShieldCheck,
+  LockKeyhole,
+  CheckCircle2,
 ];
 const trustIcons = [LockKeyhole, ShieldCheck, Languages, CheckCircle2];
-const processIcons = [MessageCircle, ClipboardCheck, Stethoscope, Plane, CalendarCheck];
+const processIcons = [MessageCircle, ClipboardCheck, Car, CalendarCheck, CheckCircle2];
 
 export default function LandingPage({ language }) {
   const { t } = useTranslation();
@@ -47,13 +45,13 @@ export default function LandingPage({ language }) {
   const heroStyle = useMemo(
     () => ({
       backgroundImage:
-        "linear-gradient(90deg, rgba(10,25,47,0.94) 0%, rgba(10,25,47,0.78) 42%, rgba(10,25,47,0.34) 100%), url('/images/hero-medical-concierge.jpg')",
+        "linear-gradient(90deg, rgba(10,25,47,0.94) 0%, rgba(10,25,47,0.78) 42%, rgba(10,25,47,0.34) 100%), url('/images/hero-charter-japan.jpg')",
     }),
     []
   );
 
   function scrollToForm() {
-    trackButtonClick("request_medical_consultation", { language });
+    trackButtonClick("request_charter_consultation", { language });
     document.getElementById("consultation")?.scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -251,7 +249,7 @@ export default function LandingPage({ language }) {
 
         <footer className="bg-midnight px-4 py-8 text-sm text-white/70 sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} JPVIPMedical</p>
+            <p>© {new Date().getFullYear()} {t("brand.name")}</p>
             <p>{t("footer.disclaimer")}</p>
           </div>
         </footer>

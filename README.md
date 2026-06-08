@@ -1,6 +1,6 @@
-# JPVIPMedical.com V1
+# JP VIP Charter V1
 
-Multilingual React/Vite landing site for Japan premium medical checkup consultation. V1 is focused on qualified WhatsApp leads, not hospital booking, online diagnosis, payment, or CRM.
+Multilingual React/Vite landing site for Japan premium private charter consultation. V1 is focused on qualified WhatsApp leads for high-end charter, Fuji private tours, medical visit transportation, study-abroad inspection trips, and business inspection trips.
 
 ## Routes
 

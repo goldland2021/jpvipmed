@@ -3,11 +3,11 @@ import { siteConfig } from "../config";
 export function buildLeadWhatsAppMessage(lead) {
   return `Hello,
 
-I would like to inquire about medical services in Japan.
+I would like to inquire about private charter services in Japan.
 
 Name: ${lead.name}
 Country: ${lead.country}
-Preferred Month: ${lead.preferred_month}
+Preferred Travel Month: ${lead.preferred_month}
 Service Type: ${lead.service_type}
 
 Thank you.`;
@@ -16,7 +16,7 @@ Thank you.`;
 export function buildQuickWhatsAppMessage(serviceName = "") {
   return `Hello,
 
-I would like to inquire about medical services in Japan.${serviceName ? `\n\nService Type: ${serviceName}` : ""}
+I would like to inquire about private charter services in Japan.${serviceName ? `\n\nService Type: ${serviceName}` : ""}
 
 Thank you.`;
 }
