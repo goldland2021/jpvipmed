@@ -40,7 +40,6 @@ export default function LandingPage({ language }) {
   const process = t("process.items", { returnObjects: true });
   const trust = t("trust.items", { returnObjects: true });
   const faqs = t("faq.items", { returnObjects: true });
-  const stats = t("hero.stats", { returnObjects: true });
 
   const heroStyle = useMemo(
     () => ({
@@ -93,19 +92,6 @@ export default function LandingPage({ language }) {
                   <CalendarCheck className="h-5 w-5" aria-hidden="true" />
                   <span>{t("cta.request")}</span>
                 </button>
-              </div>
-              <div className="mt-12 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
-                {stats.map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-md border border-white/15 bg-white/10 p-4 backdrop-blur"
-                  >
-                    <p className="text-2xl font-semibold text-gold">
-                      {item.value}
-                    </p>
-                    <p className="mt-1 text-sm text-white/80">{item.label}</p>
-                  </div>
-                ))}
               </div>
             </div>
           </div>

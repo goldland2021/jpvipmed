@@ -19,11 +19,6 @@ const resources = {
           "Private chauffeur service for Fuji tours, medical visits, study-abroad inspections, business inspections, airport transfers, and custom Japan itineraries.",
         transfer:
           "Airport pickup, hotel transfers, Fuji day trips, medical center visits, school visits, and business site visits can be arranged by private charter.",
-        stats: [
-          { value: "5", label: "Core VIP charter services" },
-          { value: "24h", label: "WhatsApp response target" },
-          { value: "3", label: "Languages for overseas clients" },
-        ],
       },
       cta: {
         whatsapp: "Consult on WhatsApp",
@@ -304,11 +299,6 @@ const resources = {
           "面向海外客戶提供 VIP 私人司機服務，覆蓋富士山旅遊、醫療出行、留學考察、商務考察、機場接送與日本定制行程。",
         transfer:
           "機場接送、酒店接送、富士山一日遊、體檢中心、學校考察與商務拜訪，均可按需求安排私人包車。",
-        stats: [
-          { value: "5", label: "核心高端包車服務" },
-          { value: "24h", label: "WhatsApp 初步回覆目標" },
-          { value: "3", label: "支援國際客戶語言" },
-        ],
       },
       cta: {
         whatsapp: "通過 WhatsApp 諮詢",
@@ -589,11 +579,6 @@ const resources = {
           "خدمة سائق خاص لرحلات فوجي، الزيارات الطبية، جولات الدراسة، زيارات الأعمال، النقل من المطار، وبرامج اليابان المخصصة.",
         transfer:
           "يمكن ترتيب النقل من المطار والفندق ورحلات فوجي وزيارات المراكز الطبية والمدارس ومواقع الأعمال بسيارة خاصة.",
-        stats: [
-          { value: "5", label: "خدمات سيارة خاصة أساسية" },
-          { value: "24h", label: "هدف الرد عبر واتساب" },
-          { value: "3", label: "لغات للعملاء الدوليين" },
-        ],
       },
       cta: {
         whatsapp: "استشر عبر واتساب",
