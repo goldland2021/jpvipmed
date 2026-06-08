@@ -4,8 +4,8 @@ Multilingual React/Vite landing site for Japan premium medical checkup consultat
 
 ## Routes
 
-- `/en` English default
-- `/zh-hk` Traditional Chinese
+- `/zh-hk` Traditional Chinese default
+- `/en` English
 - `/ar` Arabic with `html dir="rtl"`
 - `/admin` protected Supabase lead admin
 

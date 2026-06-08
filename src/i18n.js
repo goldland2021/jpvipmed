@@ -828,7 +828,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en",
+  lng: "zh-hk",
   fallbackLng: "en",
   supportedLngs: ["en", "zh-hk", "ar"],
   lowerCaseLng: true,

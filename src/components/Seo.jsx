@@ -42,7 +42,7 @@ function setManagedLinks(language) {
   const fallback = document.createElement("link");
   fallback.rel = "alternate";
   fallback.hreflang = "x-default";
-  fallback.href = `${siteConfig.siteUrl}/en`;
+  fallback.href = `${siteConfig.siteUrl}/zh-hk`;
   fallback.dataset.jpvipSeo = "true";
   document.head.appendChild(fallback);
 }

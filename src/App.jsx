@@ -20,7 +20,7 @@ function RouteAnalytics() {
     trackPageView({
       path: `${location.pathname}${location.search}`,
       title: document.title,
-      language: i18n.resolvedLanguage || i18n.language || "en",
+      language: i18n.resolvedLanguage || i18n.language || "zh-hk",
     });
   }, [location.pathname, location.search, i18n.resolvedLanguage, i18n.language]);
 
@@ -45,7 +45,7 @@ function LanguageRoute() {
   }, [i18n, lang]);
 
   if (!supportedLanguages.includes(lang)) {
-    return <Navigate to="/en" replace />;
+    return <Navigate to="/zh-hk" replace />;
   }
 
   if (!ready) return null;
@@ -57,10 +57,10 @@ export default function App() {
     <>
       <RouteAnalytics />
       <Routes>
-        <Route path="/" element={<Navigate to="/en" replace />} />
+        <Route path="/" element={<Navigate to="/zh-hk" replace />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/:lang" element={<LanguageRoute />} />
-        <Route path="*" element={<Navigate to="/en" replace />} />
+        <Route path="*" element={<Navigate to="/zh-hk" replace />} />
       </Routes>
     </>
   );
