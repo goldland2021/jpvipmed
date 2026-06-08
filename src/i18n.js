@@ -16,7 +16,7 @@ const resources = {
         subtitle:
           "Personalized health screening and VIP medical concierge services for international clients.",
         transfer:
-          "VIP Alphard transfer coordination: airport to hotel, hotel to airport.",
+          "Complimentary VIP Alphard transfers: airport to hotel, hotel to health checkup center.",
         stats: [
           { value: "3", label: "Languages for international clients" },
           { value: "5", label: "Focused medical consultation services" },
@@ -119,9 +119,9 @@ const resources = {
               "Japan's healthcare environment is built around reliability, process discipline, and patient safety.",
           },
           {
-            title: "Alphard transfer support",
+            title: "Complimentary Alphard transfers",
             description:
-              "VIP transfers can be coordinated from airport to hotel and from hotel back to airport, subject to package and availability.",
+              "Complimentary VIP Alphard transfers can be coordinated from airport to hotel and from hotel to the health checkup center.",
           },
         ],
       },
@@ -149,7 +149,7 @@ const resources = {
           {
             title: "Confirm Japan arrangements",
             description:
-              "The travel window, required documents, hotel details, and Alphard transfer needs are aligned.",
+              "The travel window, required documents, hotel details, and complimentary Alphard transfer needs are aligned.",
           },
           {
             title: "Complete the service",
@@ -177,7 +177,7 @@ const resources = {
           {
             title: "International support",
             description:
-              "Coordination can include language support, Alphard airport-hotel transfers, and travel-related planning.",
+              "Coordination can include language support, complimentary airport-hotel and hotel-checkup center Alphard transfers, and travel-related planning.",
           },
           {
             title: "Secure payment readiness",
@@ -220,7 +220,7 @@ const resources = {
           {
             question: "Can transportation be arranged?",
             answer:
-              "VIP support may include Alphard transfers from airport to hotel, from hotel to airport, and selected clinic transfers depending on the package.",
+              "Yes. VIP support includes complimentary Alphard transfers from airport to hotel and from hotel to the health checkup center for arranged checkup visits.",
           },
           {
             question: "Can medical interpreters be arranged?",
@@ -318,7 +318,7 @@ const resources = {
         subtitle:
           "為國際客戶提供個人化健康篩查諮詢與 VIP 日本醫療資源對接支援。",
         transfer:
-          "全程阿爾法接送安排：機場到酒店、酒店到機場。",
+          "全程免費阿爾法接送：機場到酒店、酒店到體檢中心。",
         stats: [
           { value: "3", label: "支援國際客戶語言" },
           { value: "5", label: "核心醫療諮詢服務" },
@@ -396,9 +396,9 @@ const resources = {
             description: "日本醫療環境重視可靠性、流程紀律與患者安全。",
           },
           {
-            title: "全程阿爾法接送",
+            title: "全程免費阿爾法接送",
             description:
-              "可按方案協調機場到酒店、酒店到機場的 VIP 阿爾法接送，亦可討論醫療機構往返安排。",
+              "可提供全程免費 VIP 阿爾法接送：機場到酒店、酒店到體檢中心。",
           },
         ],
       },
@@ -423,7 +423,7 @@ const resources = {
           {
             title: "確認赴日安排",
             description:
-              "協調行程窗口、所需資料、酒店資訊、語言支援及阿爾法接送安排。",
+              "協調行程窗口、所需資料、酒店資訊、語言支援及免費阿爾法接送安排。",
           },
           {
             title: "完成體檢或醫療服務",
@@ -448,7 +448,7 @@ const resources = {
           {
             title: "國際患者支援",
             description:
-              "可協調語言支援、赴日行程、機場酒店阿爾法接送及相關準備事項。",
+              "可協調語言支援、赴日行程、機場到酒店與酒店到體檢中心的免費阿爾法接送。",
           },
           {
             title: "安全支付準備",
@@ -490,7 +490,7 @@ const resources = {
           {
             question: "是否可以安排接送服務？",
             answer:
-              "可以按方案協調全程阿爾法接送，包括機場到酒店、酒店到機場；如需前往醫療機構，也可一併討論安排。",
+              "可以。赴日體檢安排可提供全程免費阿爾法接送，包括機場到酒店、酒店到體檢中心。",
           },
           {
             question: "是否可以安排醫療翻譯？",
@@ -587,7 +587,7 @@ const resources = {
         subtitle:
           "استشارات فحص صحي شخصية وخدمات تنسيق طبي لكبار العملاء الدوليين.",
         transfer:
-          "تنسيق نقل VIP بسيارة Alphard: من المطار إلى الفندق ومن الفندق إلى المطار.",
+          "نقل VIP مجاني بسيارة Alphard: من المطار إلى الفندق ومن الفندق إلى مركز الفحص الطبي.",
         stats: [
           { value: "3", label: "لغات لدعم العملاء الدوليين" },
           { value: "5", label: "مسارات استشارة طبية مركزة" },
@@ -670,9 +670,9 @@ const resources = {
               "بيئة الرعاية في اليابان مبنية على الموثوقية والانضباط وسلامة المرضى.",
           },
           {
-            title: "دعم نقل Alphard كامل",
+            title: "دعم نقل Alphard مجاني",
             description:
-              "يمكن تنسيق انتقال VIP بسيارة Alphard من المطار إلى الفندق ومن الفندق إلى المطار حسب الباقة والتوفر.",
+              "يمكن تنسيق نقل VIP مجاني بسيارة Alphard من المطار إلى الفندق ومن الفندق إلى مركز الفحص الطبي.",
           },
         ],
       },
@@ -697,7 +697,7 @@ const resources = {
           {
             title: "تأكيد ترتيبات السفر",
             description:
-              "يتم تنسيق فترة السفر والوثائق والفندق واحتياجات النقل بسيارة Alphard.",
+              "يتم تنسيق فترة السفر والوثائق والفندق واحتياجات النقل المجاني بسيارة Alphard.",
           },
           {
             title: "إكمال الخدمة",
@@ -722,7 +722,7 @@ const resources = {
           {
             title: "دعم دولي",
             description:
-              "يمكن أن يشمل التنسيق دعما لغويا ونقل Alphard بين المطار والفندق وتخطيطا للسفر.",
+              "يمكن أن يشمل التنسيق دعما لغويا ونقل Alphard مجانيا من المطار إلى الفندق ومن الفندق إلى مركز الفحص الطبي.",
           },
           {
             title: "جاهزية دفع آمن",
@@ -764,7 +764,7 @@ const resources = {
           {
             question: "هل يمكن ترتيب خدمة النقل؟",
             answer:
-              "قد يشمل دعم VIP تنسيق سيارة Alphard من المطار إلى الفندق ومن الفندق إلى المطار، إضافة إلى بعض تنقلات العيادة حسب الباقة.",
+              "نعم. يمكن أن تشمل ترتيبات الفحص نقل Alphard مجانيا من المطار إلى الفندق ومن الفندق إلى مركز الفحص الطبي.",
           },
           {
             question: "هل يمكن ترتيب مترجم طبي؟",
