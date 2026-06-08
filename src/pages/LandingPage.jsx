@@ -15,6 +15,7 @@ import {
   Stethoscope,
   Users,
 } from "lucide-react";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import Header from "../components/Header";
 import LeadForm from "../components/LeadForm";
@@ -43,6 +44,14 @@ export default function LandingPage({ language }) {
   const faqs = t("faq.items", { returnObjects: true });
   const stats = t("hero.stats", { returnObjects: true });
 
+  const heroStyle = useMemo(
+    () => ({
+      backgroundImage:
+        "linear-gradient(90deg, rgba(10,25,47,0.94) 0%, rgba(10,25,47,0.78) 42%, rgba(10,25,47,0.34) 100%), url('/images/hero-medical-concierge.jpg')",
+    }),
+    []
+  );
+
   function scrollToForm() {
     trackButtonClick("request_medical_consultation", { language });
     document.getElementById("consultation")?.scrollIntoView({
@@ -55,10 +64,10 @@ export default function LandingPage({ language }) {
     <>
       <Seo language={language} />
       <div className="min-h-screen bg-white text-ink">
-        <section className="relative min-h-[780px] overflow-hidden bg-midnight text-white md:min-h-[720px]">
+        <section className="relative min-h-[720px] overflow-hidden bg-midnight text-white">
           <Header language={language} />
-          <div className="hero-bg absolute inset-0" />
-          <div className="relative z-10 mx-auto flex min-h-[780px] max-w-7xl items-start px-4 pb-16 pt-64 sm:px-6 md:min-h-[720px] md:items-center md:pt-28 lg:px-8">
+          <div className="absolute inset-0 bg-cover bg-center" style={heroStyle} />
+          <div className="relative z-10 mx-auto flex min-h-[720px] max-w-7xl items-center px-4 pb-16 pt-28 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <p className="eyebrow text-gold">{t("hero.eyebrow")}</p>
               <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
