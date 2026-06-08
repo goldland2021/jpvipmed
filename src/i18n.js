@@ -13,12 +13,15 @@ const resources = {
           "Premium Japan private charter service for Fuji tours, medical visits, study-abroad inspections, business inspections, airport transfers, and custom VIP travel.",
       },
       hero: {
-        eyebrow: "Premium Japan private charter service",
+        eyebrow: "Japan premium charter",
         title: "VIP Private Charter in Japan",
         subtitle:
-          "Private chauffeur service for Fuji tours, medical visits, study-abroad inspections, business inspections, airport transfers, and custom Japan itineraries.",
-        transfer:
-          "Airport pickup, hotel transfers, Fuji day trips, medical center visits, school visits, and business site visits can be arranged by private charter.",
+          "Private chauffeur service for overseas clients who need reliable, comfortable, and flexible travel in Japan.",
+        points: [
+          "Airport and hotel transfers",
+          "Mount Fuji private tours",
+          "Medical, study-abroad, and business inspection charters",
+        ],
       },
       cta: {
         whatsapp: "Consult on WhatsApp",
@@ -293,12 +296,15 @@ const resources = {
           "日本高端包車服務，支援富士山包車旅遊、高端醫療包車、留學考察包車、商務考察包車、機場接送與 VIP 定制行程。",
       },
       hero: {
-        eyebrow: "日本高端包車服務",
-        title: "日本高端包車與定制行程",
+        eyebrow: "日本高端包車",
+        title: "日本包車，一站式安排",
         subtitle:
-          "面向海外客戶提供 VIP 私人司機服務，覆蓋富士山旅遊、醫療出行、留學考察、商務考察、機場接送與日本定制行程。",
-        transfer:
-          "機場接送、酒店接送、富士山一日遊、體檢中心、學校考察與商務拜訪，均可按需求安排私人包車。",
+          "面向海外客戶提供私人司機與高端車型，適合旅遊、醫療、留學與商務行程。",
+        points: [
+          "機場接送與酒店接送",
+          "包車富士山旅遊",
+          "高端醫療、留學考察、商務考察包車",
+        ],
       },
       cta: {
         whatsapp: "通過 WhatsApp 諮詢",
@@ -573,12 +579,15 @@ const resources = {
           "خدمة سيارة خاصة فاخرة في اليابان لرحلات فوجي، الزيارات الطبية، جولات دراسة المدارس، زيارات الأعمال، النقل من المطار، وبرامج VIP مخصصة.",
       },
       hero: {
-        eyebrow: "خدمة سيارة خاصة فاخرة في اليابان",
+        eyebrow: "خدمة سيارة خاصة فاخرة",
         title: "سيارة خاصة VIP في اليابان",
         subtitle:
-          "خدمة سائق خاص لرحلات فوجي، الزيارات الطبية، جولات الدراسة، زيارات الأعمال، النقل من المطار، وبرامج اليابان المخصصة.",
-        transfer:
-          "يمكن ترتيب النقل من المطار والفندق ورحلات فوجي وزيارات المراكز الطبية والمدارس ومواقع الأعمال بسيارة خاصة.",
+          "خدمة سائق خاص للعملاء الدوليين الذين يحتاجون إلى سفر مريح ومرن وموثوق في اليابان.",
+        points: [
+          "النقل من المطار والفندق",
+          "رحلات خاصة إلى جبل فوجي",
+          "سيارة خاصة للزيارات الطبية والدراسية والتجارية",
+        ],
       },
       cta: {
         whatsapp: "استشر عبر واتساب",

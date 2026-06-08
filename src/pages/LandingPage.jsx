@@ -73,10 +73,20 @@ export default function LandingPage({ language }) {
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85 sm:text-xl">
                 {t("hero.subtitle")}
               </p>
-              <div className="mt-6 inline-flex max-w-2xl items-start gap-3 rounded-md border border-gold/45 bg-midnight/70 px-4 py-3 text-start text-sm font-semibold leading-6 text-white shadow-soft backdrop-blur sm:text-base">
-                <Car className="mt-0.5 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
-                <span>{t("hero.transfer")}</span>
-              </div>
+              <ul className="mt-6 grid max-w-2xl gap-3 text-start text-sm font-semibold leading-6 text-white sm:text-base">
+                {t("hero.points", { returnObjects: true }).map((point) => (
+                  <li
+                    key={point}
+                    className="inline-flex items-start gap-3 rounded-md border border-gold/45 bg-midnight/70 px-4 py-3 shadow-soft backdrop-blur"
+                  >
+                    <CheckCircle2
+                      className="mt-0.5 h-5 w-5 shrink-0 text-gold"
+                      aria-hidden="true"
+                    />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <WhatsAppButton
                   language={language}
