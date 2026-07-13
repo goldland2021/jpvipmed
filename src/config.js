@@ -20,6 +20,7 @@ export const siteConfig = {
     import.meta.env.VITE_GOOGLE_ADS_WHATSAPP_CONVERSION_LABEL || "",
   recaptchaSiteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY || "",
   leadFunctionName: import.meta.env.VITE_SUPABASE_LEAD_FUNCTION_NAME || "",
+  workflowAiWidgetSrc: import.meta.env.VITE_WORKFLOWAI_WIDGET_SRC || "",
 };
 
 export const isSupabaseConfigured = Boolean(

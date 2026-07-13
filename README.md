@@ -49,3 +49,9 @@ Events are pushed to `dataLayer` for GTM and to `gtag` for GA4/Google Ads when t
 ## Deployment
 
 Deploy to Vercel as a Vite app. Add the same environment variables in Vercel project settings. The static SEO files live in `public/robots.txt` and `public/sitemap.xml`.
+
+## WorkflowAI pilot
+
+Set `VITE_WORKFLOWAI_WIDGET_SRC` to the signed embed script generated in WorkflowAI. The widget remains hidden for normal visitors and only loads on URLs with `?workflowai=pilot`, for example `/zh-hk?workflowai=pilot`.
+
+The pilot banner asks testers not to enter payment details or sensitive personal information. Routes and prices continue to require human confirmation.
