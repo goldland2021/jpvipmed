@@ -19,6 +19,7 @@ import Header from "../components/Header";
 import LeadForm from "../components/LeadForm";
 import Seo from "../components/Seo";
 import WhatsAppButton from "../components/WhatsAppButton";
+import WorkflowAiPilot from "../components/WorkflowAiPilot";
 import { trackButtonClick } from "../lib/analytics";
 
 const serviceIcons = [Car, Mountain, HeartPulse, GraduationCap, BriefcaseBusiness];
@@ -60,6 +61,7 @@ export default function LandingPage({ language }) {
   return (
     <>
       <Seo language={language} />
+      <WorkflowAiPilot language={language} />
       <div className="min-h-screen bg-white text-ink">
         <section className="relative min-h-[720px] overflow-hidden bg-midnight text-white">
           <Header language={language} />
