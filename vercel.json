@@ -1,6 +1,18 @@
 {
   "rewrites": [
     {
+      "source": "/en",
+      "destination": "/en/index.html"
+    },
+    {
+      "source": "/zh-hk",
+      "destination": "/zh-hk/index.html"
+    },
+    {
+      "source": "/ar",
+      "destination": "/ar/index.html"
+    },
+    {
       "source": "/((?!robots.txt|sitemap.xml|favicon.svg|images/.*|assets/.*).*)",
       "destination": "/index.html"
     }
