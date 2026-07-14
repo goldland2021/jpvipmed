@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { siteConfig, supportedLanguages } from "../config";
+import { localizedPath } from "../pageConfig";
 
 const hrefLang = {
   en: "en",
@@ -25,7 +26,7 @@ function upsertMeta(selector, attributes) {
   });
 }
 
-function setManagedLinks(language) {
+function setManagedLinks(language, page) {
   document
     .querySelectorAll(
       'link[data-jpvip-seo], link[rel="canonical"], link[rel="alternate"][hreflang]'
@@ -34,7 +35,7 @@ function setManagedLinks(language) {
 
   const canonical = document.createElement("link");
   canonical.rel = "canonical";
-  canonical.href = `${siteConfig.siteUrl}/${language}`;
+  canonical.href = `${siteConfig.siteUrl}${localizedPath(language, page)}`;
   canonical.dataset.jpvipSeo = "true";
   document.head.appendChild(canonical);
 
@@ -42,7 +43,7 @@ function setManagedLinks(language) {
     const alternate = document.createElement("link");
     alternate.rel = "alternate";
     alternate.hreflang = hrefLang[lang];
-    alternate.href = `${siteConfig.siteUrl}/${lang}`;
+    alternate.href = `${siteConfig.siteUrl}${localizedPath(lang, page)}`;
     alternate.dataset.jpvipSeo = "true";
     document.head.appendChild(alternate);
   });
@@ -50,18 +51,23 @@ function setManagedLinks(language) {
   const fallback = document.createElement("link");
   fallback.rel = "alternate";
   fallback.hreflang = "x-default";
-  fallback.href = `${siteConfig.siteUrl}/zh-hk`;
+  fallback.href = `${siteConfig.siteUrl}${localizedPath("zh-hk", page)}`;
   fallback.dataset.jpvipSeo = "true";
   document.head.appendChild(fallback);
 }
 
-export default function Seo({ language }) {
+export default function Seo({
+  language,
+  page = "",
+  titleKey = "seo.title",
+  descriptionKey = "seo.description",
+}) {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const title = t("seo.title");
-    const description = t("seo.description");
-    const url = `${siteConfig.siteUrl}/${language}`;
+    const title = page ? `${t(titleKey)} | ${t("brand.name")}` : t(titleKey);
+    const description = t(descriptionKey);
+    const url = `${siteConfig.siteUrl}${localizedPath(language, page)}`;
     const imageUrl = `${siteConfig.siteUrl}/images/hero-charter-japan.jpg`;
 
     document.title = title;
@@ -105,7 +111,7 @@ export default function Seo({ language }) {
       content: "summary_large_image",
     });
 
-    setManagedLinks(language);
+    setManagedLinks(language, page);
 
     document
       .querySelectorAll("script[data-jpvip-schema]")
@@ -136,7 +142,7 @@ export default function Seo({ language }) {
       availableLanguage: ["English", "Traditional Chinese", "Arabic"],
     });
     document.head.appendChild(schema);
-  }, [language, t]);
+  }, [descriptionKey, language, page, t, titleKey]);
 
   return null;
 }

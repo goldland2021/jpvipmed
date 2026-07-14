@@ -91,6 +91,7 @@
 
   .service-card h3,
   .advantage-tile h3,
+  .process-step h2,
   .process-step h3,
   .trust-item h3 {
     @apply mt-4 text-lg font-semibold text-midnight;
@@ -98,6 +99,10 @@
 
   .service-card .service-label + h3 {
     @apply mt-2 text-xl;
+  }
+
+  .home-preview-card {
+    @apply min-h-[300px];
   }
 
   .service-card p,

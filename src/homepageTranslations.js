@@ -5,6 +5,13 @@ const homepageTranslations = {
       description:
         "Private chauffeur coordination across Japan for airport transfers, hotel and station rides, Mount Fuji day trips, business travel, medical visits, and custom itineraries.",
     },
+    pageSeo: {
+      services: { title: "Japan Private Chauffeur Services" },
+      routes: { title: "Japan Airport Transfer & Private Charter Routes" },
+      process: { title: "How Japan Private Chauffeur Booking Works" },
+      faq: { title: "Japan Private Chauffeur FAQ" },
+      quote: { title: "Request a Japan Private Chauffeur Quote" },
+    },
     navigation: {
       label: "Main navigation",
       services: "Services",
@@ -29,6 +36,14 @@ const homepageTranslations = {
       whatsappShort: "WhatsApp",
       request: "Request a tailored quote",
       card: "Ask about this service",
+    },
+    pageLinks: {
+      home: "Back to home",
+      services: "Explore all services",
+      routes: "View all routes",
+      process: "See how booking works",
+      faq: "View all questions",
+      quote: "Open the detailed quote form",
     },
     quickQuote: {
       eyebrow: "Start with the route",
@@ -388,6 +403,13 @@ const homepageTranslations = {
       description:
         "提供日本私人司機行程協調，涵蓋機場接送、酒店及車站接送、富士山一日包車、商務出行、醫療接送及定制行程。",
     },
+    pageSeo: {
+      services: { title: "日本私人司機服務" },
+      routes: { title: "日本機場接送與包車路線" },
+      process: { title: "日本私人司機預訂流程" },
+      faq: { title: "日本私人司機常見問題" },
+      quote: { title: "索取日本私人司機報價" },
+    },
     navigation: {
       label: "主要導覽",
       services: "服務項目",
@@ -412,6 +434,14 @@ const homepageTranslations = {
       whatsappShort: "WhatsApp",
       request: "索取定制報價",
       card: "諮詢此項服務",
+    },
+    pageLinks: {
+      home: "返回首頁",
+      services: "查看所有服務",
+      routes: "查看所有路線",
+      process: "查看預訂流程",
+      faq: "查看全部常見問題",
+      quote: "填寫詳細報價表",
     },
     quickQuote: {
       eyebrow: "從路線開始",
@@ -602,6 +632,13 @@ const homepageTranslations = {
       description:
         "تنسيق خدمات السائق الخاص في أنحاء اليابان للنقل من المطارات والفنادق والمحطات ورحلات جبل فوجي والسفر للأعمال والمواعيد الطبية والبرامج المخصصة.",
     },
+    pageSeo: {
+      services: { title: "خدمات السائق الخاص في اليابان" },
+      routes: { title: "مسارات النقل من المطارات والجولات الخاصة في اليابان" },
+      process: { title: "طريقة حجز سائق خاص في اليابان" },
+      faq: { title: "الأسئلة الشائعة عن السائق الخاص في اليابان" },
+      quote: { title: "اطلب عرض سعر لسائق خاص في اليابان" },
+    },
     navigation: {
       label: "التنقل الرئيسي",
       services: "الخدمات",
@@ -626,6 +663,14 @@ const homepageTranslations = {
       whatsappShort: "واتساب",
       request: "اطلب عرض سعر مخصصاً",
       card: "استفسر عن هذه الخدمة",
+    },
+    pageLinks: {
+      home: "العودة إلى الصفحة الرئيسية",
+      services: "استكشف جميع الخدمات",
+      routes: "عرض جميع المسارات",
+      process: "تعرّف على خطوات الحجز",
+      faq: "عرض جميع الأسئلة",
+      quote: "افتح نموذج عرض السعر المفصل",
     },
     quickQuote: {
       eyebrow: "ابدأ بالمسار",
