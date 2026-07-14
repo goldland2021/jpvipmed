@@ -24,7 +24,7 @@ const homepageTranslations = {
       subtitle:
         "From airport arrivals and hotel transfers to full-day charters and multi-stop itineraries, every journey is tailored to your group, luggage and schedule.",
       points: [
-        "English, Traditional Chinese and Arabic support",
+        "Service available in English",
         "Route, vehicle and pickup details confirmed in advance",
         "Airport transfers, city travel and long-distance journeys",
       ],
@@ -461,7 +461,7 @@ const homepageTranslations = {
       subtitle:
         "由機場接送、酒店及車站往返，到一日包車與多站行程，我們會按同行人數、行李和時間，預先安排每個細節。",
       points: [
-        "繁體中文、英文及阿拉伯語支援",
+        "提供英文服務",
         "預先確認路線、車型及上車安排",
         "機場接送、市內用車及跨城市行程",
       ],
@@ -732,7 +732,7 @@ const homepageTranslations = {
       subtitle:
         "من الاستقبال في المطار والتنقل بين الفنادق والمحطات إلى الجولات اليومية والرحلات متعددة المحطات، نرتب كل رحلة بما يناسب عدد المسافرين والأمتعة والجدول.",
       points: [
-        "دعم بالعربية والإنجليزية والصينية التقليدية",
+        "الخدمة متاحة باللغة الإنجليزية",
         "تأكيد المسار والمركبة وتفاصيل الاستقبال مسبقاً",
         "تنقلات المطار والمدن والرحلات بين المناطق",
       ],
