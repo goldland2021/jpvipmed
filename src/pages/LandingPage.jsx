@@ -282,6 +282,7 @@ export default function LandingPage({ language }) {
   const services = t("services.items", { returnObjects: true });
   const routes = t("routes.items", { returnObjects: true }).slice(0, 3);
   const process = t("process.items", { returnObjects: true });
+  const trust = t("trust.items", { returnObjects: true });
   const faqs = t("faq.items", { returnObjects: true }).slice(0, 4);
 
   const heroStyle = useMemo(
@@ -296,7 +297,7 @@ export default function LandingPage({ language }) {
     <>
       <Seo language={language} />
       <WorkflowAiPilot />
-      <div className="min-h-screen bg-white text-ink">
+      <div className="min-h-screen bg-white pb-20 text-ink sm:pb-0">
         <main>
           <section className="relative min-h-[820px] overflow-hidden bg-midnight text-white">
             <Header language={language} />
@@ -322,12 +323,14 @@ export default function LandingPage({ language }) {
                   ))}
                 </ul>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <WhatsAppButton
-                    language={language}
-                    label={t("cta.whatsapp")}
-                    buttonName="hero_whatsapp"
-                    className="btn-primary"
-                  />
+                  <div className="hidden sm:block">
+                    <WhatsAppButton
+                      language={language}
+                      label={t("cta.whatsapp")}
+                      buttonName="hero_whatsapp"
+                      className="btn-primary"
+                    />
+                  </div>
                   <Link
                     to={localizedPath(language, "request-quote")}
                     className="btn-secondary-dark"
@@ -434,6 +437,23 @@ export default function LandingPage({ language }) {
             <p className="mx-auto mt-7 max-w-4xl border-s-2 border-gold ps-4 text-sm leading-7 text-slate-500">
               {t("trust.notice")}
             </p>
+          </section>
+
+          <section className="section-shell bg-midnight text-white">
+            <div className="section-heading section-heading-dark">
+              <p className="eyebrow">{t("trust.eyebrow")}</p>
+              <h2>{t("trust.title")}</h2>
+              <p>{t("trust.subtitle")}</p>
+            </div>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {trust.map((item) => (
+                <article key={item.title} className="trust-item">
+                  <CheckCircle2 className="h-6 w-6 text-gold" aria-hidden="true" />
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              ))}
+            </div>
           </section>
 
           <section className="section-shell bg-porcelain">

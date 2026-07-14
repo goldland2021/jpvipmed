@@ -13,6 +13,8 @@ const homepageTranslations = {
     },
     navigation: {
       label: "Main navigation",
+      menu: "Open menu",
+      close: "Close menu",
       services: "Services",
       routes: "Routes",
       coverage: "Coverage",
@@ -337,32 +339,32 @@ const homepageTranslations = {
       ],
     },
     trust: {
-      eyebrow: "Why travel with us",
-      title: "Clear details. Reliable support. No surprises.",
+      eyebrow: "Our service commitments",
+      title: "Know what is arranged before travel day.",
       subtitle:
-        "We make private travel feel straightforward with careful planning, suitable vehicle options, transparent quotes and human support when plans change.",
+        "The essential service details are confirmed with you before booking, with human support if your plans change.",
       notice:
         "JP VIP Charter arranges private chauffeur services. Your operator, vehicle, inclusions and booking terms are confirmed before you book.",
       items: [
         {
-          title: "Authorized transport providers",
+          title: "Fixed inclusive quote",
           description:
-            "When a licensed commercial operator is required, we arrange your journey with a provider authorized to deliver the quoted service in Japan.",
+            "Receive the total for your confirmed itinerary before booking, with the included service details clearly stated.",
         },
         {
-          title: "Quotes based on your actual trip",
+          title: "Complimentary waiting",
           description:
-            "We review your route and requirements before pricing the journey, so your quote reflects the service you need.",
+            "Airport arrivals include 90 minutes of free waiting; departures include 30 minutes.",
         },
         {
-          title: "Support in your preferred language",
+          title: "English-speaking driver",
           description:
-            "Your inquiry and booking support continue in English, Traditional Chinese or Arabic, based on the language you select.",
+            "Request an English-speaking driver at no extra charge when arranging your journey.",
         },
         {
-          title: "Help when plans change",
+          title: "Pickup details confirmed",
           description:
-            "If your flight, hotel or schedule changes, contact us and we will check the available options.",
+            "Your meeting point and travel-day contact details are provided before the journey.",
         },
       ],
     },
@@ -383,9 +385,14 @@ const homepageTranslations = {
             "Your quote is based on the route, date, expected service time, vehicle category, group and luggage needs, planned stops and any special requests.",
         },
         {
-          question: "Are tolls, parking, waiting, and extra stops included?",
+          question: "Is the quote all-inclusive?",
           answer:
-            "This varies by booking. Your quote will clearly list what is included and any known extra charges before you confirm.",
+            "Yes. Before booking, we provide a fixed, all-inclusive quote for the confirmed itinerary. It states the route, vehicle, included waiting time and service details. Changes after confirmation, such as extra stops or additional waiting, are reviewed separately before any adjustment.",
+        },
+        {
+          question: "How much complimentary waiting time is included?",
+          answer:
+            "Airport arrivals include up to 90 minutes of complimentary waiting, and departures include up to 30 minutes. Your pickup details and waiting window are confirmed with the booking. If your flight or plans change, contact us promptly so we can review the available adjustments.",
         },
         {
           question: "Can I request a child seat?",
@@ -431,6 +438,10 @@ const homepageTranslations = {
         "Share the trip details so a real coordinator can review the route, vehicle and availability before you continue on WhatsApp.",
       notice:
         "If known, include the exact pickup and destination, travel date, group size, luggage, preferred timing, child-seat requirements and any planned stops.",
+      afterSubmit:
+        "After you submit, WhatsApp opens with your journey details ready. Send that message to continue with a coordinator. No payment is taken through this form.",
+      privacy:
+        "We use the details you provide only to review and respond to your journey request. Please do not include payment-card or sensitive medical information.",
     },
     footer: {
       disclaimer:
@@ -451,6 +462,8 @@ const homepageTranslations = {
     },
     navigation: {
       label: "主要導覽",
+      menu: "開啟選單",
+      close: "關閉選單",
       services: "服務",
       routes: "行程",
       coverage: "服務地區",
@@ -670,16 +683,16 @@ const homepageTranslations = {
       ],
     },
     trust: {
-      eyebrow: "為何選擇我們",
-      title: "細節交代清楚，行程自然更安心。",
+      eyebrow: "我們的服務承諾",
+      title: "出發前，重要安排逐項確認。",
       subtitle:
-        "我們以準確行程資料、合適車型、清晰報價和真人支援，減少私人用車過程中的不確定性。",
+        "預訂前會與您確認主要服務細節；如計劃有變，亦有專人協助跟進。",
       notice: "JP VIP Charter 負責安排私人司機服務。實際營運商、車輛、包含項目及預訂條款，均會在確認前列明。",
       items: [
-        { title: "合資格服務供應商", description: "如行程需要持牌商業客運服務，我們會安排具備日本相關營運資格的供應商。" },
-        { title: "按實際行程報價", description: "先核對路線和需要，再提供能反映實際服務內容的報價。" },
-        { title: "以您選擇的語言跟進", description: "查詢及預訂期間，可一直使用繁體中文、英文或阿拉伯語溝通。" },
-        { title: "行程有變，專人協助", description: "如航班、酒店或時間有變，請聯絡我們確認可行的調整方案。" },
+        { title: "一價全包報價", description: "預訂前提供已確認行程的總價，並清楚列明包含的服務內容。" },
+        { title: "免費等候時間", description: "接機包含 90 分鐘免費等候；送機包含 30 分鐘免費等候。" },
+        { title: "英語司機不另收費", description: "安排行程時可要求英語司機，毋須支付額外費用。" },
+        { title: "預先確認接送資料", description: "出發前會提供會合地點及行程當日的聯絡資料。" },
       ],
     },
     faq: {
@@ -689,7 +702,8 @@ const homepageTranslations = {
       items: [
         { question: "網站沒有列出的路線也可以安排嗎？", answer: "可以。網站只列出部分常見行程，機場接送、度假區、郊外目的地、一日包車及多日行程均可另行規劃。" },
         { question: "服務價格如何計算？", answer: "報價會按路線、日期、預計用車時間、車型、同行人數、行李、停靠點及特別需要計算。" },
-        { question: "報價是否包括高速公路費、停車費、等候和額外停靠站？", answer: "包含項目視乎個別預訂而定。確認前，報價會清楚列明服務內容及已知附加費用。" },
+        { question: "報價是一價全包嗎？", answer: "是。預訂前會按已確認的行程提供一價全包報價，清楚列明路線、車型、免費等候時間及服務內容。如確認後新增停靠點或延長等候，任何價格調整均會另行核對。" },
+        { question: "免費等候時間有多久？", answer: "接機包含最多 90 分鐘免費等候，送機包含最多 30 分鐘免費等候。會合方式和等候時間會隨預訂一併確認；如航班或計劃有變，請盡早聯絡我們核對可行的調整。" },
         { question: "可以安排兒童安全座椅嗎？", answer: "可以。查詢時請提供兒童年齡及所需座椅類型，我們會在預訂前確認供應、適用情況和相關條款。" },
         { question: "哪種車型適合我的行程？", answer: "請提供成人與兒童人數，以及行李數量和尺寸，我們會建議合適車型並確認載客及行李空間。" },
         { question: "司機可以等候或停靠多個地點嗎？", answer: "可以，但需要預先列入已確認的行程。請提前告訴我們等候時間和停靠地點，以便準確安排時間及報價。" },
@@ -704,6 +718,8 @@ const homepageTranslations = {
       title: "告訴我們您的行程需要。",
       subtitle: "提交資料後，專人會先核對路線、車型及能否安排，再透過 WhatsApp 跟進。",
       notice: "如資料已確定，請提供上車地點、目的地、日期、同行人數、行李、用車時間、兒童安全座椅及停靠點。",
+      afterSubmit: "提交後，WhatsApp 會開啟並預先填好行程資料；請發送該訊息，讓專人繼續跟進。此表格不會收取任何款項。",
+      privacy: "您提供的資料只會用於審核及回覆本次行程查詢。請勿填寫付款卡資料或敏感醫療資料。",
     },
     footer: {
       disclaimer: "全日本私人司機及包車服務。路線、車型、包含項目和價格均會在預訂前確認。",
@@ -723,6 +739,8 @@ const homepageTranslations = {
     },
     navigation: {
       label: "التنقل الرئيسي",
+      menu: "فتح القائمة",
+      close: "إغلاق القائمة",
       services: "الخدمات",
       routes: "المسارات",
       coverage: "مناطق الخدمة",
@@ -943,16 +961,16 @@ const homepageTranslations = {
       ],
     },
     trust: {
-      eyebrow: "لماذا تختارنا",
-      title: "تفاصيل واضحة، دعم موثوق، ومن دون مفاجآت.",
+      eyebrow: "التزاماتنا في الخدمة",
+      title: "تعرف على التفاصيل المرتبة قبل يوم الرحلة.",
       subtitle:
-        "نجعل التنقل الخاص أكثر سهولة من خلال التخطيط الدقيق واختيار المركبة المناسبة وعروض السعر الواضحة والدعم البشري عند تغير الخطط.",
+        "نؤكد معك تفاصيل الخدمة الأساسية قبل الحجز، مع دعم بشري عند تغير خططك.",
       notice: "تتولى JP VIP Charter ترتيب خدمات السائق الخاص. نؤكد المشغل والمركبة والمشمولات وشروط الحجز قبل التأكيد.",
       items: [
-        { title: "مقدمو خدمة معتمدون", description: "عندما تتطلب الرحلة مشغلاً تجارياً مرخصاً، نرتب الخدمة مع جهة مخولة بتقديمها في اليابان." },
-        { title: "سعر مبني على تفاصيل رحلتك", description: "نراجع المسار والمتطلبات قبل تحديد السعر، ليعكس العرض الخدمة التي تحتاجها فعلياً." },
-        { title: "دعم بلغتك المفضلة", description: "يستمر دعم الاستفسار والحجز بالعربية أو الإنجليزية أو الصينية التقليدية، بحسب اللغة التي تختارها." },
-        { title: "نساعدك عند تغير الخطط", description: "إذا تغيرت رحلتك الجوية أو فندقك أو جدولك، تواصل معنا وسنتحقق من الخيارات المتاحة." },
+        { title: "سعر ثابت شامل", description: "تحصل على السعر الإجمالي للمسار المؤكد قبل الحجز، مع توضيح تفاصيل الخدمة المشمولة." },
+        { title: "وقت انتظار مجاني", description: "يشمل استقبال المطار 90 دقيقة انتظار مجاني، وتشمل رحلات المغادرة 30 دقيقة." },
+        { title: "سائق يتحدث الإنجليزية", description: "يمكنك طلب سائق يتحدث الإنجليزية من دون رسوم إضافية عند ترتيب الرحلة." },
+        { title: "تأكيد تفاصيل الاستقبال", description: "نرسل نقطة اللقاء وبيانات التواصل الخاصة بيوم الرحلة قبل موعدها." },
       ],
     },
     faq: {
@@ -962,7 +980,8 @@ const homepageTranslations = {
       items: [
         { question: "هل يمكن ترتيب مسار غير مدرج في الموقع؟", answer: "نعم. المسارات المعروضة أمثلة فقط. يمكننا مراجعة خدمات المطار والمنتجعات والوجهات الريفية والجولات اليومية والرحلات لعدة أيام." },
         { question: "كيف يتم احتساب السعر؟", answer: "يعتمد عرض السعر على المسار والتاريخ ومدة الخدمة المتوقعة وفئة المركبة وعدد المسافرين والأمتعة والمحطات وأي طلبات خاصة." },
-        { question: "هل تشمل الخدمة رسوم الطرق والمواقف والانتظار والمحطات الإضافية؟", answer: "يختلف ذلك حسب الحجز. يوضح عرض السعر ما هو مشمول وأي تكاليف إضافية معروفة قبل التأكيد." },
+        { question: "هل عرض السعر شامل وثابت؟", answer: "نعم. نقدم قبل الحجز سعراً ثابتاً شاملاً للمسار المؤكد، مع توضيح المسار والمركبة ووقت الانتظار المشمول وتفاصيل الخدمة. إذا أضفت محطات أو وقت انتظار بعد التأكيد، نراجع أي تعديل في السعر بصورة منفصلة." },
+        { question: "ما مدة الانتظار المجاني المشمولة؟", answer: "يشمل استقبال المطار ما يصل إلى 90 دقيقة انتظار مجاني، وتشمل رحلات المغادرة ما يصل إلى 30 دقيقة. نؤكد تفاصيل اللقاء ومدة الانتظار مع الحجز. إذا تغيرت الرحلة الجوية أو الخطة، تواصل معنا سريعاً لنراجع التعديلات المتاحة." },
         { question: "هل يمكن طلب مقعد طفل؟", answer: "نعم. أخبرنا بعمر الطفل ونوع المقعد المطلوب عند الاستفسار، وسنؤكد التوفر والملاءمة وأي شروط مرتبطة به قبل الحجز." },
         { question: "ما المركبة الأنسب لمجموعتي؟", answer: "أخبرنا بعدد البالغين والأطفال وعدد الحقائب وأحجامها، وسنقترح الفئة المناسبة ونؤكد السعة." },
         { question: "هل يمكن للسائق الانتظار أو التوقف في عدة مواقع؟", answer: "نعم، إذا كان ذلك مدرجاً في الخطة المؤكدة. أخبرنا مسبقاً بوقت الانتظار والمحطات الإضافية لنخطط الجدول والسعر بدقة." },
@@ -977,6 +996,8 @@ const homepageTranslations = {
       title: "أخبرنا بتفاصيل رحلتك.",
       subtitle: "أرسل تفاصيل الرحلة ليراجع منسق حقيقي المسار والمركبة والتوفر قبل أن تتابع عبر واتساب.",
       notice: "إذا كانت المعلومات متاحة، أضف موقع الاستقبال والوجهة والتاريخ وعدد المسافرين والأمتعة والتوقيت المطلوب ومقاعد الأطفال وأي محطات مخططة.",
+      afterSubmit: "بعد الإرسال يفتح واتساب وتكون تفاصيل رحلتك جاهزة. أرسل الرسالة للمتابعة مع المنسق. لا يتم تحصيل أي مبلغ عبر هذا النموذج.",
+      privacy: "نستخدم البيانات التي تقدمها لمراجعة طلب الرحلة والرد عليه فقط. يرجى عدم إدخال بيانات بطاقات الدفع أو معلومات طبية حساسة.",
     },
     footer: {
       disclaimer: "خدمات سائق خاص في جميع أنحاء اليابان. نؤكد المسار والمركبة والمشمولات والسعر قبل الحجز.",

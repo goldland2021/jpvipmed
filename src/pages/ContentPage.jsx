@@ -314,7 +314,7 @@ export default function ContentPage({ language, page }) {
         descriptionKey={meta.descriptionKey}
       />
       <WorkflowAiPilot />
-      <div className="min-h-screen bg-white text-ink">
+      <div className="min-h-screen bg-white pb-20 text-ink sm:pb-0">
         <PageHero language={language} page={page} />
         <main>{content}</main>
         <SiteFooter />

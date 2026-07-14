@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Send } from "lucide-react";
+import { MessageCircle, Send, ShieldCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { isSupabaseConfigured } from "../config";
 import { trackButtonClick, trackEvent } from "../lib/analytics";
@@ -201,6 +201,17 @@ export default function LeadForm({ language, services }) {
         <Send className="h-5 w-5" aria-hidden="true" />
         <span>{t("form.submit")}</span>
       </button>
+
+      <div className="mt-6 grid gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-600">
+        <p className="flex items-start gap-3">
+          <MessageCircle className="mt-0.5 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
+          <span>{t("form.afterSubmit")}</span>
+        </p>
+        <p className="flex items-start gap-3">
+          <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
+          <span>{t("form.privacy")}</span>
+        </p>
+      </div>
     </form>
   );
 }
