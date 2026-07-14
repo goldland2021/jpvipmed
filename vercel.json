@@ -20,6 +20,10 @@
       "destination": "/ar/index.html"
     },
     {
+      "source": "/:lang(en|zh-hk|ar)/:page(services|routes|how-it-works|faq|request-quote)",
+      "destination": "/:lang/:page/index.html"
+    },
+    {
       "source": "/((?!robots.txt|sitemap.xml|favicon.svg|images/.*|assets/.*).*)",
       "destination": "/index.html"
     }
