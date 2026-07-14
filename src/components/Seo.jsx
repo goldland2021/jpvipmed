@@ -8,6 +8,12 @@ const hrefLang = {
   ar: "ar",
 };
 
+const ogLocale = {
+  en: "en_US",
+  "zh-hk": "zh_HK",
+  ar: "ar_AR",
+};
+
 function upsertMeta(selector, attributes) {
   let element = document.head.querySelector(selector);
   if (!element) {
@@ -84,6 +90,14 @@ export default function Seo({ language }) {
       property: "og:image",
       content: imageUrl,
     });
+    upsertMeta('meta[property="og:site_name"]', {
+      property: "og:site_name",
+      content: t("brand.name"),
+    });
+    upsertMeta('meta[property="og:locale"]', {
+      property: "og:locale",
+      content: ogLocale[language] || "en_US",
+    });
     upsertMeta('meta[name="twitter:card"]', {
       name: "twitter:card",
       content: "summary_large_image",
@@ -106,7 +120,7 @@ export default function Seo({ language }) {
       image: imageUrl,
       description,
       serviceType:
-        "Japan premium private charter, chauffeur, Fuji tour, medical visit, study inspection, and business inspection transportation",
+        "Japan private chauffeur, airport transfer, hotel and station pickup, Mount Fuji day charter, business travel, and custom itinerary transportation",
       areaServed: [
         "Hong Kong",
         "Taiwan",
