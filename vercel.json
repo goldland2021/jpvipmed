@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/zh-hk",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/en",

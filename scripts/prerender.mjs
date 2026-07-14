@@ -1,9 +1,13 @@
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const root = resolve(import.meta.dirname, "..");
 const template = readFileSync(resolve(root, "dist/index.html"), "utf8");
-const { render } = await import(resolve(root, "dist/server/entry-server.js"));
+const serverEntryUrl = pathToFileURL(
+  resolve(root, "dist/server/entry-server.js")
+).href;
+const { render } = await import(serverEntryUrl);
 
 const siteUrl = process.env.VITE_SITE_URL || "https://www.jpairport.jp";
 
@@ -16,9 +20,11 @@ const pages = [
 const hreflangLinks = pages
   .map(
     (p) =>
-      `<link rel="alternate" hreflang="${p.hreflang}" href="${siteUrl}/${p.lang}" />`
+      `<link rel="alternate" hreflang="${p.hreflang}" href="${siteUrl}/${p.lang}" data-jpvip-seo="true" />`
   )
-  .concat(`<link rel="alternate" hreflang="x-default" href="${siteUrl}/zh-hk" />`)
+  .concat(
+    `<link rel="alternate" hreflang="x-default" href="${siteUrl}/zh-hk" data-jpvip-seo="true" />`
+  )
   .join("\n    ");
 
 function escapeAttr(value) {
@@ -26,7 +32,7 @@ function escapeAttr(value) {
 }
 
 for (const page of pages) {
-  const { html, title, description, brand } = await render(page.lang);
+  const { html, title, description } = await render(page.lang);
   const url = `${siteUrl}/${page.lang}`;
 
   let out = template
@@ -38,7 +44,7 @@ for (const page of pages) {
     .replace(/<meta property="og:url"[\s\S]*?\/>/, `<meta property="og:url" content="${url}" />`)
     .replace(
       "</head>",
-      `  <meta property="og:site_name" content="${escapeAttr(brand)}" />\n    <meta property="og:locale" content="${page.locale}" />\n    <link rel="canonical" href="${url}" />\n    ${hreflangLinks}\n  </head>`
+      `  <meta property="og:locale" content="${page.locale}" />\n    <link rel="canonical" href="${url}" data-jpvip-seo="true" />\n    ${hreflangLinks}\n  </head>`
     )
     .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
 

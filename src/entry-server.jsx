@@ -17,6 +17,5 @@ export async function render(lang) {
     html,
     title: i18n.t("seo.title"),
     description: i18n.t("seo.description"),
-    brand: i18n.t("brand.name"),
   };
 }

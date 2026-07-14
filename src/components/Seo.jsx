@@ -27,7 +27,9 @@ function upsertMeta(selector, attributes) {
 
 function setManagedLinks(language) {
   document
-    .querySelectorAll("link[data-jpvip-seo]")
+    .querySelectorAll(
+      'link[data-jpvip-seo], link[rel="canonical"], link[rel="alternate"][hreflang]'
+    )
     .forEach((element) => element.remove());
 
   const canonical = document.createElement("link");

@@ -9,7 +9,6 @@ import {
   ClipboardCheck,
   Clock3,
   Globe2,
-  HeartPulse,
   Hotel,
   Languages,
   LifeBuoy,
