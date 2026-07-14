@@ -5,20 +5,16 @@ import {
   CalendarCheck,
   Car,
   CheckCircle2,
-  ClipboardCheck,
   Clock3,
   Globe2,
   Hotel,
   Languages,
-  LifeBuoy,
   Luggage,
   MapPin,
-  MessageCircle,
   Mountain,
   Navigation,
   Plane,
   ReceiptText,
-  ShieldCheck,
   Snowflake,
   Users,
   Waves,
@@ -38,8 +34,6 @@ const serviceIcons = [Plane, Car, CalendarCheck];
 const vehicleIcons = [Car, Users, BadgeCheck];
 const routeIcons = [Plane, Mountain, Building2, Plane, Snowflake, Waves];
 const coverageIcons = [Building2, Hotel, Mountain, Snowflake, Waves, Globe2];
-const processIcons = [MessageCircle, ClipboardCheck, Car, CalendarCheck];
-const trustIcons = [ShieldCheck, ReceiptText, Languages, LifeBuoy];
 
 function PageHero({ language, page }) {
   const { t } = useTranslation();
@@ -256,58 +250,6 @@ function RoutesContent({ language }) {
   );
 }
 
-function ProcessContent({ language }) {
-  const { t } = useTranslation();
-  const process = t("process.items", { returnObjects: true });
-  const trust = t("trust.items", { returnObjects: true });
-
-  return (
-    <>
-      <section className="section-shell bg-white">
-        <div className="grid gap-4 lg:grid-cols-4">
-          {process.map((step, index) => {
-            const Icon = processIcons[index] || ArrowRight;
-            return (
-              <article key={step.title} className="process-step">
-                <span>{index + 1}</span>
-                <Icon className="mt-5 h-7 w-7 text-gold" aria-hidden="true" />
-                <h2>{step.title}</h2>
-                <p>{step.description}</p>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="section-shell bg-midnight text-white">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="eyebrow text-gold">{t("trust.eyebrow")}</p>
-            <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">{t("trust.title")}</h2>
-            <p className="mt-5 text-base leading-8 text-white/78">{t("trust.subtitle")}</p>
-            <p className="mt-6 border-s-2 border-gold ps-4 text-sm leading-7 text-white/60">
-              {t("trust.notice")}
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {trust.map((item, index) => {
-              const Icon = trustIcons[index] || ShieldCheck;
-              return (
-                <article key={item.title} className="trust-item">
-                  <Icon className="h-7 w-7 text-gold" aria-hidden="true" />
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-      <QuoteCta language={language} />
-    </>
-  );
-}
-
 function FaqContent({ language }) {
   const { t } = useTranslation();
   const faqs = t("faq.items", { returnObjects: true });
@@ -359,7 +301,6 @@ export default function ContentPage({ language, page }) {
   const content = {
     services: <ServicesContent language={language} />,
     routes: <RoutesContent language={language} />,
-    "how-it-works": <ProcessContent language={language} />,
     faq: <FaqContent language={language} />,
     "request-quote": <QuoteContent language={language} />,
   }[page];

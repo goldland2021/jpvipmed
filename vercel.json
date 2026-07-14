@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/:lang(en|zh-hk|ar)/how-it-works",
+      "destination": "/:lang#booking-process",
+      "permanent": true
+    },
+    {
       "source": "/",
       "destination": "/zh-hk",
       "permanent": true
@@ -20,7 +25,7 @@
       "destination": "/ar/index.html"
     },
     {
-      "source": "/:lang(en|zh-hk|ar)/:page(services|routes|how-it-works|faq|request-quote)",
+      "source": "/:lang(en|zh-hk|ar)/:page(services|routes|faq|request-quote)",
       "destination": "/:lang/:page/index.html"
     },
     {

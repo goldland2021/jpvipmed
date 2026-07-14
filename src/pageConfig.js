@@ -1,7 +1,6 @@
 export const contentPageSlugs = [
   "services",
   "routes",
-  "how-it-works",
   "faq",
   "request-quote",
 ];
@@ -18,12 +17,6 @@ export const pageConfig = {
     heroTitleKey: "routes.title",
     seoTitleKey: "pageSeo.routes.title",
     descriptionKey: "routes.subtitle",
-  },
-  "how-it-works": {
-    eyebrowKey: "process.eyebrow",
-    heroTitleKey: "process.title",
-    seoTitleKey: "pageSeo.process.title",
-    descriptionKey: "process.subtitle",
   },
   faq: {
     eyebrowKey: "faq.eyebrow",

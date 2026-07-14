@@ -8,7 +8,6 @@ const homepageTranslations = {
     pageSeo: {
       services: { title: "Private Chauffeur Services in Japan" },
       routes: { title: "Popular Private Transfer Routes in Japan" },
-      process: { title: "How to Book a Private Chauffeur in Japan" },
       faq: { title: "Private Chauffeur FAQs for Japan" },
       quote: { title: "Request a Private Chauffeur Quote in Japan" },
     },
@@ -17,7 +16,6 @@ const homepageTranslations = {
       services: "Services",
       routes: "Routes",
       coverage: "Coverage",
-      trust: "How it works",
       faq: "FAQs",
     },
     hero: {
@@ -41,7 +39,6 @@ const homepageTranslations = {
       home: "Back to the homepage",
       services: "View all services",
       routes: "View popular routes",
-      process: "How booking works",
       faq: "See all FAQs",
       quote: "Request a detailed quote",
     },
@@ -320,26 +317,21 @@ const homepageTranslations = {
       ],
     },
     process: {
-      eyebrow: "How it works",
-      title: "A simple path from inquiry to pickup.",
-      subtitle:
-        "A real coordinator reviews your journey, so the important details are clear before you travel.",
+      eyebrow: "Planning made simple",
+      title: "Three steps from inquiry to a confirmed journey.",
+      subtitle: "Share the basics, review a clear quote, and confirm only when the details suit you.",
       items: [
         {
-          title: "Tell us about your trip",
-          description: "Share your date, pickup, destination, group size, luggage and any special requests.",
+          title: "Tell us where and when",
+          description: "Share your date, route, group size, luggage and any special requests.",
         },
         {
-          title: "We plan and price the journey",
-          description: "We check travel time, stops, scheduling, vehicle options and availability.",
+          title: "Receive your tailored quote",
+          description: "We check availability, the route, vehicle options and known costs.",
         },
         {
-          title: "Review and confirm",
-          description: "Check the itinerary, vehicle, inclusions and quote, then confirm the option that suits you.",
-        },
-        {
-          title: "Receive your pickup details",
-          description: "We confirm the meeting point, timing and day-of-travel contact details in advance.",
+          title: "Confirm your journey",
+          description: "Approve the details, then receive the meeting point and travel-day contact information.",
         },
       ],
     },
@@ -453,7 +445,6 @@ const homepageTranslations = {
     pageSeo: {
       services: { title: "日本私人司機服務" },
       routes: { title: "日本私人接送及包車路線" },
-      process: { title: "如何預訂日本私人司機" },
       faq: { title: "日本私人司機常見問題" },
       quote: { title: "索取日本私人司機服務報價" },
     },
@@ -462,7 +453,6 @@ const homepageTranslations = {
       services: "服務",
       routes: "行程",
       coverage: "服務地區",
-      trust: "預訂流程",
       faq: "常見問題",
     },
     hero: {
@@ -486,7 +476,6 @@ const homepageTranslations = {
       home: "返回首頁",
       services: "查看所有服務",
       routes: "查看熱門行程",
-      process: "了解預訂流程",
       faq: "查看全部常見問題",
       quote: "索取詳細報價",
     },
@@ -669,14 +658,13 @@ const homepageTranslations = {
       ],
     },
     process: {
-      eyebrow: "預訂流程",
-      title: "由查詢到上車，四個步驟安排妥當。",
-      subtitle: "每項行程均由專人核對，讓路線、車型、價格及上車資料在出發前清楚確認。",
+      eyebrow: "簡單安排",
+      title: "三個步驟，完成行程安排。",
+      subtitle: "先提供基本資料，收到清晰報價後，再決定是否確認。",
       items: [
-        { title: "提供行程資料", description: "告訴我們日期、上車地點、目的地、同行人數、行李和特別需要。" },
-        { title: "規劃路線及報價", description: "核對車程、停靠點、時間、車型和車輛供應。" },
-        { title: "查看報價並確認預訂", description: "確認路線、車型、包含項目和價格，再選擇合適方案。" },
-        { title: "接收上車資料", description: "出發前確認會合地點、時間及當日聯絡方式。" },
+        { title: "提供日期及行程", description: "告訴我們路線、同行人數、行李和特別需要。" },
+        { title: "接收專屬報價", description: "我們會核對供應、路線、合適車型和已知費用。" },
+        { title: "確認您的行程", description: "同意安排後，我們會提供會合地點及當日聯絡資料。" },
       ],
     },
     trust: {
@@ -728,7 +716,6 @@ const homepageTranslations = {
     pageSeo: {
       services: { title: "خدمات السائق الخاص في اليابان" },
       routes: { title: "مسارات التنقل الخاص في اليابان" },
-      process: { title: "كيفية حجز سائق خاص في اليابان" },
       faq: { title: "الأسئلة الشائعة عن السائق الخاص في اليابان" },
       quote: { title: "طلب عرض سعر لخدمة سائق خاص في اليابان" },
     },
@@ -737,7 +724,6 @@ const homepageTranslations = {
       services: "الخدمات",
       routes: "المسارات",
       coverage: "مناطق الخدمة",
-      trust: "خطوات الحجز",
       faq: "الأسئلة الشائعة",
     },
     hero: {
@@ -761,7 +747,6 @@ const homepageTranslations = {
       home: "العودة إلى الصفحة الرئيسية",
       services: "عرض جميع الخدمات",
       routes: "عرض المسارات الشائعة",
-      process: "كيف يتم الحجز",
       faq: "عرض جميع الأسئلة",
       quote: "اطلب عرض سعر مفصل",
     },
@@ -945,14 +930,13 @@ const homepageTranslations = {
       ],
     },
     process: {
-      eyebrow: "كيف يتم الحجز",
-      title: "خطوات بسيطة من الاستفسار إلى موعد الاستقبال.",
-      subtitle: "يراجع منسق حقيقي تفاصيل رحلتك، لتكون المعلومات المهمة واضحة قبل موعد السفر.",
+      eyebrow: "ترتيب بسيط",
+      title: "ثلاث خطوات لترتيب رحلتك.",
+      subtitle: "أرسل التفاصيل الأساسية، راجع عرض السعر، ثم أكد فقط عندما يناسبك كل شيء.",
       items: [
-        { title: "أخبرنا عن رحلتك", description: "شارك التاريخ وموقع الاستقبال والوجهة وعدد المسافرين والأمتعة وأي طلبات خاصة." },
-        { title: "نخطط الرحلة ونحدد السعر", description: "نتحقق من مدة الرحلة والمحطات والجدول وخيارات المركبات والتوفر." },
-        { title: "راجع العرض وأكد الحجز", description: "راجع المسار والمركبة والمشمولات والسعر، ثم أكد الخيار الذي يناسبك." },
-        { title: "استلم تفاصيل الاستقبال", description: "نؤكد نقطة اللقاء والموعد وبيانات التواصل الخاصة بيوم الرحلة مسبقاً." },
+        { title: "أرسل الموعد والمسار", description: "شارك عدد المسافرين والأمتعة وأي طلبات خاصة." },
+        { title: "استلم عرضاً مخصصاً", description: "نتحقق من التوفر والمسار وخيارات المركبات والتكاليف المعروفة." },
+        { title: "أكد رحلتك", description: "بعد الموافقة نرسل نقطة اللقاء وبيانات التواصل الخاصة بيوم الرحلة." },
       ],
     },
     trust: {

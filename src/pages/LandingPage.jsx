@@ -9,7 +9,6 @@ import {
   MessageCircle,
   Mountain,
   Plane,
-  ShieldCheck,
   Sparkles,
 } from "lucide-react";
 import { useMemo, useState } from "react";
@@ -282,8 +281,7 @@ export default function LandingPage({ language }) {
   const highlights = t("highlights.items", { returnObjects: true });
   const services = t("services.items", { returnObjects: true });
   const routes = t("routes.items", { returnObjects: true }).slice(0, 3);
-  const process = t("process.items", { returnObjects: true }).slice(0, 3);
-  const trust = t("trust.items", { returnObjects: true }).slice(0, 3);
+  const process = t("process.items", { returnObjects: true });
   const faqs = t("faq.items", { returnObjects: true }).slice(0, 4);
 
   const heroStyle = useMemo(
@@ -414,49 +412,28 @@ export default function LandingPage({ language }) {
             </div>
           </section>
 
-          <section className="section-shell bg-white">
-            <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-              <div>
-                <p className="eyebrow">{t("process.eyebrow")}</p>
-                <h2 className="mt-3 text-3xl font-semibold text-midnight sm:text-4xl">
-                  {t("process.title")}
-                </h2>
-                <p className="mt-4 max-w-3xl leading-8 text-slate-600">{t("process.subtitle")}</p>
-                <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                  {process.map((step, index) => {
-                    const Icon = processIcons[index] || ArrowRight;
-                    return (
-                      <article key={step.title} className="process-step">
-                        <span>{index + 1}</span>
-                        <Icon className="mt-5 h-7 w-7 text-gold" aria-hidden="true" />
-                        <h3>{step.title}</h3>
-                        <p>{step.description}</p>
-                      </article>
-                    );
-                  })}
-                </div>
-              </div>
-              <aside className="rounded-2xl bg-midnight p-7 text-white shadow-soft sm:p-9">
-                <ShieldCheck className="h-9 w-9 text-gold" aria-hidden="true" />
-                <p className="eyebrow mt-6 text-gold">{t("trust.eyebrow")}</p>
-                <h2 className="mt-3 text-2xl font-semibold">{t("trust.title")}</h2>
-                <div className="mt-6 space-y-5">
-                  {trust.map((item) => (
-                    <div key={item.title}>
-                      <h3 className="font-semibold text-white">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-white/65">{item.description}</p>
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  to={localizedPath(language, "how-it-works")}
-                  className="btn-secondary-dark mt-7"
-                >
-                  <span>{t("pageLinks.process")}</span>
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </aside>
+          <section id="booking-process" className="section-shell scroll-mt-24 bg-white">
+            <div className="section-heading">
+              <p className="eyebrow">{t("process.eyebrow")}</p>
+              <h2>{t("process.title")}</h2>
+              <p>{t("process.subtitle")}</p>
             </div>
+            <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-3">
+              {process.map((step, index) => {
+                const Icon = processIcons[index] || ArrowRight;
+                return (
+                  <article key={step.title} className="process-step">
+                    <span>{index + 1}</span>
+                    <Icon className="mt-5 h-7 w-7 text-gold" aria-hidden="true" />
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </article>
+                );
+              })}
+            </div>
+            <p className="mx-auto mt-7 max-w-4xl border-s-2 border-gold ps-4 text-sm leading-7 text-slate-500">
+              {t("trust.notice")}
+            </p>
           </section>
 
           <section className="section-shell bg-porcelain">

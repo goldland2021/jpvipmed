@@ -50,6 +50,10 @@ function LanguageRoute() {
     return <Navigate to="/zh-hk" replace />;
   }
 
+  if (page === "how-it-works") {
+    return <Navigate to={`/${lang}#booking-process`} replace />;
+  }
+
   if (page && !contentPageSlugs.includes(page)) {
     return <Navigate to={`/${lang}`} replace />;
   }
