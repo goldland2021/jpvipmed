@@ -11,7 +11,10 @@ const messageCopy = {
     service: "Service",
     pickup: "Pickup",
     destination: "Drop-off",
+    serviceArea: "Service area / itinerary",
+    duration: "Hire length",
     date: "Travel date",
+    startTime: "Start time",
     passengers: "Passengers",
     message: "Trip details",
     closing: "Could you please confirm availability, recommend the right vehicle and send me a quote? Thank you.",
@@ -26,7 +29,10 @@ const messageCopy = {
     service: "所需服務",
     pickup: "上車地點",
     destination: "目的地",
+    serviceArea: "服務地區／行程範圍",
+    duration: "包車時長",
     date: "出發日期",
+    startTime: "開始時間",
     passengers: "同行人數",
     message: "行程詳情",
     closing: "請確認能否安排、建議合適車型，並提供報價。謝謝。",
@@ -41,7 +47,10 @@ const messageCopy = {
     service: "الخدمة",
     pickup: "موقع الاستقبال",
     destination: "موقع الوصول",
+    serviceArea: "منطقة الخدمة / مسار الرحلة",
+    duration: "مدة الحجز",
     date: "تاريخ السفر",
+    startTime: "وقت البدء",
     passengers: "عدد الركاب",
     message: "تفاصيل الرحلة",
     closing: "يرجى تأكيد التوفر، واقتراح المركبة المناسبة، وإرسال عرض السعر. شكراً لكم.",
@@ -87,16 +96,23 @@ export function buildQuickWhatsAppMessage(serviceName = "", language = "en") {
 
 export function buildTripWhatsAppMessage(trip, language = "en") {
   const copy = getCopy(language);
+  const details = [
+    `${copy.service}: ${trip.service}`,
+    trip.pickup ? `${copy.pickup}: ${trip.pickup}` : "",
+    trip.destination ? `${copy.destination}: ${trip.destination}` : "",
+    trip.serviceArea ? `${copy.serviceArea}: ${trip.serviceArea}` : "",
+    trip.duration ? `${copy.duration}: ${trip.duration}` : "",
+    trip.date ? `${copy.date}: ${trip.date}` : "",
+    trip.startTime ? `${copy.startTime}: ${trip.startTime}` : "",
+    trip.passengers ? `${copy.passengers}: ${trip.passengers}` : "",
+  ].filter(Boolean);
+
   return [
     copy.greeting,
     "",
     copy.quickIntro,
     "",
-    `${copy.service}: ${trip.service}`,
-    `${copy.pickup}: ${trip.pickup}`,
-    `${copy.destination}: ${trip.destination}`,
-    `${copy.date}: ${trip.date}`,
-    `${copy.passengers}: ${trip.passengers}`,
+    ...details,
     "",
     copy.closing,
   ].join("\n");
