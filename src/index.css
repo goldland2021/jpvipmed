@@ -60,6 +60,17 @@
     font-family: "Noto Sans Arabic", Tahoma, "Segoe UI", Arial, sans-serif;
   }
 
+  html[lang="zh-HK"] body {
+    font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei",
+      "Microsoft YaHei", Arial, sans-serif;
+  }
+
+  html[lang="zh-HK"] h1 {
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+  }
+
   html[lang="ar"] h1 {
     font-weight: 600;
     line-height: 1.25;
