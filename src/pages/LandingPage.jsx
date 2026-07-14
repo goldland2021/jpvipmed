@@ -33,17 +33,22 @@ function QuickPlanner({ language }) {
   const { t } = useTranslation();
   const serviceOptions = t("quickQuote.serviceOptions", { returnObjects: true });
   const airportLocationOptions = t("quickQuote.airportLocationOptions", { returnObjects: true });
+  const charterConfig = t("quickQuote.charter", { returnObjects: true });
   const [trip, setTrip] = useState({
     serviceId: serviceOptions[0]?.id || "airport",
     pickup: "",
     destination: "",
+    serviceArea: "",
+    duration: "",
     date: "",
+    startTime: "",
     passengers: "",
   });
   const selectedService =
     serviceOptions.find((option) => option.id === trip.serviceId) || serviceOptions[0];
   const serviceLabel = selectedService?.label || "";
   const isAirportService = trip.serviceId === "airport";
+  const isCharterService = trip.serviceId === "charter";
 
   function updateField(field, value) {
     setTrip((current) => ({ ...current, [field]: value }));
@@ -51,6 +56,15 @@ function QuickPlanner({ language }) {
 
   function submitTrip(event) {
     event.preventDefault();
+    const messageTrip = isCharterService
+      ? { ...trip, service: serviceLabel, destination: "" }
+      : {
+          ...trip,
+          service: serviceLabel,
+          serviceArea: "",
+          duration: "",
+          startTime: "",
+        };
     trackButtonClick("hero_trip_planner", { language, service_type: serviceLabel });
     trackEvent("whatsapp_click", {
       language,
@@ -58,7 +72,7 @@ function QuickPlanner({ language }) {
       source: "hero_trip_planner",
     });
     window.open(
-      getWhatsAppUrl(buildTripWhatsAppMessage({ ...trip, service: serviceLabel }, language)),
+      getWhatsAppUrl(buildTripWhatsAppMessage(messageTrip, language)),
       "_blank",
       "noopener,noreferrer"
     );
@@ -89,70 +103,128 @@ function QuickPlanner({ language }) {
       </div>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
-        <div className="planner-field">
-          <label htmlFor={`hero-pickup-${language}`}>
-            <span>{t("quickQuote.fields.pickup")}</span>
-            <input
-              id={`hero-pickup-${language}`}
-              required
-              value={trip.pickup}
-              onChange={(event) => updateField("pickup", event.target.value)}
-              placeholder={t("quickQuote.placeholders.pickup")}
-            />
-          </label>
-          {isAirportService && Array.isArray(airportLocationOptions) && (
-            <select
-              className="planner-preset-select"
-              data-testid="airport-pickup-select"
-              aria-label={t("quickQuote.airportPickupLabel")}
-              value={airportLocationOptions.includes(trip.pickup) ? trip.pickup : ""}
-              onChange={(event) => updateField("pickup", event.target.value)}
-            >
-              <option value="" disabled>
-                {t("quickQuote.airportPickupPlaceholder")}
-              </option>
-              {airportLocationOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
+        {isCharterService ? (
+          <>
+            <label className="planner-field">
+              <span>{charterConfig.pickupLabel}</span>
+              <input
+                required
+                value={trip.pickup}
+                onChange={(event) => updateField("pickup", event.target.value)}
+                placeholder={charterConfig.pickupPlaceholder}
+              />
+            </label>
+            <label className="planner-field">
+              <span>{charterConfig.areaLabel}</span>
+              <select
+                required
+                className="planner-main-select"
+                data-testid="charter-area-select"
+                value={trip.serviceArea}
+                onChange={(event) => updateField("serviceArea", event.target.value)}
+              >
+                <option value="" disabled>
+                  {charterConfig.areaPlaceholder}
                 </option>
-              ))}
-            </select>
-          )}
-        </div>
-        <div className="planner-field">
-          <label htmlFor={`hero-destination-${language}`}>
-            <span>{t("quickQuote.fields.destination")}</span>
-            <input
-              id={`hero-destination-${language}`}
-              required
-              value={trip.destination}
-              onChange={(event) => updateField("destination", event.target.value)}
-              placeholder={t("quickQuote.placeholders.destination")}
-            />
-          </label>
-          {isAirportService && Array.isArray(airportLocationOptions) && (
-            <select
-              className="planner-preset-select"
-              data-testid="airport-dropoff-select"
-              aria-label={t("quickQuote.airportDropoffLabel")}
-              value={
-                airportLocationOptions.includes(trip.destination) ? trip.destination : ""
-              }
-              onChange={(event) => updateField("destination", event.target.value)}
-            >
-              <option value="" disabled>
-                {t("quickQuote.airportDropoffPlaceholder")}
-              </option>
-              {airportLocationOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
+                {Array.isArray(charterConfig.areaOptions) &&
+                  charterConfig.areaOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+              </select>
+            </label>
+            <label className="planner-field">
+              <span>{charterConfig.durationLabel}</span>
+              <select
+                required
+                className="planner-main-select"
+                data-testid="charter-duration-select"
+                value={trip.duration}
+                onChange={(event) => updateField("duration", event.target.value)}
+              >
+                <option value="" disabled>
+                  {charterConfig.durationPlaceholder}
                 </option>
-              ))}
-            </select>
-          )}
-        </div>
+                {Array.isArray(charterConfig.durationOptions) &&
+                  charterConfig.durationOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+              </select>
+            </label>
+          </>
+        ) : (
+          <>
+            <div className="planner-field">
+              <label htmlFor={`hero-pickup-${language}`}>
+                <span>{t("quickQuote.fields.pickup")}</span>
+                <input
+                  id={`hero-pickup-${language}`}
+                  required
+                  value={trip.pickup}
+                  onChange={(event) => updateField("pickup", event.target.value)}
+                  placeholder={t("quickQuote.placeholders.pickup")}
+                />
+              </label>
+              {isAirportService && Array.isArray(airportLocationOptions) && (
+                <select
+                  className="planner-preset-select"
+                  data-testid="airport-pickup-select"
+                  aria-label={t("quickQuote.airportPickupLabel")}
+                  value={airportLocationOptions.includes(trip.pickup) ? trip.pickup : ""}
+                  onChange={(event) => updateField("pickup", event.target.value)}
+                >
+                  <option value="" disabled>
+                    {t("quickQuote.airportPickupPlaceholder")}
+                  </option>
+                  {airportLocationOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </div>
+            <div className="planner-field">
+              <label htmlFor={`hero-destination-${language}`}>
+                <span>{t("quickQuote.fields.destination")}</span>
+                <input
+                  id={`hero-destination-${language}`}
+                  required
+                  value={trip.destination}
+                  onChange={(event) => updateField("destination", event.target.value)}
+                  placeholder={t("quickQuote.placeholders.destination")}
+                />
+              </label>
+              {isAirportService && Array.isArray(airportLocationOptions) && (
+                <select
+                  className="planner-preset-select"
+                  data-testid="airport-dropoff-select"
+                  aria-label={t("quickQuote.airportDropoffLabel")}
+                  value={
+                    airportLocationOptions.includes(trip.destination) ? trip.destination : ""
+                  }
+                  onChange={(event) => updateField("destination", event.target.value)}
+                >
+                  <option value="" disabled>
+                    {t("quickQuote.airportDropoffPlaceholder")}
+                  </option>
+                  {airportLocationOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </div>
+          </>
+        )}
         <label className="planner-field">
-          <span>{t("quickQuote.fields.date")}</span>
+          <span>
+            {isCharterService ? charterConfig.dateLabel : t("quickQuote.fields.date")}
+          </span>
           <input
             required
             type="date"
@@ -160,8 +232,23 @@ function QuickPlanner({ language }) {
             onChange={(event) => updateField("date", event.target.value)}
           />
         </label>
+        {isCharterService && (
+          <label className="planner-field">
+            <span>{charterConfig.startTimeLabel}</span>
+            <input
+              required
+              type="time"
+              value={trip.startTime}
+              onChange={(event) => updateField("startTime", event.target.value)}
+            />
+          </label>
+        )}
         <label className="planner-field">
-          <span>{t("quickQuote.fields.passengers")}</span>
+          <span>
+            {isCharterService
+              ? charterConfig.passengersLabel
+              : t("quickQuote.fields.passengers")}
+          </span>
           <input
             required
             min="1"
@@ -169,9 +256,14 @@ function QuickPlanner({ language }) {
             inputMode="numeric"
             value={trip.passengers}
             onChange={(event) => updateField("passengers", event.target.value)}
-            placeholder={t("quickQuote.placeholders.passengers")}
+            placeholder={
+              isCharterService
+                ? charterConfig.passengersPlaceholder
+                : t("quickQuote.placeholders.passengers")
+            }
           />
         </label>
+        {isCharterService && <p className="planner-charter-hint">{charterConfig.hint}</p>}
       </div>
 
       <button type="submit" className="btn-primary mt-5 w-full justify-center">
