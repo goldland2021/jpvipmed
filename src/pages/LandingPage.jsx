@@ -1,43 +1,165 @@
 import {
   ArrowRight,
-  BriefcaseBusiness,
+  Baby,
+  BadgeCheck,
+  Building2,
   CalendarCheck,
   Car,
   CheckCircle2,
   ClipboardCheck,
-  GraduationCap,
+  Clock3,
+  Globe2,
   HeartPulse,
+  Hotel,
   Languages,
-  LockKeyhole,
+  LifeBuoy,
+  Luggage,
+  MapPin,
   MessageCircle,
   Mountain,
+  Navigation,
+  Plane,
+  ReceiptText,
+  Route,
   ShieldCheck,
+  Snowflake,
+  Sparkles,
+  Users,
+  Waves,
 } from "lucide-react";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Header from "../components/Header";
 import LeadForm from "../components/LeadForm";
 import Seo from "../components/Seo";
 import WhatsAppButton from "../components/WhatsAppButton";
 import WorkflowAiPilot from "../components/WorkflowAiPilot";
-import { trackButtonClick } from "../lib/analytics";
+import { trackButtonClick, trackEvent } from "../lib/analytics";
+import { buildTripWhatsAppMessage, getWhatsAppUrl } from "../lib/whatsapp";
 
-const serviceIcons = [Car, Mountain, HeartPulse, GraduationCap, BriefcaseBusiness];
-const advantageIcons = [
-  Car,
-  CalendarCheck,
-  Languages,
-  ShieldCheck,
-  LockKeyhole,
-  CheckCircle2,
-];
-const trustIcons = [LockKeyhole, ShieldCheck, Languages, CheckCircle2];
-const processIcons = [MessageCircle, ClipboardCheck, Car, CalendarCheck, CheckCircle2];
+const highlightIcons = [Plane, Baby, Car];
+const serviceIcons = [Plane, Route, Sparkles];
+const includedIcons = [Navigation, Luggage, MapPin, Clock3, Languages, ReceiptText];
+const vehicleIcons = [Car, Users, BadgeCheck];
+const routeIcons = [Plane, Mountain, Building2, Plane, Snowflake, Waves];
+const coverageIcons = [Building2, Hotel, Mountain, Snowflake, Waves, Globe2];
+const trustIcons = [ShieldCheck, ReceiptText, Languages, LifeBuoy];
+const processIcons = [MessageCircle, ClipboardCheck, Car, CalendarCheck];
+
+function QuickPlanner({ language }) {
+  const { t } = useTranslation();
+  const serviceOptions = t("quickQuote.serviceOptions", { returnObjects: true });
+  const [trip, setTrip] = useState({
+    service: serviceOptions[0]?.label || "",
+    pickup: "",
+    destination: "",
+    date: "",
+    passengers: "",
+  });
+
+  function updateField(field, value) {
+    setTrip((current) => ({ ...current, [field]: value }));
+  }
+
+  function submitTrip(event) {
+    event.preventDefault();
+    trackButtonClick("hero_trip_planner", { language, service_type: trip.service });
+    trackEvent("whatsapp_click", {
+      language,
+      service_type: trip.service,
+      source: "hero_trip_planner",
+    });
+    window.open(
+      getWhatsAppUrl(buildTripWhatsAppMessage(trip, language)),
+      "_blank",
+      "noopener,noreferrer"
+    );
+  }
+
+  return (
+    <form onSubmit={submitTrip} className="hero-planner">
+      <p className="eyebrow">{t("quickQuote.eyebrow")}</p>
+      <h2>{t("quickQuote.title")}</h2>
+      <p className="hero-planner-intro">{t("quickQuote.subtitle")}</p>
+
+      <div className="mt-5 grid grid-cols-3 gap-2">
+        {serviceOptions.map((option) => (
+          <button
+            type="button"
+            key={option.label}
+            onClick={() => updateField("service", option.label)}
+            className={
+              trip.service === option.label
+                ? "planner-option planner-option-active"
+                : "planner-option"
+            }
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+        <label className="planner-field">
+          <span>{t("quickQuote.fields.pickup")}</span>
+          <input
+            required
+            value={trip.pickup}
+            onChange={(event) => updateField("pickup", event.target.value)}
+            placeholder={t("quickQuote.placeholders.pickup")}
+          />
+        </label>
+        <label className="planner-field">
+          <span>{t("quickQuote.fields.destination")}</span>
+          <input
+            required
+            value={trip.destination}
+            onChange={(event) => updateField("destination", event.target.value)}
+            placeholder={t("quickQuote.placeholders.destination")}
+          />
+        </label>
+        <label className="planner-field">
+          <span>{t("quickQuote.fields.date")}</span>
+          <input
+            required
+            type="date"
+            value={trip.date}
+            onChange={(event) => updateField("date", event.target.value)}
+          />
+        </label>
+        <label className="planner-field">
+          <span>{t("quickQuote.fields.passengers")}</span>
+          <input
+            required
+            min="1"
+            type="number"
+            inputMode="numeric"
+            value={trip.passengers}
+            onChange={(event) => updateField("passengers", event.target.value)}
+            placeholder={t("quickQuote.placeholders.passengers")}
+          />
+        </label>
+      </div>
+
+      <button type="submit" className="btn-primary mt-5 w-full justify-center">
+        <MessageCircle className="h-5 w-5" aria-hidden="true" />
+        <span>{t("quickQuote.cta")}</span>
+      </button>
+      <p className="mt-3 text-center text-xs leading-5 text-slate-500">
+        {t("quickQuote.note")}
+      </p>
+    </form>
+  );
+}
 
 export default function LandingPage({ language }) {
   const { t } = useTranslation();
+  const highlights = t("highlights.items", { returnObjects: true });
   const services = t("services.items", { returnObjects: true });
-  const advantages = t("advantages.items", { returnObjects: true });
+  const included = t("included.items", { returnObjects: true });
+  const vehicles = t("vehicles.items", { returnObjects: true });
+  const routes = t("routes.items", { returnObjects: true });
+  const coverage = t("coverage.items", { returnObjects: true });
   const process = t("process.items", { returnObjects: true });
   const trust = t("trust.items", { returnObjects: true });
   const faqs = t("faq.items", { returnObjects: true });
@@ -45,7 +167,7 @@ export default function LandingPage({ language }) {
   const heroStyle = useMemo(
     () => ({
       backgroundImage:
-        "linear-gradient(90deg, rgba(10,25,47,0.94) 0%, rgba(10,25,47,0.78) 42%, rgba(10,25,47,0.34) 100%), url('/images/hero-charter-japan.jpg')",
+        "linear-gradient(90deg, rgba(5,18,35,0.97) 0%, rgba(10,25,47,0.88) 48%, rgba(10,25,47,0.48) 100%), url('/images/hero-charter-japan.jpg')",
     }),
     []
   );
@@ -63,28 +185,25 @@ export default function LandingPage({ language }) {
       <Seo language={language} />
       <WorkflowAiPilot language={language} />
       <div className="min-h-screen bg-white text-ink">
-        <section className="relative min-h-[720px] overflow-hidden bg-midnight text-white">
+        <section className="relative min-h-[820px] overflow-hidden bg-midnight text-white">
           <Header language={language} />
           <div className="absolute inset-0 bg-cover bg-center" style={heroStyle} />
-          <div className="relative z-10 mx-auto flex min-h-[720px] max-w-7xl items-center px-4 pb-16 pt-28 sm:px-6 lg:px-8">
+          <div className="relative z-10 mx-auto grid min-h-[820px] max-w-7xl gap-12 px-4 pb-16 pt-32 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8">
             <div className="max-w-3xl">
               <p className="eyebrow text-gold">{t("hero.eyebrow")}</p>
-              <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+              <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.08] text-white sm:text-5xl lg:text-6xl">
                 {t("hero.title")}
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85 sm:text-xl">
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
                 {t("hero.subtitle")}
               </p>
-              <ul className="mt-6 grid max-w-2xl gap-3 text-start text-sm font-semibold leading-6 text-white sm:text-base">
+              <ul className="mt-7 flex flex-wrap gap-3 text-sm font-semibold text-white/90">
                 {t("hero.points", { returnObjects: true }).map((point) => (
                   <li
                     key={point}
-                    className="inline-flex items-start gap-3 rounded-md border border-gold/45 bg-midnight/70 px-4 py-3 shadow-soft backdrop-blur"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-midnight/55 px-4 py-2 backdrop-blur"
                   >
-                    <CheckCircle2
-                      className="mt-0.5 h-5 w-5 shrink-0 text-gold"
-                      aria-hidden="true"
-                    />
+                    <CheckCircle2 className="h-4 w-4 text-gold" aria-hidden="true" />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -96,31 +215,48 @@ export default function LandingPage({ language }) {
                   buttonName="hero_whatsapp"
                   className="btn-primary"
                 />
-                <button
-                  type="button"
-                  onClick={scrollToForm}
-                  className="btn-secondary-dark"
-                >
+                <button type="button" onClick={scrollToForm} className="btn-secondary-dark">
                   <CalendarCheck className="h-5 w-5" aria-hidden="true" />
                   <span>{t("cta.request")}</span>
                 </button>
               </div>
             </div>
+            <QuickPlanner key={language} language={language} />
           </div>
         </section>
 
-        <section className="section-shell bg-white" id="services">
+        <section className="relative z-20 mx-auto -mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid overflow-hidden rounded-xl border border-slate-200 bg-white shadow-soft md:grid-cols-3">
+            {highlights.map((item, index) => {
+              const Icon = highlightIcons[index] || CheckCircle2;
+              return (
+                <article key={item.title} className="highlight-item">
+                  <Icon className="h-7 w-7 shrink-0 text-gold" aria-hidden="true" />
+                  <div>
+                    <h2>{item.title}</h2>
+                    <p>{item.description}</p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="section-shell bg-white pt-24" id="services">
           <div className="section-heading">
             <p className="eyebrow">{t("services.eyebrow")}</p>
             <h2>{t("services.title")}</h2>
             <p>{t("services.subtitle")}</p>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {services.map((service, index) => {
-              const Icon = serviceIcons[index] || HeartPulse;
+              const Icon = serviceIcons[index] || Car;
               return (
                 <article key={service.title} className="service-card">
-                  <Icon className="h-8 w-8 text-gold" aria-hidden="true" />
+                  <div className="service-icon-wrap">
+                    <Icon className="h-7 w-7 text-gold" aria-hidden="true" />
+                  </div>
+                  <p className="service-label">{service.label}</p>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
                   <ul>
@@ -144,20 +280,115 @@ export default function LandingPage({ language }) {
           </div>
         </section>
 
-        <section className="section-shell bg-porcelain">
+        <section className="section-shell bg-porcelain" id="included">
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <div className="lg:sticky lg:top-24">
+              <p className="eyebrow">{t("included.eyebrow")}</p>
+              <h2 className="mt-3 text-3xl font-semibold text-midnight sm:text-4xl">
+                {t("included.title")}
+              </h2>
+              <p className="mt-5 text-base leading-8 text-slate-600">
+                {t("included.subtitle")}
+              </p>
+              <div className="mt-7 rounded-xl border border-gold/30 bg-white p-5 text-sm leading-7 text-slate-700 shadow-soft">
+                {t("included.notice")}
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {included.map((item, index) => {
+                const Icon = includedIcons[index] || CheckCircle2;
+                return (
+                  <article key={item.title} className="included-card">
+                    <Icon className="h-7 w-7 text-sage" aria-hidden="true" />
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-shell bg-midnight text-white">
+          <div className="section-heading section-heading-dark">
+            <p className="eyebrow text-gold">{t("vehicles.eyebrow")}</p>
+            <h2>{t("vehicles.title")}</h2>
+            <p>{t("vehicles.subtitle")}</p>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {vehicles.map((item, index) => {
+              const Icon = vehicleIcons[index] || Car;
+              return (
+                <article key={item.title} className="vehicle-card">
+                  <Icon className="h-8 w-8 text-gold" aria-hidden="true" />
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  <span>{item.note}</span>
+                </article>
+              );
+            })}
+          </div>
+          <p className="mx-auto mt-7 max-w-3xl text-center text-sm leading-7 text-white/60">
+            {t("vehicles.notice")}
+          </p>
+        </section>
+
+        <section className="section-shell bg-white" id="routes">
           <div className="section-heading">
-            <p className="eyebrow">{t("advantages.eyebrow")}</p>
-            <h2>{t("advantages.title")}</h2>
-            <p>{t("advantages.subtitle")}</p>
+            <p className="eyebrow">{t("routes.eyebrow")}</p>
+            <h2>{t("routes.title")}</h2>
+            <p>{t("routes.subtitle")}</p>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {advantages.map((advantage, index) => {
-              const Icon = advantageIcons[index] || ShieldCheck;
+            {routes.map((item, index) => {
+              const Icon = routeIcons[index] || MapPin;
               return (
-                <article key={advantage.title} className="advantage-tile">
-                  <Icon className="h-7 w-7 text-sage" aria-hidden="true" />
-                  <h3>{advantage.title}</h3>
-                  <p>{advantage.description}</p>
+                <article key={item.title} className="route-card">
+                  <div className="flex items-center justify-between gap-4">
+                    <Icon className="h-6 w-6 text-gold" aria-hidden="true" />
+                    <span>{item.type}</span>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  <WhatsAppButton
+                    language={language}
+                    serviceName={item.title}
+                    label={t("routes.cta")}
+                    buttonName="popular_route_whatsapp"
+                    className="route-link"
+                  >
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </WhatsAppButton>
+                </article>
+              );
+            })}
+          </div>
+          <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-xl bg-porcelain p-6 text-center sm:flex-row sm:text-start">
+            <div>
+              <h3 className="text-lg font-semibold text-midnight">{t("routes.customTitle")}</h3>
+              <p className="mt-2 text-sm leading-7 text-slate-600">{t("routes.customText")}</p>
+            </div>
+            <button type="button" onClick={scrollToForm} className="btn-secondary-light shrink-0">
+              <span>{t("routes.customCta")}</span>
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </button>
+          </div>
+        </section>
+
+        <section className="section-shell bg-porcelain" id="coverage">
+          <div className="section-heading">
+            <p className="eyebrow">{t("coverage.eyebrow")}</p>
+            <h2>{t("coverage.title")}</h2>
+            <p>{t("coverage.subtitle")}</p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {coverage.map((item, index) => {
+              const Icon = coverageIcons[index] || Globe2;
+              return (
+                <article key={item.title} className="coverage-card">
+                  <Icon className="h-6 w-6 text-gold" aria-hidden="true" />
+                  <h3>{item.title}</h3>
+                  <p>{item.places}</p>
                 </article>
               );
             })}
@@ -170,7 +401,7 @@ export default function LandingPage({ language }) {
             <h2>{t("process.title")}</h2>
             <p>{t("process.subtitle")}</p>
           </div>
-          <div className="mt-10 grid gap-4 lg:grid-cols-5">
+          <div className="mt-10 grid gap-4 lg:grid-cols-4">
             {process.map((step, index) => {
               const Icon = processIcons[index] || ArrowRight;
               return (
@@ -185,15 +416,14 @@ export default function LandingPage({ language }) {
           </div>
         </section>
 
-        <section className="section-shell bg-midnight text-white">
+        <section className="section-shell bg-midnight text-white" id="trust">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <p className="eyebrow text-gold">{t("trust.eyebrow")}</p>
-              <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">
-                {t("trust.title")}
-              </h2>
-              <p className="mt-5 text-base leading-8 text-white/80">
-                {t("trust.subtitle")}
+              <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">{t("trust.title")}</h2>
+              <p className="mt-5 text-base leading-8 text-white/78">{t("trust.subtitle")}</p>
+              <p className="mt-6 border-s-2 border-gold ps-4 text-sm leading-7 text-white/60">
+                {t("trust.notice")}
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -211,13 +441,13 @@ export default function LandingPage({ language }) {
           </div>
         </section>
 
-        <section className="section-shell bg-white">
+        <section className="section-shell bg-white" id="faq">
           <div className="section-heading">
             <p className="eyebrow">{t("faq.eyebrow")}</p>
             <h2>{t("faq.title")}</h2>
             <p>{t("faq.subtitle")}</p>
           </div>
-          <div className="mx-auto mt-10 max-w-4xl divide-y divide-slate-200 rounded-md border border-slate-200">
+          <div className="mx-auto mt-10 max-w-4xl divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200">
             {faqs.map((item) => (
               <details key={item.question} className="faq-row">
                 <summary>{item.question}</summary>
@@ -235,11 +465,11 @@ export default function LandingPage({ language }) {
                 {t("form.title")}
               </h2>
               <p className="mt-5 leading-8 text-slate-600">{t("form.subtitle")}</p>
-              <div className="mt-8 rounded-md border border-gold/30 bg-white p-5 text-sm leading-7 text-slate-700 shadow-soft">
+              <div className="mt-8 rounded-xl border border-gold/30 bg-white p-5 text-sm leading-7 text-slate-700 shadow-soft">
                 {t("form.notice")}
               </div>
             </div>
-            <div className="rounded-md border border-slate-200 bg-white p-5 shadow-soft sm:p-8">
+            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-soft sm:p-8">
               <LeadForm language={language} services={services} />
             </div>
           </div>

@@ -7,7 +7,7 @@ export const languageLabels = {
 };
 
 export const siteConfig = {
-  siteUrl: import.meta.env.VITE_SITE_URL || "https://jpvipmedical.com",
+  siteUrl: import.meta.env.VITE_SITE_URL || "https://www.jpairport.jp",
   supabaseUrl: import.meta.env.VITE_SUPABASE_URL || "",
   supabaseAnonKey: import.meta.env.VITE_SUPABASE_ANON_KEY || "",
   whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || "",

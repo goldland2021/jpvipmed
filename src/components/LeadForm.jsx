@@ -160,8 +160,11 @@ export default function LeadForm({ language, services }) {
           >
             <option value="">{t("form.servicePlaceholder")}</option>
             {services.map((service) => (
-              <option key={service.title} value={service.title}>
-                {service.title}
+              <option
+                key={service.title}
+                value={service.label || service.title}
+              >
+                {service.label || service.title}
               </option>
             ))}
           </select>

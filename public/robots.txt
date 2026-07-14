@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jpvipmedical.com/sitemap.xml
+Sitemap: https://www.jpairport.jp/sitemap.xml

@@ -17,7 +17,7 @@ export default function WhatsAppButton({
     trackButtonClick(buttonName, { language, service_type: serviceName });
     trackEvent("whatsapp_click", { language, service_type: serviceName });
     window.open(
-      getWhatsAppUrl(buildQuickWhatsAppMessage(serviceName)),
+      getWhatsAppUrl(buildQuickWhatsAppMessage(serviceName, language)),
       "_blank",
       "noopener,noreferrer"
     );
