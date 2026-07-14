@@ -9,7 +9,6 @@ export default function Header({ language }) {
   const navigation = [
     ["services", "services"],
     ["routes", "routes"],
-    ["trust", "how-it-works"],
     ["faq", "faq"],
   ];
 
