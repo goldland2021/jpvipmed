@@ -101,26 +101,21 @@ function QuickPlanner({ language }) {
             />
           </label>
           {isAirportService && Array.isArray(airportPickupOptions) && (
-            <div
-              className="planner-preset-list"
+            <select
+              className="planner-preset-select"
               aria-label={t("quickQuote.airportPickupLabel")}
+              value={airportPickupOptions.includes(trip.pickup) ? trip.pickup : ""}
+              onChange={(event) => updateField("pickup", event.target.value)}
             >
+              <option value="" disabled>
+                {t("quickQuote.airportPickupPlaceholder")}
+              </option>
               {airportPickupOptions.map((option) => (
-                <button
-                  type="button"
-                  key={option}
-                  aria-pressed={trip.pickup === option}
-                  onClick={() => updateField("pickup", option)}
-                  className={
-                    trip.pickup === option
-                      ? "planner-preset planner-preset-active"
-                      : "planner-preset"
-                  }
-                >
+                <option key={option} value={option}>
                   {option}
-                </button>
+                </option>
               ))}
-            </div>
+            </select>
           )}
         </div>
         <label className="planner-field">
