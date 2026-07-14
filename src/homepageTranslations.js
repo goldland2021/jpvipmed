@@ -1,250 +1,250 @@
 const homepageTranslations = {
   en: {
     seo: {
-      title: "Japan Private Chauffeur, Airport Transfer & Charter | JP VIP Charter",
+      title: "Private Chauffeur & Airport Transfers in Japan | JP VIP Charter",
       description:
-        "Private chauffeur coordination across Japan for airport transfers, hotel and station rides, Mount Fuji day trips, business travel, medical visits, and custom itineraries.",
+        "Arrange private airport transfers, point-to-point rides and custom charters across Japan, with multilingual support and a clear quote before you travel.",
     },
     pageSeo: {
-      services: { title: "Japan Private Chauffeur Services" },
-      routes: { title: "Japan Airport Transfer & Private Charter Routes" },
-      process: { title: "How Japan Private Chauffeur Booking Works" },
-      faq: { title: "Japan Private Chauffeur FAQ" },
-      quote: { title: "Request a Japan Private Chauffeur Quote" },
+      services: { title: "Private Chauffeur Services in Japan" },
+      routes: { title: "Popular Private Transfer Routes in Japan" },
+      process: { title: "How to Book a Private Chauffeur in Japan" },
+      faq: { title: "Private Chauffeur FAQs for Japan" },
+      quote: { title: "Request a Private Chauffeur Quote in Japan" },
     },
     navigation: {
       label: "Main navigation",
       services: "Services",
-      routes: "Popular routes",
+      routes: "Routes",
       coverage: "Coverage",
-      trust: "Service promise",
-      faq: "Help",
+      trust: "How it works",
+      faq: "FAQs",
     },
     hero: {
-      eyebrow: "JP VIP Charter · Private travel in Japan",
-      title: "Your private chauffeur for a smoother journey across Japan.",
+      eyebrow: "Private chauffeur service across Japan",
+      title: "Travel Japan in comfort, with every detail arranged.",
       subtitle:
-        "Airport arrivals, hotel and station transfers, private day charters, and tailored multi-stop travel—planned around your party, luggage, and schedule.",
+        "From airport arrivals and hotel transfers to full-day charters and multi-stop itineraries, every journey is tailored to your group, luggage and schedule.",
       points: [
-        "English, Traditional Chinese & Arabic support",
-        "Vehicle and route confirmed before service",
-        "Airport, city and nationwide itineraries",
+        "English, Traditional Chinese and Arabic support",
+        "Route, vehicle and pickup details confirmed in advance",
+        "Airport transfers, city travel and long-distance journeys",
       ],
     },
     cta: {
-      whatsapp: "Plan your trip on WhatsApp",
+      whatsapp: "Plan your journey on WhatsApp",
       whatsappShort: "WhatsApp",
-      request: "Request a tailored quote",
-      card: "Ask about this service",
+      request: "Get a personalized quote",
+      card: "Ask about this option",
     },
     pageLinks: {
-      home: "Back to home",
-      services: "Explore all services",
-      routes: "View all routes",
-      process: "See how booking works",
-      faq: "View all questions",
-      quote: "Open the detailed quote form",
+      home: "Back to the homepage",
+      services: "View all services",
+      routes: "View popular routes",
+      process: "How booking works",
+      faq: "See all FAQs",
+      quote: "Request a detailed quote",
     },
     quickQuote: {
-      eyebrow: "Start with the route",
-      title: "Tell us where you need to go.",
+      eyebrow: "Plan your journey",
+      title: "Where can we take you?",
       subtitle:
-        "Share the essentials now. A coordinator will confirm availability, the right vehicle, and a clear quotation with you.",
+        "Share the basics and a travel coordinator will check availability, recommend the right vehicle and prepare a clear quote.",
       serviceOptions: [
         { label: "Airport" },
         { label: "Transfer" },
         { label: "Charter" },
       ],
       fields: {
-        pickup: "Pickup",
-        destination: "Destination",
+        pickup: "Pickup location",
+        destination: "Drop-off location",
         date: "Travel date",
         passengers: "Passengers",
       },
       placeholders: {
-        pickup: "Airport, hotel or station",
-        destination: "Hotel, address or area",
+        pickup: "Airport, hotel, station or address",
+        destination: "Hotel, station, address or area",
         passengers: "e.g. 4",
       },
-      cta: "Send route on WhatsApp",
-      note: "No payment is taken here. Final service details and price are confirmed personally.",
+      cta: "Send trip details on WhatsApp",
+      note: "You will not be charged now. We confirm the itinerary, vehicle and price with you before you book.",
     },
     highlights: {
       items: [
         {
-          title: "Airport pickup planned clearly",
+          title: "Airport pickups, carefully planned",
           description:
-            "Share your flight and terminal so the meeting point and pickup timing can be confirmed in advance.",
+            "Share your flight and terminal details so we can confirm the meeting point and pickup time in advance.",
         },
         {
-          title: "Family requests welcomed",
+          title: "Family travel made easier",
           description:
-            "Tell us about child-seat needs, strollers, and luggage when you inquire; availability is confirmed with your quote.",
+            "Let us know about child seats, strollers and luggage when you inquire, and we will include them in the planning.",
         },
         {
-          title: "Vehicle matched to your party",
+          title: "The right vehicle for your group",
           description:
-            "From premium vans to group vehicles, the recommendation follows passenger count, bags, route, and comfort needs.",
+            "We recommend a vehicle based on your group size, luggage, route and comfort preferences.",
         },
       ],
     },
     services: {
       eyebrow: "Our services",
-      title: "One private travel partner for the moments that matter.",
+      title: "A private chauffeur for every part of your journey.",
       subtitle:
-        "Choose a straightforward transfer or ask us to coordinate a more detailed day. Every arrangement starts with your real route and requirements.",
+        "Choose a simple point-to-point transfer or let us plan a full day around your itinerary. Every booking is tailored to your route, timing and travel needs.",
       items: [
         {
           label: "Airport transfer",
-          title: "From the terminal to your hotel, calmly.",
+          title: "A smooth start or finish to your trip.",
           description:
-            "Private pickup for Haneda, Narita, Kansai, Chubu, New Chitose, Fukuoka, Naha, and other major airports.",
+            "Private transfers for arrivals and departures at Haneda, Narita, Kansai, Chubu, New Chitose, Fukuoka, Naha and other major airports.",
           points: [
             "Flight and terminal details reviewed",
             "Luggage-friendly vehicle matching",
-            "Hotel, residence, resort, or onward stop",
+            "Door-to-door service to your next stop",
           ],
         },
         {
           label: "Private transfer",
-          title: "Direct rides between the places on your itinerary.",
+          title: "Door-to-door travel, on your schedule.",
           description:
-            "Hotel, station, attraction, hospital, school, meeting venue, and city-to-city transportation arranged around your timing.",
+            "Travel between hotels, stations, attractions, hospitals, schools, meeting venues and cities without the stress of navigating transfers.",
           points: [
-            "Point-to-point or scheduled waiting",
-            "Single or multiple planned stops",
+            "Point-to-point travel or scheduled waiting",
+            "One destination or several planned stops",
             "Family, executive, and VIP travel",
           ],
         },
         {
           label: "Private charter",
-          title: "A vehicle and chauffeur reserved around your day.",
+          title: "Your own chauffeur for the day.",
           description:
-            "Flexible hourly, full-day, and multi-day planning for sightseeing, Fuji and Hakone, shopping, medical visits, education, or business.",
+            "Flexible hourly, full-day and multi-day charters for sightseeing, Mt. Fuji and Hakone, shopping, appointments, education visits or business travel.",
           points: [
-            "Custom route review before departure",
+            "A custom itinerary reviewed before departure",
             "Premium van and group options",
-            "Special-purpose itinerary coordination",
+            "Careful planning for complex schedules",
           ],
         },
       ],
     },
     included: {
-      eyebrow: "Designed around real travel",
-      title: "The details that make private transport easier.",
+      eyebrow: "The details matter",
+      title: "Thoughtful planning before you travel.",
       subtitle:
-        "Japan travel often involves exact entrances, multiple bags, changing schedules, and destinations beyond the nearest station. We confirm the practical details with you before service.",
+        "Journeys in Japan often involve specific entrances, multiple bags, changing schedules and places far from the nearest station. We confirm the practical details before the day of travel.",
       notice:
-        "Waiting time, child seats, extra stops, tolls, parking, guide service, and late-night arrangements vary by booking. Anything chargeable is clarified in the quotation before you confirm.",
+        "Waiting time, child seats, extra stops, tolls, parking, guide services and late-night travel vary by booking. Your quote will clearly show what is included before you confirm.",
       items: [
         {
-          title: "Pickup point planning",
+          title: "A clear meeting point",
           description:
-            "Airport terminal, hotel entrance, station exit, or another practical meeting point is confirmed before the ride.",
+            "We confirm the airport terminal, hotel entrance, station exit or other practical meeting point before your journey.",
         },
         {
-          title: "Luggage-aware matching",
+          title: "Space for your luggage",
           description:
-            "Suitcases, strollers, wheelchairs, and special bags are considered when recommending a vehicle.",
+            "Suitcases, pushchairs, wheelchairs and special bags are all considered when we recommend a vehicle.",
         },
         {
-          title: "Your actual destination",
+          title: "Door-to-door convenience",
           description:
-            "Go to the hotel, residence, venue, clinic, resort, or sightseeing stop that fits your itinerary.",
+            "Travel directly to the hotel, residence, venue, clinic, resort or sightseeing stop on your itinerary.",
         },
         {
-          title: "Planned waiting and stops",
+          title: "Waiting time and extra stops",
           description:
-            "If your day needs waiting time or several stops, they can be built into the plan and quotation.",
+            "If your day includes waiting time or several stops, we can build them into the schedule and quote.",
         },
         {
-          title: "Multilingual coordination",
+          title: "Multilingual support",
           description:
-            "Inquiry support is available in English, Traditional Chinese, and Arabic from planning through confirmation.",
+            "Plan and confirm your journey in English, Traditional Chinese or Arabic.",
         },
         {
-          title: "A clear quotation",
+          title: "A clear quote",
           description:
-            "The route, service time, vehicle category, and known additions are reviewed before the price is confirmed.",
+            "We review the route, service time, vehicle category and any known extras before confirming the price.",
         },
       ],
     },
     vehicles: {
-      eyebrow: "Vehicle choice",
-      title: "Comfort sized to your group—not just the passenger count.",
+      eyebrow: "Choosing your vehicle",
+      title: "The right amount of space for your group and luggage.",
       subtitle:
-        "The best vehicle depends on both people and baggage. Share the full picture and we will recommend the appropriate category for the day.",
+        "The best choice depends on both passengers and baggage. Tell us what you are bringing and we will recommend the most suitable category.",
       notice:
-        "Vehicle examples indicate categories, not a guaranteed model. The exact model, capacity, and availability are confirmed before booking.",
+        "Vehicle examples represent categories rather than guaranteed models. We confirm the exact model, capacity and availability before booking.",
       items: [
         {
           title: "Premium van",
           description:
             "A comfortable choice for families, executives, airport arrivals, and long sightseeing days.",
-          note: "Alphard-style category available on request",
+          note: "Alphard-class vehicles available on request",
         },
         {
           title: "Group vehicle",
           description:
             "More passenger and luggage capacity for larger families, small groups, and multi-day travel.",
-          note: "Van or minibus category by group size",
+          note: "Van or minibus selected to suit your group",
         },
         {
-          title: "Executive arrangement",
+          title: "Executive travel",
           description:
-            "Discreet transportation for meetings, inspections, hospitality, and schedule-sensitive travel.",
-          note: "Vehicle and chauffeur requirements matched",
+            "Discreet, punctual transport for meetings, site visits, hospitality and time-sensitive schedules.",
+          note: "Vehicle and chauffeur matched to your requirements",
         },
       ],
     },
     routes: {
-      eyebrow: "Frequently requested routes",
-      title: "Start with the journeys travelers ask for most.",
+      eyebrow: "Popular journeys",
+      title: "Popular routes, tailored to your plans.",
       subtitle:
-        "These examples are starting points, not fixed packages. Send the exact pickup, destination, date, party size, and luggage for a tailored quotation.",
-      cta: "Request this route",
-      customTitle: "Your route is not listed? We plan custom journeys across Japan.",
+        "Use these routes as inspiration rather than fixed packages. Share your exact pickup, destination, date, group size and luggage for a personalized quote.",
+      cta: "Ask about this route",
+      customTitle: "Not seeing your route? We arrange private journeys throughout Japan.",
       customText:
-        "Ryokan stays, ski resorts, countryside addresses, multi-city travel, medical appointments, education visits, and business schedules can all be reviewed individually.",
-      customCta: "Send a custom route",
+        "We can plan journeys to ryokans, ski resorts and rural addresses, as well as multi-city travel, appointments, education visits and business schedules.",
+      customCta: "Plan a custom route",
       items: [
         {
           type: "Airport transfer",
           title: "Haneda or Narita Airport → Tokyo",
-          description: "Private arrival or departure transfer for hotels, residences, and onward connections.",
+          description: "Private airport transfers to hotels, residences and onward connections across the Tokyo area.",
         },
         {
           type: "Full-day charter",
           title: "Tokyo → Mt. Fuji & Hakone",
-          description: "A private day planned around scenery, seasonal conditions, preferred stops, and your pace.",
+          description: "A private day trip shaped around the scenery, seasonal conditions, your preferred stops and your pace.",
         },
         {
           type: "City transport",
           title: "Tokyo, Kyoto & Osaka private travel",
-          description: "Hotel, station, dining, shopping, sightseeing, event, and meeting transportation.",
+          description: "Private transport for hotels, stations, dining, shopping, sightseeing, events and meetings.",
         },
         {
           type: "Airport transfer",
           title: "Kansai Airport → Osaka or Kyoto",
-          description: "Door-to-door transfer after arrival or before departure, matched to travelers and luggage.",
+          description: "Door-to-door travel after arrival or before departure, with a vehicle matched to your group and luggage.",
         },
         {
           type: "Resort transfer",
           title: "Hokkaido airports → ski resorts",
-          description: "Private transfers for Niseko and other resort areas, reviewed around winter conditions and bags.",
+          description: "Private transfers to Niseko and other resorts, planned around winter conditions, ski equipment and luggage.",
         },
         {
           type: "Tailored itinerary",
-          title: "Medical, study & business visits",
-          description: "Schedule-focused multi-stop travel for clinics, schools, offices, factories, and exhibitions.",
+          title: "Medical, education & business visits",
+          description: "Reliable multi-stop travel for clinics, schools, offices, factories, exhibitions and other appointments.",
         },
       ],
     },
     coverage: {
-      eyebrow: "Nationwide coordination",
-      title: "Major gateways, city centers, resorts, and harder-to-reach stops.",
+      eyebrow: "Service areas",
+      title: "From major airports and city centers to resorts and rural destinations.",
       subtitle:
-        "Coverage depends on date, operator availability, route practicality, and vehicle needs. Share the journey and we will confirm what can be arranged.",
+        "Availability depends on your date, route and vehicle needs. Tell us where you are going and we will confirm what we can arrange.",
       items: [
         {
           title: "Greater Tokyo",
@@ -268,133 +268,133 @@ const homepageTranslations = {
         },
         {
           title: "Okinawa & custom regions",
-          places: "Naha · Ishigaki · Miyakojima · resort and countryside requests",
+          places: "Naha · Ishigaki · Miyakojima · Resorts and rural destinations",
         },
       ],
     },
     process: {
-      eyebrow: "Simple booking process",
-      title: "From route request to a confirmed pickup plan.",
+      eyebrow: "How it works",
+      title: "A simple path from inquiry to pickup.",
       subtitle:
-        "The service remains personal because complex Japan travel is easier to confirm with a real coordinator.",
+        "A real coordinator reviews your journey, so the important details are clear before you travel.",
       items: [
         {
-          title: "Send the trip essentials",
-          description: "Share date, pickup, destination, passengers, luggage, and any special requests.",
+          title: "Tell us about your trip",
+          description: "Share your date, pickup, destination, group size, luggage and any special requests.",
         },
         {
-          title: "We review the route",
-          description: "Travel time, stops, schedule, vehicle category, and availability are checked.",
+          title: "We plan and price the journey",
+          description: "We check travel time, stops, scheduling, vehicle options and availability.",
         },
         {
-          title: "Confirm the proposal",
-          description: "Review the service scope and quotation, then approve the arrangement that suits you.",
+          title: "Review and confirm",
+          description: "Check the itinerary, vehicle, inclusions and quote, then confirm the option that suits you.",
         },
         {
-          title: "Receive pickup details",
-          description: "Meeting point, timing, and day-of contact details are aligned before service.",
+          title: "Receive your pickup details",
+          description: "We confirm the meeting point, timing and day-of-travel contact details in advance.",
         },
       ],
     },
     trust: {
-      eyebrow: "Our service promise",
-      title: "Clear coordination before the vehicle arrives.",
+      eyebrow: "Why travel with us",
+      title: "Clear details. Reliable support. No surprises.",
       subtitle:
-        "Private transport should remove uncertainty. We focus on accurate trip information, appropriate vehicle planning, transparent confirmation, and reachable human support.",
+        "We make private travel feel straightforward with careful planning, suitable vehicle options, transparent quotes and human support when plans change.",
       notice:
-        "JP VIP Charter provides charter coordination. Final operator, vehicle, inclusions, and service terms are confirmed for each booking.",
+        "JP VIP Charter arranges private chauffeur services. Your operator, vehicle, inclusions and booking terms are confirmed before you book.",
       items: [
         {
-          title: "Eligible commercial arrangements",
+          title: "Authorized transport providers",
           description:
-            "Where required, transportation is coordinated with operators eligible to provide the quoted commercial service in Japan.",
+            "When a licensed commercial operator is required, we arrange your journey with a provider authorized to deliver the quoted service in Japan.",
         },
         {
-          title: "No invented instant fare",
+          title: "Quotes based on your actual trip",
           description:
-            "We review the real route and requirements before confirming a price, so the quote reflects the service requested.",
+            "We review your route and requirements before pricing the journey, so your quote reflects the service you need.",
         },
         {
-          title: "Language stays consistent",
+          title: "Support in your preferred language",
           description:
-            "Your inquiry and booking support continue in English, Traditional Chinese, or Arabic according to your selected language.",
+            "Your inquiry and booking support continue in English, Traditional Chinese or Arabic, based on the language you select.",
         },
         {
-          title: "Human support for changes",
+          title: "Help when plans change",
           description:
-            "If a flight, hotel, or schedule changes, contact us and we will check the available adjustment options.",
+            "If your flight, hotel or schedule changes, contact us and we will check the available options.",
         },
       ],
     },
     faq: {
-      eyebrow: "Help before booking",
-      title: "Common questions about private travel in Japan.",
+      eyebrow: "Questions before you book",
+      title: "What to know before arranging a private chauffeur in Japan.",
       subtitle:
-        "Final answers depend on your date, route, vehicle, and availability. Send us the trip if you need a precise confirmation.",
+        "Every trip is different. For an exact answer, share your date, route, group size and luggage with us.",
       items: [
         {
-          question: "Can you arrange a route that is not shown on the website?",
+          question: "Can you arrange a route that is not listed on the website?",
           answer:
-            "Yes. The routes shown are common examples. Custom airport transfers, resort trips, countryside addresses, day charters, and multi-day itineraries can be reviewed individually.",
+            "Yes. The routes shown are only examples. We can review custom airport transfers, resort journeys, rural destinations, day charters and multi-day itineraries.",
         },
         {
           question: "How is the price calculated?",
           answer:
-            "The quotation is based on the route, date, expected service time, vehicle category, passenger and luggage needs, planned stops, and special requests.",
+            "Your quote is based on the route, date, expected service time, vehicle category, group and luggage needs, planned stops and any special requests.",
         },
         {
           question: "Are tolls, parking, waiting, and extra stops included?",
           answer:
-            "Inclusions vary by booking. The quotation will state the confirmed service scope and any known additions before you approve it.",
+            "This varies by booking. Your quote will clearly list what is included and any known extra charges before you confirm.",
         },
         {
           question: "Can I request a child seat?",
           answer:
-            "Yes. Tell us the child’s age and seat type when you inquire. Availability, suitability, and any related terms are confirmed with the booking.",
+            "Yes. Tell us the child’s age and the type of seat required when you inquire. We will confirm availability, suitability and any related terms before booking.",
         },
         {
-          question: "What vehicle should I choose?",
+          question: "Which vehicle is right for my group?",
           answer:
-            "Share the number of adults and children plus the quantity and size of luggage. We will recommend a suitable vehicle category and confirm capacity.",
+            "Tell us how many adults and children are traveling, plus the number and size of your bags. We will recommend a suitable category and confirm capacity.",
         },
         {
           question: "Can the driver wait or make several stops?",
           answer:
-            "Yes, when it is included in the confirmed plan. Waiting time and multiple stops should be shared in advance so the schedule and quotation are accurate.",
+            "Yes, if this is included in the confirmed itinerary. Tell us about waiting time and extra stops in advance so we can plan the schedule and price accurately.",
         },
         {
-          question: "Do you support airport delays or itinerary changes?",
+          question: "What happens if my flight or itinerary changes?",
           answer:
-            "Send flight details for airport service and contact us as early as possible if plans change. We will check feasible adjustments and any effect on the service terms.",
+            "Send us your flight details for airport transfers and contact us as soon as possible if your plans change. We will check the available adjustments and explain any effect on your booking.",
         },
         {
-          question: "Can you support medical, school, or business visits?",
+          question: "Can you provide transport for medical, education or business visits?",
           answer:
-            "Yes. Transportation can be planned around appointments and multi-stop schedules. JP VIP Charter coordinates transport and does not provide medical, education, or professional advice.",
+            "Yes. We can plan transport around appointments and multi-stop schedules. JP VIP Charter arranges transportation only and does not provide medical, education or professional advice.",
         },
         {
-          question: "Which languages can I use?",
+          question: "Which languages do you support?",
           answer:
-            "Inquiry support is available in English, Traditional Chinese, and Arabic. Driver language depends on availability and is confirmed separately when requested.",
+            "Inquiry support is available in English, Traditional Chinese and Arabic. Driver language depends on availability and is confirmed separately if requested.",
         },
         {
-          question: "How early should I contact you?",
+          question: "How far in advance should I book?",
           answer:
-            "Earlier is better, especially for holidays, cherry blossom and autumn seasons, winter resorts, large groups, and multi-day travel.",
+            "The earlier, the better—especially during public holidays, cherry blossom and autumn foliage seasons, ski season, or for large groups and multi-day journeys.",
         },
       ],
     },
     form: {
-      eyebrow: "Tailored trip request",
-      title: "Share the journey and continue with a real coordinator.",
+      eyebrow: "Request a personalized quote",
+      title: "Tell us about your journey.",
       subtitle:
-        "Give us enough detail to review the right route and vehicle before the WhatsApp conversation starts.",
+        "Share the trip details so a real coordinator can review the route, vehicle and availability before you continue on WhatsApp.",
       notice:
-        "Please include exact pickup and destination, date, passenger count, luggage, desired service time, child-seat needs, and planned stops if known.",
+        "If known, include the exact pickup and destination, travel date, group size, luggage, preferred timing, child-seat requirements and any planned stops.",
     },
     footer: {
       disclaimer:
-        "Private chauffeur coordination across Japan. Routes, vehicles, availability, and prices are confirmed individually.",
+        "Private chauffeur services across Japan. Every route, vehicle, inclusion and price is confirmed before booking.",
     },
   },
   "zh-hk": {
