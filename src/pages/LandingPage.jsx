@@ -32,13 +32,18 @@ const processIcons = [MessageCircle, ClipboardCheck, Car];
 function QuickPlanner({ language }) {
   const { t } = useTranslation();
   const serviceOptions = t("quickQuote.serviceOptions", { returnObjects: true });
+  const airportPickupOptions = t("quickQuote.airportPickupOptions", { returnObjects: true });
   const [trip, setTrip] = useState({
-    service: serviceOptions[0]?.label || "",
+    serviceId: serviceOptions[0]?.id || "airport",
     pickup: "",
     destination: "",
     date: "",
     passengers: "",
   });
+  const selectedService =
+    serviceOptions.find((option) => option.id === trip.serviceId) || serviceOptions[0];
+  const serviceLabel = selectedService?.label || "";
+  const isAirportService = trip.serviceId === "airport";
 
   function updateField(field, value) {
     setTrip((current) => ({ ...current, [field]: value }));
@@ -46,14 +51,14 @@ function QuickPlanner({ language }) {
 
   function submitTrip(event) {
     event.preventDefault();
-    trackButtonClick("hero_trip_planner", { language, service_type: trip.service });
+    trackButtonClick("hero_trip_planner", { language, service_type: serviceLabel });
     trackEvent("whatsapp_click", {
       language,
-      service_type: trip.service,
+      service_type: serviceLabel,
       source: "hero_trip_planner",
     });
     window.open(
-      getWhatsAppUrl(buildTripWhatsAppMessage(trip, language)),
+      getWhatsAppUrl(buildTripWhatsAppMessage({ ...trip, service: serviceLabel }, language)),
       "_blank",
       "noopener,noreferrer"
     );
@@ -69,10 +74,11 @@ function QuickPlanner({ language }) {
         {serviceOptions.map((option) => (
           <button
             type="button"
-            key={option.label}
-            onClick={() => updateField("service", option.label)}
+            key={option.id}
+            aria-pressed={trip.serviceId === option.id}
+            onClick={() => updateField("serviceId", option.id)}
             className={
-              trip.service === option.label
+              trip.serviceId === option.id
                 ? "planner-option planner-option-active"
                 : "planner-option"
             }
@@ -83,15 +89,40 @@ function QuickPlanner({ language }) {
       </div>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
-        <label className="planner-field">
-          <span>{t("quickQuote.fields.pickup")}</span>
-          <input
-            required
-            value={trip.pickup}
-            onChange={(event) => updateField("pickup", event.target.value)}
-            placeholder={t("quickQuote.placeholders.pickup")}
-          />
-        </label>
+        <div className="planner-field">
+          <label htmlFor={`hero-pickup-${language}`}>
+            <span>{t("quickQuote.fields.pickup")}</span>
+            <input
+              id={`hero-pickup-${language}`}
+              required
+              value={trip.pickup}
+              onChange={(event) => updateField("pickup", event.target.value)}
+              placeholder={t("quickQuote.placeholders.pickup")}
+            />
+          </label>
+          {isAirportService && Array.isArray(airportPickupOptions) && (
+            <div
+              className="planner-preset-list"
+              aria-label={t("quickQuote.airportPickupLabel")}
+            >
+              {airportPickupOptions.map((option) => (
+                <button
+                  type="button"
+                  key={option}
+                  aria-pressed={trip.pickup === option}
+                  onClick={() => updateField("pickup", option)}
+                  className={
+                    trip.pickup === option
+                      ? "planner-preset planner-preset-active"
+                      : "planner-preset"
+                  }
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
         <label className="planner-field">
           <span>{t("quickQuote.fields.destination")}</span>
           <input

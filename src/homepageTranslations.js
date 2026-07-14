@@ -51,10 +51,12 @@ const homepageTranslations = {
       subtitle:
         "Share the basics and a travel coordinator will check availability, recommend the right vehicle and prepare a clear quote.",
       serviceOptions: [
-        { label: "Airport" },
-        { label: "Transfer" },
-        { label: "Charter" },
+        { id: "airport", label: "Airport" },
+        { id: "transfer", label: "Transfer" },
+        { id: "charter", label: "Charter" },
       ],
+      airportPickupLabel: "Popular airport and port pickup points",
+      airportPickupOptions: ["Narita Airport (NRT)", "Haneda Airport (HND)", "Yokohama Port"],
       fields: {
         pickup: "Pickup location",
         destination: "Drop-off location",
@@ -449,10 +451,12 @@ const homepageTranslations = {
       subtitle:
         "提供基本行程資料，專人會確認能否安排、建議合適車型，並提供清晰報價。",
       serviceOptions: [
-        { label: "機場接送" },
-        { label: "私人接送" },
-        { label: "私人包車" },
+        { id: "airport", label: "機場接送" },
+        { id: "transfer", label: "私人接送" },
+        { id: "charter", label: "私人包車" },
       ],
+      airportPickupLabel: "常用機場及碼頭上車地點",
+      airportPickupOptions: ["成田機場（NRT）", "羽田機場（HND）", "橫濱港"],
       fields: {
         pickup: "上車地點",
         destination: "目的地",
@@ -678,10 +682,12 @@ const homepageTranslations = {
       subtitle:
         "أرسل التفاصيل الأساسية، وسيتحقق منسق الرحلة من التوفر ويقترح المركبة المناسبة ويجهز لك عرض سعر واضحاً.",
       serviceOptions: [
-        { label: "المطار" },
-        { label: "تنقل خاص" },
-        { label: "سيارة خاصة" },
+        { id: "airport", label: "المطار" },
+        { id: "transfer", label: "تنقل خاص" },
+        { id: "charter", label: "سيارة خاصة" },
       ],
+      airportPickupLabel: "نقاط استقبال شائعة من المطارات والميناء",
+      airportPickupOptions: ["مطار ناريتا (NRT)", "مطار هانيدا (HND)", "ميناء يوكوهاما"],
       fields: {
         pickup: "موقع الاستقبال",
         destination: "موقع الوصول",
