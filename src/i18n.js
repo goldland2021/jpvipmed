@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import homepageTranslations from "./homepageTranslations";
 
 const resources = {
   en: {
@@ -852,6 +853,26 @@ const resources = {
     },
   },
 };
+
+Object.entries(homepageTranslations).forEach(([language, translation]) => {
+  const current = resources[language].translation;
+  resources[language].translation = {
+    ...current,
+    ...translation,
+    form: {
+      ...current.form,
+      ...translation.form,
+      fields: {
+        ...current.form.fields,
+        ...translation.form?.fields,
+      },
+      errors: {
+        ...current.form.errors,
+        ...translation.form?.errors,
+      },
+    },
+  };
+});
 
 i18n.use(initReactI18next).init({
   resources,

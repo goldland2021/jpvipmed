@@ -2,24 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jpvipmedical.com/en</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jpvipmedical.com/en"/>
-    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://jpvipmedical.com/zh-hk"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://jpvipmedical.com/ar"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpvipmedical.com/zh-hk"/>
+    <loc>https://www.jpairport.jp/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en"/>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk"/>
   </url>
   <url>
-    <loc>https://jpvipmedical.com/zh-hk</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jpvipmedical.com/en"/>
-    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://jpvipmedical.com/zh-hk"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://jpvipmedical.com/ar"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpvipmedical.com/zh-hk"/>
+    <loc>https://www.jpairport.jp/zh-hk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en"/>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk"/>
   </url>
   <url>
-    <loc>https://jpvipmedical.com/ar</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jpvipmedical.com/en"/>
-    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://jpvipmedical.com/zh-hk"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://jpvipmedical.com/ar"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jpvipmedical.com/zh-hk"/>
+    <loc>https://www.jpairport.jp/ar</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en"/>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk"/>
   </url>
 </urlset>

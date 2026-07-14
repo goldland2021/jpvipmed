@@ -51,7 +51,7 @@
   .btn-secondary-dark,
   .btn-secondary-light,
   .btn-card {
-    @apply inline-flex min-h-12 items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex min-h-12 items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   .btn-primary {
@@ -74,11 +74,19 @@
   .advantage-tile,
   .process-step,
   .trust-item {
-    @apply rounded-md border p-5;
+    @apply rounded-xl border p-5;
   }
 
   .service-card {
-    @apply flex min-h-[360px] flex-col border-slate-200 bg-white shadow-soft;
+    @apply flex min-h-[390px] flex-col border-slate-200 bg-white p-6 shadow-soft;
+  }
+
+  .service-icon-wrap {
+    @apply grid h-12 w-12 place-items-center rounded-xl bg-midnight;
+  }
+
+  .service-label {
+    @apply mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-gold;
   }
 
   .service-card h3,
@@ -86,6 +94,10 @@
   .process-step h3,
   .trust-item h3 {
     @apply mt-4 text-lg font-semibold text-midnight;
+  }
+
+  .service-card .service-label + h3 {
+    @apply mt-2 text-xl;
   }
 
   .service-card p,
@@ -132,6 +144,118 @@
 
   .faq-row {
     @apply bg-white px-5 py-4;
+  }
+
+  .hero-planner {
+    @apply rounded-2xl border border-white/15 bg-white p-5 text-start text-ink shadow-soft sm:p-7;
+  }
+
+  .hero-planner h2 {
+    @apply mt-2 text-2xl font-semibold text-midnight sm:text-3xl;
+  }
+
+  .hero-planner-intro {
+    @apply mt-3 text-sm leading-6 text-slate-600;
+  }
+
+  .planner-option {
+    @apply min-h-10 rounded-lg border border-slate-200 bg-white px-2 py-2 text-xs font-semibold text-slate-600 transition hover:border-gold;
+  }
+
+  .planner-option-active {
+    @apply border-midnight bg-midnight text-white;
+  }
+
+  .planner-field {
+    @apply block text-xs font-semibold text-midnight;
+  }
+
+  .planner-field span {
+    @apply mb-2 block;
+  }
+
+  .planner-field input {
+    @apply min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm font-normal text-ink outline-none transition placeholder:text-slate-400 focus:border-gold focus:ring-2 focus:ring-gold/25;
+  }
+
+  .highlight-item {
+    @apply flex gap-4 p-5 md:border-e md:border-slate-200 md:last:border-e-0 lg:p-6;
+  }
+
+  .highlight-item h2 {
+    @apply text-base font-semibold text-midnight;
+  }
+
+  .highlight-item p {
+    @apply mt-2 text-sm leading-6 text-slate-600;
+  }
+
+  .included-card {
+    @apply rounded-xl border border-slate-200 bg-white p-5;
+  }
+
+  .included-card h3 {
+    @apply mt-4 text-lg font-semibold text-midnight;
+  }
+
+  .included-card p {
+    @apply mt-3 text-sm leading-7 text-slate-600;
+  }
+
+  .section-heading-dark h2 {
+    @apply text-white;
+  }
+
+  .section-heading-dark p:last-child {
+    @apply text-white/70;
+  }
+
+  .vehicle-card {
+    @apply rounded-xl border border-white/10 bg-white/5 p-6;
+  }
+
+  .vehicle-card h3 {
+    @apply mt-5 text-xl font-semibold text-white;
+  }
+
+  .vehicle-card p {
+    @apply mt-3 text-sm leading-7 text-white/70;
+  }
+
+  .vehicle-card span {
+    @apply mt-5 inline-block rounded-full border border-gold/30 px-3 py-1.5 text-xs font-semibold text-gold;
+  }
+
+  .route-card {
+    @apply flex min-h-[270px] flex-col rounded-xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-gold hover:shadow-soft;
+  }
+
+  .route-card > div span {
+    @apply rounded-full bg-porcelain px-3 py-1 text-xs font-semibold text-slate-600;
+  }
+
+  .route-card h3 {
+    @apply mt-6 text-lg font-semibold text-midnight;
+  }
+
+  .route-card p {
+    @apply mt-3 text-sm leading-7 text-slate-600;
+  }
+
+  .route-link {
+    @apply mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-midnight transition hover:text-gold;
+  }
+
+  .coverage-card {
+    @apply rounded-xl border border-slate-200 bg-white p-5;
+  }
+
+  .coverage-card h3 {
+    @apply mt-4 text-lg font-semibold text-midnight;
+  }
+
+  .coverage-card p {
+    @apply mt-3 text-sm leading-7 text-slate-600;
   }
 
   .faq-row summary {
@@ -182,7 +306,8 @@
 }
 
 html[dir="rtl"] .section-heading,
-html[dir="rtl"] .lead-form {
+html[dir="rtl"] .lead-form,
+html[dir="rtl"] .hero-planner {
   text-align: right;
 }
 
