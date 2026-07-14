@@ -32,7 +32,7 @@ const processIcons = [MessageCircle, ClipboardCheck, Car];
 function QuickPlanner({ language }) {
   const { t } = useTranslation();
   const serviceOptions = t("quickQuote.serviceOptions", { returnObjects: true });
-  const airportPickupOptions = t("quickQuote.airportPickupOptions", { returnObjects: true });
+  const airportLocationOptions = t("quickQuote.airportLocationOptions", { returnObjects: true });
   const [trip, setTrip] = useState({
     serviceId: serviceOptions[0]?.id || "airport",
     pickup: "",
@@ -100,17 +100,18 @@ function QuickPlanner({ language }) {
               placeholder={t("quickQuote.placeholders.pickup")}
             />
           </label>
-          {isAirportService && Array.isArray(airportPickupOptions) && (
+          {isAirportService && Array.isArray(airportLocationOptions) && (
             <select
               className="planner-preset-select"
+              data-testid="airport-pickup-select"
               aria-label={t("quickQuote.airportPickupLabel")}
-              value={airportPickupOptions.includes(trip.pickup) ? trip.pickup : ""}
+              value={airportLocationOptions.includes(trip.pickup) ? trip.pickup : ""}
               onChange={(event) => updateField("pickup", event.target.value)}
             >
               <option value="" disabled>
                 {t("quickQuote.airportPickupPlaceholder")}
               </option>
-              {airportPickupOptions.map((option) => (
+              {airportLocationOptions.map((option) => (
                 <option key={option} value={option}>
                   {option}
                 </option>
@@ -118,15 +119,38 @@ function QuickPlanner({ language }) {
             </select>
           )}
         </div>
-        <label className="planner-field">
-          <span>{t("quickQuote.fields.destination")}</span>
-          <input
-            required
-            value={trip.destination}
-            onChange={(event) => updateField("destination", event.target.value)}
-            placeholder={t("quickQuote.placeholders.destination")}
-          />
-        </label>
+        <div className="planner-field">
+          <label htmlFor={`hero-destination-${language}`}>
+            <span>{t("quickQuote.fields.destination")}</span>
+            <input
+              id={`hero-destination-${language}`}
+              required
+              value={trip.destination}
+              onChange={(event) => updateField("destination", event.target.value)}
+              placeholder={t("quickQuote.placeholders.destination")}
+            />
+          </label>
+          {isAirportService && Array.isArray(airportLocationOptions) && (
+            <select
+              className="planner-preset-select"
+              data-testid="airport-dropoff-select"
+              aria-label={t("quickQuote.airportDropoffLabel")}
+              value={
+                airportLocationOptions.includes(trip.destination) ? trip.destination : ""
+              }
+              onChange={(event) => updateField("destination", event.target.value)}
+            >
+              <option value="" disabled>
+                {t("quickQuote.airportDropoffPlaceholder")}
+              </option>
+              {airportLocationOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          )}
+        </div>
         <label className="planner-field">
           <span>{t("quickQuote.fields.date")}</span>
           <input
