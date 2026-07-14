@@ -239,6 +239,18 @@
     @apply border-midnight bg-midnight text-white;
   }
 
+  .planner-preset-list {
+    @apply mt-2 flex flex-wrap gap-1.5;
+  }
+
+  .planner-preset {
+    @apply rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[11px] font-medium leading-4 text-slate-600 transition hover:border-gold hover:bg-gold/10 hover:text-midnight;
+  }
+
+  .planner-preset-active {
+    @apply border-gold bg-gold/15 text-midnight;
+  }
+
   .planner-field {
     @apply block text-xs font-semibold text-midnight;
   }
