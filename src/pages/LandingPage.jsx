@@ -8,7 +8,6 @@ import {
   MessageCircle,
   Mountain,
   Plane,
-  Sparkles,
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -23,7 +22,6 @@ import { buildTripWhatsAppMessage, getWhatsAppUrl } from "../lib/whatsapp";
 import { localizedPath } from "../pageConfig";
 
 const highlightIcons = [Plane, Baby, Car];
-const serviceIcons = [Plane, Car, Sparkles];
 const routeIcons = [Plane, Mountain, Building2];
 
 function QuickPlanner({ language }) {
@@ -277,7 +275,6 @@ function QuickPlanner({ language }) {
 export default function LandingPage({ language }) {
   const { t } = useTranslation();
   const highlights = t("highlights.items", { returnObjects: true });
-  const services = t("services.items", { returnObjects: true });
   const routes = t("routes.items", { returnObjects: true }).slice(0, 3);
   const trust = t("trust.items", { returnObjects: true });
   const faqs = t("faq.items", { returnObjects: true }).slice(0, 4);
@@ -352,33 +349,6 @@ export default function LandingPage({ language }) {
                       <h2>{item.title}</h2>
                       <p>{item.description}</p>
                     </div>
-                  </article>
-                );
-              })}
-            </div>
-          </section>
-
-          <section className="section-shell bg-white pt-24">
-            <div className="section-heading">
-              <p className="eyebrow">{t("services.eyebrow")}</p>
-              <h2>{t("services.title")}</h2>
-              <p>{t("services.subtitle")}</p>
-            </div>
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
-              {services.map((service, index) => {
-                const Icon = serviceIcons[index] || Car;
-                return (
-                  <article key={service.title} className="service-card home-preview-card">
-                    <div className="service-icon-wrap">
-                      <Icon className="h-7 w-7 text-gold" aria-hidden="true" />
-                    </div>
-                    <p className="service-label">{service.label}</p>
-                    <h3>{service.title}</h3>
-                    <p>{service.description}</p>
-                    <Link to={localizedPath(language, "services")} className="btn-card">
-                      <span>{t("pageLinks.services")}</span>
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </Link>
                   </article>
                 );
               })}
