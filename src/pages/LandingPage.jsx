@@ -277,7 +277,6 @@ export default function LandingPage({ language }) {
   const highlights = t("highlights.items", { returnObjects: true });
   const routes = t("routes.items", { returnObjects: true }).slice(0, 3);
   const trust = t("trust.items", { returnObjects: true });
-  const faqs = t("faq.items", { returnObjects: true }).slice(0, 4);
 
   const heroStyle = useMemo(
     () => ({
@@ -400,28 +399,6 @@ export default function LandingPage({ language }) {
             <p className="mx-auto mt-7 max-w-4xl border-s-2 border-gold ps-4 text-sm leading-7 text-white/60">
               {t("trust.notice")}
             </p>
-          </section>
-
-          <section className="section-shell bg-porcelain">
-            <div className="section-heading">
-              <p className="eyebrow">{t("faq.eyebrow")}</p>
-              <h2>{t("faq.title")}</h2>
-              <p>{t("faq.subtitle")}</p>
-            </div>
-            <div className="mx-auto mt-10 max-w-4xl divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200">
-              {faqs.map((item) => (
-                <details key={item.question} className="faq-row">
-                  <summary>{item.question}</summary>
-                  <p>{item.answer}</p>
-                </details>
-              ))}
-            </div>
-            <div className="mt-8 text-center">
-              <Link to={localizedPath(language, "faq")} className="btn-secondary-light">
-                <span>{t("pageLinks.faq")}</span>
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            </div>
           </section>
 
           <section className="section-shell bg-white">
