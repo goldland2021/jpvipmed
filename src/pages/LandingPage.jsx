@@ -5,7 +5,6 @@ import {
   CalendarCheck,
   Car,
   CheckCircle2,
-  ClipboardCheck,
   MessageCircle,
   Mountain,
   Plane,
@@ -26,7 +25,6 @@ import { localizedPath } from "../pageConfig";
 const highlightIcons = [Plane, Baby, Car];
 const serviceIcons = [Plane, Car, Sparkles];
 const routeIcons = [Plane, Mountain, Building2];
-const processIcons = [MessageCircle, ClipboardCheck, Car];
 
 function QuickPlanner({ language }) {
   const { t } = useTranslation();
@@ -281,7 +279,6 @@ export default function LandingPage({ language }) {
   const highlights = t("highlights.items", { returnObjects: true });
   const services = t("services.items", { returnObjects: true });
   const routes = t("routes.items", { returnObjects: true }).slice(0, 3);
-  const process = t("process.items", { returnObjects: true });
   const trust = t("trust.items", { returnObjects: true });
   const faqs = t("faq.items", { returnObjects: true }).slice(0, 4);
 
@@ -415,30 +412,6 @@ export default function LandingPage({ language }) {
             </div>
           </section>
 
-          <section id="booking-process" className="section-shell scroll-mt-24 bg-white">
-            <div className="section-heading">
-              <p className="eyebrow">{t("process.eyebrow")}</p>
-              <h2>{t("process.title")}</h2>
-              <p>{t("process.subtitle")}</p>
-            </div>
-            <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-3">
-              {process.map((step, index) => {
-                const Icon = processIcons[index] || ArrowRight;
-                return (
-                  <article key={step.title} className="process-step">
-                    <span>{index + 1}</span>
-                    <Icon className="mt-5 h-7 w-7 text-gold" aria-hidden="true" />
-                    <h3>{step.title}</h3>
-                    <p>{step.description}</p>
-                  </article>
-                );
-              })}
-            </div>
-            <p className="mx-auto mt-7 max-w-4xl border-s-2 border-gold ps-4 text-sm leading-7 text-slate-500">
-              {t("trust.notice")}
-            </p>
-          </section>
-
           <section className="section-shell bg-midnight text-white">
             <div className="section-heading section-heading-dark">
               <p className="eyebrow">{t("trust.eyebrow")}</p>
@@ -454,6 +427,9 @@ export default function LandingPage({ language }) {
                 </article>
               ))}
             </div>
+            <p className="mx-auto mt-7 max-w-4xl border-s-2 border-gold ps-4 text-sm leading-7 text-white/60">
+              {t("trust.notice")}
+            </p>
           </section>
 
           <section className="section-shell bg-porcelain">
