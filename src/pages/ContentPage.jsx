@@ -19,6 +19,7 @@ import {
   Users,
   Waves,
 } from "lucide-react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
@@ -27,13 +28,10 @@ import Seo from "../components/Seo";
 import SiteFooter from "../components/SiteFooter";
 import WhatsAppButton from "../components/WhatsAppButton";
 import WorkflowAiPilot from "../components/WorkflowAiPilot";
+import { formatYen, sortWardsByFare } from "../data/tokyoWards";
 import { localizedPath, pageConfig } from "../pageConfig";
 
-const routeFares = [12000, 60000, 11000, 22000, 35000, 60000];
-
-function formatYen(value) {
-  return `¥${new Intl.NumberFormat("en-US").format(value)}`;
-}
+const routeFares = [10000, 60000, 11000, 22000, 35000, 60000];
 
 const includedIcons = [Navigation, Luggage, MapPin, Clock3, Languages, ReceiptText];
 const serviceIcons = [Plane, Car, CalendarCheck];
@@ -192,6 +190,127 @@ function ServicesContent({ language }) {
   );
 }
 
+function TokyoWardPricing({ language }) {
+  const { t } = useTranslation();
+  const [airport, setAirport] = useState("hnd");
+  const [sortOrder, setSortOrder] = useState("asc");
+
+  const wards = useMemo(
+    () => sortWardsByFare(airport, sortOrder),
+    [airport, sortOrder]
+  );
+
+  return (
+    <section className="section-shell bg-porcelain" id="tokyo-wards">
+      <div className="section-heading max-w-3xl">
+        <p className="eyebrow">{t("routes.tokyoWards.eyebrow")}</p>
+        <h2>{t("routes.tokyoWards.title")}</h2>
+        <p>{t("routes.tokyoWards.subtitle")}</p>
+      </div>
+
+      <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft sm:flex-row sm:flex-wrap sm:items-end sm:justify-between sm:p-6">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            {t("routes.tokyoWards.airportLabel")}
+          </p>
+          <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label={t("routes.tokyoWards.airportLabel")}>
+            {[
+              { id: "hnd", label: t("routes.tokyoWards.hndLabel") },
+              { id: "nrt", label: t("routes.tokyoWards.nrtLabel") },
+            ].map((option) => (
+              <button
+                key={option.id}
+                type="button"
+                aria-pressed={airport === option.id}
+                onClick={() => setAirport(option.id)}
+                className={
+                  airport === option.id
+                    ? "ward-airport-btn ward-airport-btn-active"
+                    : "ward-airport-btn"
+                }
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <label className="block min-w-[200px]">
+          <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            {t("routes.tokyoWards.sortLabel")}
+          </span>
+          <select
+            className="ward-sort-select mt-2 w-full"
+            value={sortOrder}
+            onChange={(event) => setSortOrder(event.target.value)}
+          >
+            <option value="asc">{t("routes.tokyoWards.sortAsc")}</option>
+            <option value="desc">{t("routes.tokyoWards.sortDesc")}</option>
+          </select>
+        </label>
+      </div>
+
+      <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft">
+        <div className="ward-table-scroll">
+          <table className="ward-table">
+            <thead>
+              <tr>
+                <th scope="col">{t("routes.tokyoWards.wardColumn")}</th>
+                <th scope="col">{t("routes.tokyoWards.fareColumn")}</th>
+                <th scope="col" className="ward-table-action">
+                  <span className="sr-only">{t("routes.tokyoWards.cta")}</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {wards.map((ward) => {
+                const wardName = t(`routes.tokyoWards.wards.${ward.id}`);
+                const fare = airport === "nrt" ? ward.nrt : ward.hnd;
+                const airportLabel =
+                  airport === "nrt"
+                    ? t("routes.tokyoWards.nrtLabel")
+                    : t("routes.tokyoWards.hndLabel");
+                const serviceName = `${airportLabel} → ${wardName}`;
+
+                return (
+                  <tr key={ward.id}>
+                    <td>
+                      <div className="font-semibold text-midnight">{wardName}</div>
+                      <div className="mt-0.5 text-xs text-slate-500">
+                        {t("routes.tokyoWards.direction", { ward: wardName })}
+                      </div>
+                    </td>
+                    <td>
+                      <span className="text-lg font-semibold text-midnight">
+                        {formatYen(fare)}
+                      </span>
+                    </td>
+                    <td className="ward-table-action">
+                      <WhatsAppButton
+                        language={language}
+                        serviceName={serviceName}
+                        label={t("routes.tokyoWards.cta")}
+                        buttonName="tokyo_ward_quote"
+                        className="ward-quote-btn"
+                      />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p className="mt-5 text-sm leading-7 text-slate-600">
+        {t("routes.tokyoWards.includes")}
+      </p>
+      <p className="mt-2 text-sm leading-7 text-slate-500">
+        {t("routes.tokyoWards.note")}
+      </p>
+    </section>
+  );
+}
+
 function RoutesContent({ language }) {
   const { t } = useTranslation();
   const routes = t("routes.items", { returnObjects: true });
@@ -199,8 +318,15 @@ function RoutesContent({ language }) {
 
   return (
     <>
+      <TokyoWardPricing language={language} />
+
       <section className="section-shell bg-white">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="section-heading max-w-3xl">
+          <p className="eyebrow">{t("routes.eyebrow")}</p>
+          <h2>{t("routes.title")}</h2>
+          <p>{t("routes.subtitle")}</p>
+        </div>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {routes.map((item, index) => {
             const Icon = routeIcons[index] || MapPin;
             return (
