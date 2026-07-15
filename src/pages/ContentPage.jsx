@@ -29,6 +29,12 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import WorkflowAiPilot from "../components/WorkflowAiPilot";
 import { localizedPath, pageConfig } from "../pageConfig";
 
+const routeFares = [12000, 60000, 11000, 22000, 35000, 60000];
+
+function formatYen(value) {
+  return `¥${new Intl.NumberFormat("en-US").format(value)}`;
+}
+
 const includedIcons = [Navigation, Luggage, MapPin, Clock3, Languages, ReceiptText];
 const serviceIcons = [Plane, Car, CalendarCheck];
 const vehicleIcons = [Car, Users, BadgeCheck];
@@ -204,6 +210,15 @@ function RoutesContent({ language }) {
                   <span>{item.type}</span>
                 </div>
                 <h2 className="mt-6 text-lg font-semibold text-midnight">{item.title}</h2>
+                {routeFares[index] ? (
+                  <p className="mt-2 text-sm text-slate-500">
+                    {t("routes.from")}{" "}
+                    <span className="text-lg font-semibold text-midnight">
+                      {formatYen(routeFares[index])}
+                    </span>{" "}
+                    JPY
+                  </p>
+                ) : null}
                 <p>{item.description}</p>
                 <WhatsAppButton
                   language={language}
@@ -218,6 +233,9 @@ function RoutesContent({ language }) {
             );
           })}
         </div>
+        <p className="mt-6 text-center text-sm leading-6 text-slate-500">
+          {t("routes.refNote")}
+        </p>
         <div className="mt-8 rounded-xl bg-porcelain p-6 text-center">
           <h2 className="text-xl font-semibold text-midnight">{t("routes.customTitle")}</h2>
           <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 text-slate-600">
@@ -271,6 +289,35 @@ function FaqContent({ language }) {
   );
 }
 
+function LegalContent({ language, doc }) {
+  const { t } = useTranslation();
+  const sections = t(`legal.${doc}.sections`, { returnObjects: true });
+
+  return (
+    <>
+      <section className="section-shell bg-white">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-sm text-slate-500">{t("legal.updated")}</p>
+          <div className="mt-8 space-y-8">
+            {sections.map((section, index) => (
+              <div key={section.heading}>
+                <h2 className="text-xl font-semibold text-midnight">
+                  {index + 1}. {section.heading}
+                </h2>
+                <p className="mt-3 leading-8 text-slate-600">{section.body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 rounded-xl border border-gold/30 bg-porcelain p-5 text-sm leading-7 text-slate-700">
+            {t("legal.contact")}
+          </p>
+        </div>
+      </section>
+      <QuoteCta language={language} />
+    </>
+  );
+}
+
 function QuoteContent({ language }) {
   const { t } = useTranslation();
   const services = t("services.items", { returnObjects: true });
@@ -303,6 +350,8 @@ export default function ContentPage({ language, page }) {
     routes: <RoutesContent language={language} />,
     faq: <FaqContent language={language} />,
     "request-quote": <QuoteContent language={language} />,
+    privacy: <LegalContent language={language} doc="privacy" />,
+    terms: <LegalContent language={language} doc="terms" />,
   }[page];
 
   return (

@@ -10,7 +10,44 @@ const homepageTranslations = {
       routes: { title: "Popular Private Transfer Routes in Japan" },
       faq: { title: "Private Chauffeur FAQs for Japan" },
       quote: { title: "Request a Private Chauffeur Quote in Japan" },
+      privacy: { title: "Privacy Policy | JP VIP Charter" },
+      terms: { title: "Terms of Service | JP VIP Charter" },
     },
+    legal: {
+      eyebrow: "Legal",
+      updated: "Last updated: July 15, 2026",
+      contact:
+        "Questions about this page? Contact us on WhatsApp or through the quote form and we will respond promptly.",
+      privacy: {
+        title: "Privacy Policy",
+        intro:
+          "This policy explains what information JP VIP Charter collects when you use this website, and how we use and protect it.",
+        sections: [
+          { heading: "Information we collect", body: "When you submit the quote form we collect your name, country or region, WhatsApp number, preferred travel month, service type, and your message. We also record basic marketing attribution (such as the ad click identifier and traffic source) and your chosen language." },
+          { heading: "How we use your information", body: "We use your information only to respond to your inquiry, prepare quotes, coordinate charter services, and understand which marketing channels work. We do not sell your personal information." },
+          { heading: "Storage and security", body: "Inquiry records are stored in Supabase with row-level security policies. Access is limited to authorized staff. We keep records only as long as needed to serve you and meet legal obligations." },
+          { heading: "Third-party services", body: "This site uses WhatsApp (Meta) for consultation, Google Analytics and Google Ads for traffic measurement, Google reCAPTCHA for spam protection, and Supabase for data storage. Each provider processes data under its own privacy policy." },
+          { heading: "Cookies and analytics", body: "We use cookies and similar technologies for analytics and advertising measurement. You can limit cookies in your browser settings; the site remains usable without them." },
+          { heading: "Your rights", body: "You may request access to, correction of, or deletion of your personal information at any time by contacting us on WhatsApp. We will respond within a reasonable period." },
+          { heading: "Changes to this policy", body: "We may update this policy as the service evolves. The latest version is always published on this page with the update date shown above." },
+        ],
+      },
+      terms: {
+        title: "Terms of Service",
+        intro:
+          "These terms apply to consultations and charter arrangements made through this website.",
+        sections: [
+          { heading: "Nature of the service", body: "JP VIP Charter coordinates premium private charter services in Japan. Rides are fulfilled by licensed Japanese partner operators. We are not a medical provider, school, travel agency, or investment adviser." },
+          { heading: "Quotes and confirmation", body: "Fares shown on this site are Japanese-yen reference fares. Every booking is confirmed manually on WhatsApp after we review the date, route, vehicle, luggage, and exact addresses. No arrangement is final until we confirm it in writing on WhatsApp." },
+          { heading: "Payment", body: "Payment method and timing are agreed during confirmation on WhatsApp. No payment is collected through this website." },
+          { heading: "Changes and cancellation", body: "Contact us on WhatsApp as early as possible if your plans change. Changes are accommodated subject to availability. Cancellation terms are stated in your booking confirmation." },
+          { heading: "Airport waiting and extras", body: "For airport pickups with flight details shared in advance, the driver waits free for 90 minutes after landing. Additional waiting, added stops, late-night pickups, or route changes may incur extra charges, which we confirm before they apply." },
+          { heading: "Liability", body: "Transport is provided by licensed partner operators with commercial insurance. We are not liable for delays caused by weather, traffic, force majeure, or inaccurate information provided at booking." },
+          { heading: "Language versions", body: "This site is published in English, Traditional Chinese, and Arabic. If versions differ, the English version prevails for interpreting these terms." },
+        ],
+      },
+    },
+
     navigation: {
       label: "Main navigation",
       menu: "Open menu",
@@ -250,6 +287,9 @@ const homepageTranslations = {
       subtitle:
         "Use these routes as inspiration rather than fixed packages. Share your exact pickup, destination, date, group size and luggage for a personalized quote.",
       cta: "Ask about this route",
+      from: "From",
+      refNote:
+        "Reference fares in Japanese yen. The final quote depends on date, vehicle, luggage, and exact addresses, and is confirmed personally before you book.",
       customTitle: "Not seeing your route? We arrange private journeys throughout Japan.",
       customText:
         "We can plan journeys to ryokans, ski resorts and rural addresses, as well as multi-city travel, appointments, education visits and business schedules.",
@@ -459,7 +499,41 @@ const homepageTranslations = {
       routes: { title: "日本私人接送及包車路線" },
       faq: { title: "日本私人司機常見問題" },
       quote: { title: "索取日本私人司機服務報價" },
+      privacy: { title: "私隱政策 | JP VIP Charter" },
+      terms: { title: "服務條款 | JP VIP Charter" },
     },
+    legal: {
+      eyebrow: "法律條款",
+      updated: "最後更新：2026 年 7 月 15 日",
+      contact: "對本頁內容有疑問？請通過 WhatsApp 或報價表單聯絡我們，我們會盡快回覆。",
+      privacy: {
+        title: "私隱政策",
+        intro: "本政策說明 JP VIP Charter 在您使用本網站時收集哪些資料，以及我們如何使用和保護這些資料。",
+        sections: [
+          { heading: "我們收集的資料", body: "提交報價表單時，我們會收集您的姓名、國家或地區、WhatsApp 號碼、預計出發月份、服務類型及留言內容，並記錄基本的營銷歸因資料（如廣告點擊標識與流量來源）及您選擇的語言。" },
+          { heading: "資料的使用方式", body: "您的資料僅用於回覆諮詢、提供報價、協調用車服務，以及了解營銷渠道效果。我們不會出售您的個人資料。" },
+          { heading: "儲存與安全", body: "諮詢記錄儲存於 Supabase，並設有行級安全（RLS）權限策略，僅授權人員可存取。資料僅在服務所需及法律要求的期間內保留。" },
+          { heading: "第三方服務", body: "本網站使用 WhatsApp（Meta）進行諮詢溝通、Google Analytics 及 Google Ads 進行流量統計、Google reCAPTCHA 防止垃圾提交、Supabase 儲存資料。各服務商按其私隱政策處理資料。" },
+          { heading: "Cookie 與分析", body: "我們使用 Cookie 及類似技術進行分析與廣告效果統計。您可在瀏覽器設定中限制 Cookie，不影響網站基本使用。" },
+          { heading: "您的權利", body: "您可隨時通過 WhatsApp 聯絡我們，要求查閱、更正或刪除您的個人資料，我們會在合理期間內回覆。" },
+          { heading: "政策更新", body: "我們可能隨服務發展更新本政策，最新版本會發布於本頁，並在頁首標示更新日期。" },
+        ],
+      },
+      terms: {
+        title: "服務條款",
+        intro: "本條款適用於通過本網站進行的諮詢及用車安排。",
+        sections: [
+          { heading: "服務性質", body: "JP VIP Charter 提供日本高端用車協調服務，行程由持牌日本合作營運商執行。我們不是醫療機構、學校、旅行社或投資顧問。" },
+          { heading: "報價與確認", body: "網站所示價格均為日圓參考價。每筆預約均需在 WhatsApp 上經人工核對日期、路線、車型、行李及詳細地址後確認。在我們於 WhatsApp 書面確認前，任何安排均不作準。" },
+          { heading: "付款", body: "付款方式及時間在 WhatsApp 確認時協商約定。本網站不收取任何款項。" },
+          { heading: "更改與取消", body: "行程有變請盡早通過 WhatsApp 聯絡我們，更改視乎可用情況安排。取消條款以您的預約確認為準。" },
+          { heading: "機場等候與額外費用", body: "機場接機如提前提供航班資料，司機在航班降落後免費等候 90 分鐘。額外等候、加停站點、深夜接送或路線變更可能產生額外費用，均會在生效前與您確認。" },
+          { heading: "責任", body: "運輸由持牌合作營運商提供並配有商業保險。因天氣、交通、不可抗力或預約時提供的資料不準確導致的延誤，我們不承擔責任。" },
+          { heading: "語言版本", body: "本網站提供英文、繁體中文及阿拉伯文版本。如各版本有差異，本條款以英文版為準。" },
+        ],
+      },
+    },
+
     navigation: {
       label: "主要導覽",
       menu: "開啟選單",
@@ -645,6 +719,9 @@ const homepageTranslations = {
       subtitle:
         "以下只列出部分行程，並非固定套票。提供上車地點、目的地、日期、同行人數及行李資料後，我們會為您準備專屬報價。",
       cta: "查詢此路線",
+      from: "起",
+      refNote:
+        "以上為日圓參考價，最終報價視日期、車型、行李及詳細地址而定，確認後方可預約。",
       customTitle: "沒有找到合適路線？日本各地行程均可另行規劃。",
       customText:
         "溫泉旅館、滑雪場、郊外目的地、跨城市行程、醫療預約、升學參訪及商務日程，均可按需要安排。",
@@ -736,7 +813,41 @@ const homepageTranslations = {
       routes: { title: "مسارات التنقل الخاص في اليابان" },
       faq: { title: "الأسئلة الشائعة عن السائق الخاص في اليابان" },
       quote: { title: "طلب عرض سعر لخدمة سائق خاص في اليابان" },
+      privacy: { title: "سياسة الخصوصية | JP VIP Charter" },
+      terms: { title: "شروط الخدمة | JP VIP Charter" },
     },
+    legal: {
+      eyebrow: "الشؤون القانونية",
+      updated: "آخر تحديث: 15 يوليو 2026",
+      contact: "لديك سؤال حول هذه الصفحة؟ تواصل معنا عبر واتساب أو نموذج طلب السعر وسنرد عليك سريعا.",
+      privacy: {
+        title: "سياسة الخصوصية",
+        intro: "توضح هذه السياسة المعلومات التي تجمعها JP VIP Charter عند استخدامك هذا الموقع، وكيف نستخدمها ونحميها.",
+        sections: [
+          { heading: "المعلومات التي نجمعها", body: "عند إرسال نموذج طلب السعر نجمع الاسم والدولة أو المنطقة ورقم واتساب وشهر السفر المفضل ونوع الخدمة ورسالتك، كما نسجل بيانات تسويقية أساسية (مثل معرف نقرة الإعلان ومصدر الزيارة) واللغة المختارة." },
+          { heading: "كيف نستخدم معلوماتك", body: "نستخدم معلوماتك فقط للرد على استفسارك وإعداد عروض الأسعار وتنسيق خدمة السيارة وفهم فعالية قنوات التسويق. لا نبيع معلوماتك الشخصية." },
+          { heading: "التخزين والأمان", body: "تخزن سجلات الاستفسار في Supabase مع سياسات أمان على مستوى الصفوف، ويقتصر الوصول على الموظفين المخولين. نحتفظ بالسجلات فقط للمدة اللازمة لخدمتك وللالتزامات القانونية." },
+          { heading: "خدمات الطرف الثالث", body: "يستخدم الموقع واتساب (Meta) للاستشارة، وGoogle Analytics وGoogle Ads لقياس الزيارات، وGoogle reCAPTCHA للحماية من الرسائل المزعجة، وSupabase لتخزين البيانات. يعالج كل مزود البيانات وفق سياسة الخصوصية الخاصة به." },
+          { heading: "ملفات تعريف الارتباط والتحليلات", body: "نستخدم ملفات تعريف الارتباط وتقنيات مشابهة للتحليلات وقياس الإعلانات. يمكنك تقييدها من إعدادات المتصفح ويبقى الموقع قابلا للاستخدام." },
+          { heading: "حقوقك", body: "يمكنك في أي وقت طلب الاطلاع على معلوماتك الشخصية أو تصحيحها أو حذفها بالتواصل معنا عبر واتساب، وسنرد خلال مدة معقولة." },
+          { heading: "تحديثات هذه السياسة", body: "قد نحدث هذه السياسة مع تطور الخدمة. تنشر أحدث نسخة دائما في هذه الصفحة مع تاريخ التحديث أعلاه." },
+        ],
+      },
+      terms: {
+        title: "شروط الخدمة",
+        intro: "تنطبق هذه الشروط على الاستشارات وترتيبات السيارة الخاصة التي تتم عبر هذا الموقع.",
+        sections: [
+          { heading: "طبيعة الخدمة", body: "تنسق JP VIP Charter خدمات سيارة خاصة فاخرة في اليابان، وتنفذ الرحلات عبر مشغلين يابانيين مرخصين. لسنا جهة طبية أو مدرسة أو وكالة سفر أو مستشار استثمار." },
+          { heading: "الأسعار والتأكيد", body: "الأسعار المعروضة في الموقع أسعار استرشادية بالين الياباني. يؤكد كل حجز يدويا عبر واتساب بعد مراجعة التاريخ والمسار والسيارة والأمتعة والعناوين الدقيقة. لا يعتبر أي ترتيب نهائيا قبل تأكيدنا الكتابي عبر واتساب." },
+          { heading: "الدفع", body: "يتفق على طريقة الدفع وتوقيته أثناء التأكيد عبر واتساب. لا يحصل هذا الموقع أي مدفوعات." },
+          { heading: "التغييرات والإلغاء", body: "إذا تغيرت خطتك تواصل معنا عبر واتساب في أقرب وقت. تتم التغييرات حسب التوفر، وتوضح شروط الإلغاء في تأكيد حجزك." },
+          { heading: "انتظار المطار والرسوم الإضافية", body: "للاستقبال من المطار مع مشاركة تفاصيل الرحلة مسبقا، ينتظر السائق مجانا 90 دقيقة بعد الهبوط. قد يترتب على الانتظار الإضافي أو المحطات المضافة أو الاستقبال المتأخر ليلا أو تغيير المسار رسوم إضافية نؤكدها قبل تطبيقها." },
+          { heading: "المسؤولية", body: "ينفذ النقل مشغلون شركاء مرخصون بتأمين تجاري. لسنا مسؤولين عن التأخير الناتج عن الطقس أو حركة المرور أو القوة القاهرة أو معلومات غير دقيقة قدمت عند الحجز." },
+          { heading: "نسخ اللغات", body: "ينشر هذا الموقع بالإنجليزية والصينية التقليدية والعربية. عند الاختلاف بين النسخ، تعتمد النسخة الإنجليزية في تفسير هذه الشروط." },
+        ],
+      },
+    },
+
     navigation: {
       label: "التنقل الرئيسي",
       menu: "فتح القائمة",
@@ -923,6 +1034,9 @@ const homepageTranslations = {
       subtitle:
         "هذه المسارات أمثلة وليست باقات ثابتة. أرسل موقع الاستقبال والوجهة والتاريخ وعدد المسافرين والأمتعة لنعد لك عرض سعر مخصصاً.",
       cta: "استفسر عن هذا المسار",
+      from: "ابتداء من",
+      refNote:
+        "أسعار استرشادية بالين الياباني. يعتمد السعر النهائي على التاريخ والسيارة والأمتعة والعناوين الدقيقة ويؤكد شخصيا قبل الحجز.",
       customTitle: "لا تجد مسارك؟ نرتب رحلات خاصة في جميع أنحاء اليابان.",
       customText:
         "يمكننا التخطيط للتنقل إلى الريوكان ومنتجعات التزلج والوجهات الريفية، إضافة إلى الرحلات بين المدن والمواعيد الطبية والزيارات التعليمية وبرامج الأعمال.",

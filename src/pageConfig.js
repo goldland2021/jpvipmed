@@ -3,6 +3,8 @@ export const contentPageSlugs = [
   "routes",
   "faq",
   "request-quote",
+  "privacy",
+  "terms",
 ];
 
 export const pageConfig = {
@@ -29,6 +31,18 @@ export const pageConfig = {
     heroTitleKey: "form.title",
     seoTitleKey: "pageSeo.quote.title",
     descriptionKey: "form.subtitle",
+  },
+  privacy: {
+    eyebrowKey: "legal.eyebrow",
+    heroTitleKey: "legal.privacy.title",
+    seoTitleKey: "pageSeo.privacy.title",
+    descriptionKey: "legal.privacy.intro",
+  },
+  terms: {
+    eyebrowKey: "legal.eyebrow",
+    heroTitleKey: "legal.terms.title",
+    seoTitleKey: "pageSeo.terms.title",
+    descriptionKey: "legal.terms.intro",
   },
 };
 

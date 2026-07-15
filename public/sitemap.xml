@@ -2,112 +2,150 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.jpairport.jp/en</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/en</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk"/>
   </url>
   <url>
-    <loc>https://www.jpairport.jp/zh-hk</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/zh-hk</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk"/>
   </url>
   <url>
-    <loc>https://www.jpairport.jp/ar</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/ar</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk"/>
   </url>
-
   <url>
-    <loc>https://www.jpairport.jp/en/services</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/en/services</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/services"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/services"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/services"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/services"/>
   </url>
   <url>
-    <loc>https://www.jpairport.jp/zh-hk/services</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/zh-hk/services</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/services"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/services"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/services"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/services"/>
   </url>
   <url>
-    <loc>https://www.jpairport.jp/ar/services</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/ar/services</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/services"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/services"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/services"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/services"/>
   </url>
-
   <url>
-    <loc>https://www.jpairport.jp/en/routes</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/en/routes</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/routes"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/routes"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/routes"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/routes"/>
   </url>
   <url>
-    <loc>https://www.jpairport.jp/zh-hk/routes</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/zh-hk/routes</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/routes"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/routes"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/routes"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/routes"/>
   </url>
   <url>
-    <loc>https://www.jpairport.jp/ar/routes</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/ar/routes</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/routes"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/routes"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/routes"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/routes"/>
   </url>
-
   <url>
-    <loc>https://www.jpairport.jp/en/faq</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/en/faq</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/faq"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/faq"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/faq"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/faq"/>
   </url>
   <url>
-    <loc>https://www.jpairport.jp/zh-hk/faq</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/zh-hk/faq</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/faq"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/faq"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/faq"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/faq"/>
   </url>
   <url>
-    <loc>https://www.jpairport.jp/ar/faq</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/ar/faq</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/faq"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/faq"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/faq"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/faq"/>
   </url>
-
   <url>
-    <loc>https://www.jpairport.jp/en/request-quote</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/en/request-quote</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/request-quote"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/request-quote"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/request-quote"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/request-quote"/>
   </url>
   <url>
-    <loc>https://www.jpairport.jp/zh-hk/request-quote</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/zh-hk/request-quote</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/request-quote"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/request-quote"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/request-quote"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/request-quote"/>
   </url>
   <url>
-    <loc>https://www.jpairport.jp/ar/request-quote</loc><lastmod>2026-07-14</lastmod>
+    <loc>https://www.jpairport.jp/ar/request-quote</loc><lastmod>2026-07-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/request-quote"/>
     <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/request-quote"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/request-quote"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/request-quote"/>
+  </url>
+  <url>
+    <loc>https://www.jpairport.jp/en/privacy</loc><lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.jpairport.jp/zh-hk/privacy</loc><lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.jpairport.jp/ar/privacy</loc><lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.jpairport.jp/en/terms</loc><lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/terms"/>
+  </url>
+  <url>
+    <loc>https://www.jpairport.jp/zh-hk/terms</loc><lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/terms"/>
+  </url>
+  <url>
+    <loc>https://www.jpairport.jp/ar/terms</loc><lastmod>2026-07-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jpairport.jp/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://www.jpairport.jp/zh-hk/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.jpairport.jp/ar/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jpairport.jp/zh-hk/terms"/>
   </url>
 </urlset>
