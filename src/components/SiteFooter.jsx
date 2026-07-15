@@ -4,7 +4,7 @@ import { localizedPath } from "../pageConfig";
 
 export default function SiteFooter() {
   const { t, i18n } = useTranslation();
-  const language = i18n.resolvedLanguage || i18n.language || "zh-hk";
+  const language = i18n.resolvedLanguage || i18n.language || "en";
 
   return (
     <footer className="bg-midnight px-4 py-8 text-sm text-white/70 sm:px-6 lg:px-8">

@@ -51,7 +51,7 @@ function setManagedLinks(language, page) {
   const fallback = document.createElement("link");
   fallback.rel = "alternate";
   fallback.hreflang = "x-default";
-  fallback.href = `${siteConfig.siteUrl}${localizedPath("zh-hk", page)}`;
+  fallback.href = `${siteConfig.siteUrl}${localizedPath("en", page)}`;
   fallback.dataset.jpvipSeo = "true";
   document.head.appendChild(fallback);
 }

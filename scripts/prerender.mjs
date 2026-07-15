@@ -35,7 +35,7 @@ for (const page of routes) {
         `<link rel="alternate" hreflang="${language.hreflang}" href="${siteUrl}${routePath(language.lang, page)}" data-jpvip-seo="true" />`
     )
     .concat(
-      `<link rel="alternate" hreflang="x-default" href="${siteUrl}${routePath("zh-hk", page)}" data-jpvip-seo="true" />`
+      `<link rel="alternate" hreflang="x-default" href="${siteUrl}${routePath("en", page)}" data-jpvip-seo="true" />`
     )
     .join("\n    ");
 

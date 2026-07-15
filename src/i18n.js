@@ -876,7 +876,7 @@ Object.entries(homepageTranslations).forEach(([language, translation]) => {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "zh-hk",
+  lng: "en",
   fallbackLng: "en",
   supportedLngs: ["en", "zh-hk", "ar"],
   lowerCaseLng: true,

@@ -4,8 +4,8 @@ Multilingual React/Vite landing site for Japan premium private charter consultat
 
 ## Routes
 
-- `/zh-hk` Traditional Chinese default
-- `/en` English
+- `/en` English default
+- `/zh-hk` Traditional Chinese
 - `/ar` Arabic with `html dir="rtl"`
 - `/admin` protected Supabase lead admin
 
