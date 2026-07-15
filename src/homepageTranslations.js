@@ -10,8 +10,8 @@ const homepageTranslations = {
       routes: { title: "Popular Private Transfer Routes in Japan" },
       faq: { title: "Private Chauffeur FAQs for Japan" },
       quote: { title: "Request a Private Chauffeur Quote in Japan" },
-      privacy: { title: "Privacy Policy | JP VIP Charter" },
-      terms: { title: "Terms of Service | JP VIP Charter" },
+      privacy: { title: "Privacy Policy" },
+      terms: { title: "Terms of Service" },
     },
     legal: {
       eyebrow: "Legal",
@@ -499,8 +499,8 @@ const homepageTranslations = {
       routes: { title: "日本私人接送及包車路線" },
       faq: { title: "日本私人司機常見問題" },
       quote: { title: "索取日本私人司機服務報價" },
-      privacy: { title: "私隱政策 | JP VIP Charter" },
-      terms: { title: "服務條款 | JP VIP Charter" },
+      privacy: { title: "私隱政策" },
+      terms: { title: "服務條款" },
     },
     legal: {
       eyebrow: "法律條款",
@@ -813,8 +813,8 @@ const homepageTranslations = {
       routes: { title: "مسارات التنقل الخاص في اليابان" },
       faq: { title: "الأسئلة الشائعة عن السائق الخاص في اليابان" },
       quote: { title: "طلب عرض سعر لخدمة سائق خاص في اليابان" },
-      privacy: { title: "سياسة الخصوصية | JP VIP Charter" },
-      terms: { title: "شروط الخدمة | JP VIP Charter" },
+      privacy: { title: "سياسة الخصوصية" },
+      terms: { title: "شروط الخدمة" },
     },
     legal: {
       eyebrow: "الشؤون القانونية",
