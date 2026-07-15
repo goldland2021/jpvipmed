@@ -29,7 +29,7 @@ const homepageTranslations = {
         "Narita & Haneda transfers to Tokyo hotels, Tokyo Disney Resort and Yokohama",
         "Hotel, cruise terminal and Shinkansen station pickups, plus private day charters",
         "English-speaking driver available on request at no extra charge",
-        "All-inclusive fixed quote with free waiting — 90 min for arrivals / 30 min for departures",
+        "Free waiting — 90 min for arrivals / 30 min for departures",
       ],
     },
     cta: {
@@ -478,7 +478,7 @@ const homepageTranslations = {
         "成田及羽田機場接送，直達東京酒店、東京迪士尼度假區及橫濱",
         "提供酒店、郵輪碼頭、新幹線車站接送及私人一日包車",
         "可應要求安排會說英語的司機，不另收費",
-        "預訂前確認一價全包報價；接機免費等候 90 分鐘，送機免費等候 30 分鐘",
+        "接機免費等候 90 分鐘，送機免費等候 30 分鐘",
       ],
     },
     cta: {
@@ -755,7 +755,7 @@ const homepageTranslations = {
         "توصيل من مطاري ناريتا وهانيدا إلى فنادق طوكيو ومنتجع طوكيو ديزني ويوكوهاما",
         "توصيل من الفنادق وموانئ الرحلات البحرية ومحطات الشينكانسن، وجولات خاصة ليوم كامل",
         "سائق يتحدث الإنجليزية عند الطلب من دون رسوم إضافية",
-        "سعر ثابت شامل قبل الحجز، مع انتظار مجاني 90 دقيقة عند الوصول و30 دقيقة عند المغادرة",
+        "انتظار مجاني 90 دقيقة عند الوصول و30 دقيقة عند المغادرة",
       ],
     },
     cta: {
