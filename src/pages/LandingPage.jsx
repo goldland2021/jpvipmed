@@ -8,6 +8,7 @@ import {
   MessageCircle,
   Mountain,
   Plane,
+  Snowflake,
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -17,12 +18,18 @@ import Seo from "../components/Seo";
 import SiteFooter from "../components/SiteFooter";
 import WhatsAppButton from "../components/WhatsAppButton";
 import WorkflowAiPilot from "../components/WorkflowAiPilot";
+import { formatYen, popularRouteCards } from "../data/routePricing";
 import { trackButtonClick, trackEvent } from "../lib/analytics";
 import { buildTripWhatsAppMessage, getWhatsAppUrl } from "../lib/whatsapp";
 import { localizedPath } from "../pageConfig";
 
 const highlightIcons = [Plane, Baby, Car];
-const routeIcons = [Plane, Mountain, Building2];
+const routeIconMap = {
+  plane: Plane,
+  mountain: Mountain,
+  building: Building2,
+  snow: Snowflake,
+};
 
 function QuickPlanner({ language }) {
   const { t } = useTranslation();
@@ -275,7 +282,7 @@ function QuickPlanner({ language }) {
 export default function LandingPage({ language }) {
   const { t } = useTranslation();
   const highlights = t("highlights.items", { returnObjects: true });
-  const routes = t("routes.items", { returnObjects: true }).slice(0, 3);
+  const homepageRoutes = popularRouteCards.slice(0, 3);
   const trust = t("trust.items", { returnObjects: true });
 
   const heroStyle = useMemo(
@@ -361,16 +368,24 @@ export default function LandingPage({ language }) {
               <p>{t("routes.subtitle")}</p>
             </div>
             <div className="mt-10 grid gap-4 md:grid-cols-3">
-              {routes.map((item, index) => {
-                const Icon = routeIcons[index] || Plane;
+              {homepageRoutes.map((route) => {
+                const copy = t(`routes.cards.${route.id}`, { returnObjects: true });
+                const Icon = routeIconMap[route.icon] || Plane;
                 return (
-                  <article key={item.title} className="route-card">
-                    <div className="flex items-center justify-between gap-4">
-                      <Icon className="h-6 w-6 text-gold" aria-hidden="true" />
-                      <span>{item.type}</span>
+                  <article key={route.id} className="fare-card">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="fare-card-icon">
+                        <Icon className="h-5 w-5 text-gold" aria-hidden="true" />
+                      </div>
+                      <span className="fare-card-type">{copy?.type}</span>
                     </div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <h3 className="mt-5 text-lg font-semibold text-midnight">{copy?.title}</h3>
+                    <p className="fare-price">
+                      <span className="fare-price-label">{t("routes.from")}</span>
+                      <span className="fare-price-value">{formatYen(route.fare)}</span>
+                      <span className="fare-price-unit">{t("routes.jpy")}</span>
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">{copy?.description}</p>
                     <Link to={localizedPath(language, "routes")} className="route-link">
                       <span>{t("pageLinks.routes")}</span>
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />

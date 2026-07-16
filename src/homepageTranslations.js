@@ -288,44 +288,70 @@ const homepageTranslations = {
         "Use these routes as inspiration rather than fixed packages. Share your exact pickup, destination, date, group size and luggage for a personalized quote.",
       cta: "Ask about this route",
       from: "From",
+      jpy: "JPY",
+      vehicleNote: "Alphard-class reference. Hiace +¥5,000 when a larger vehicle is needed.",
       refNote:
-        "Reference fares in Japanese yen. The final quote depends on date, vehicle, luggage, and exact addresses, and is confirmed personally before you book.",
+        "Reference fares in Japanese yen for daytime one-way transfers or full-day charters. The final quote depends on date, vehicle, luggage, and exact addresses, and is confirmed personally before you book.",
       customTitle: "Not seeing your route? We arrange private journeys throughout Japan.",
       customText:
         "We can plan journeys to ryokans, ski resorts and rural addresses, as well as multi-city travel, appointments, education visits and business schedules.",
       customCta: "Plan a custom route",
-      items: [
-        {
+      cards: {
+        "hnd-tokyo": {
           type: "Airport transfer",
-          title: "Haneda or Narita Airport → Tokyo",
-          description: "Private airport transfers to hotels, residences and onward connections across the Tokyo area.",
+          title: "Haneda Airport → Tokyo wards",
+          description:
+            "One-way private transfer from Haneda to hotels across Tokyo’s 23 wards. Starting price for nearer wards such as Ota and Shinagawa.",
         },
-        {
+        "nrt-tokyo": {
+          type: "Airport transfer",
+          title: "Narita Airport → Tokyo wards",
+          description:
+            "One-way private transfer from Narita to Tokyo hotels. Starting price for eastern wards; central wards usually sit a little higher.",
+        },
+        "nrt-hnd": {
+          type: "Airport transfer",
+          title: "Narita ↔ Haneda Airport",
+          description:
+            "Fixed-style airport-to-airport transfer for tight connections, with room for luggage and family groups.",
+        },
+        "hnd-hakone": {
+          type: "Resort transfer",
+          title: "Haneda Airport → Hakone",
+          description:
+            "Private transfer to Hakone ryokans and hotels. Distance-based resort anchor rather than a short city hop.",
+        },
+        "hnd-fuji": {
+          type: "Resort transfer",
+          title: "Haneda Airport → Mt. Fuji / Kawaguchiko",
+          description:
+            "Private transfer toward the Mt. Fuji and Kawaguchiko area for hotel drop-off or the start of a day plan.",
+        },
+        "tokyo-full-day": {
           type: "Full-day charter",
-          title: "Tokyo → Mt. Fuji & Hakone",
-          description: "A private day trip shaped around the scenery, seasonal conditions, your preferred stops and your pace.",
+          title: "Tokyo full-day private chauffeur",
+          description:
+            "About 10 hours with a private vehicle for hotels, stations, dining, shopping, and multi-stop city plans.",
         },
-        {
-          type: "City transport",
-          title: "Tokyo, Kyoto & Osaka private travel",
-          description: "Private transport for hotels, stations, dining, shopping, sightseeing, events and meetings.",
+        "fuji-full-day": {
+          type: "Full-day charter",
+          title: "Tokyo ↔ Mt. Fuji full-day",
+          description:
+            "About 10 hours for a Tokyo-based Mt. Fuji day trip, shaped around weather, stops, and your pace.",
         },
-        {
+        "kix-osaka-kyoto": {
           type: "Airport transfer",
           title: "Kansai Airport → Osaka or Kyoto",
-          description: "Door-to-door travel after arrival or before departure, with a vehicle matched to your group and luggage.",
+          description:
+            "Door-to-door arrival or departure transfer, with the vehicle matched to group size and luggage.",
         },
-        {
+        "cts-niseko": {
           type: "Resort transfer",
-          title: "Hokkaido airports → ski resorts",
-          description: "Private transfers to Niseko and other resorts, planned around winter conditions, ski equipment and luggage.",
+          title: "New Chitose → Niseko area",
+          description:
+            "Winter-ready private transfer for ski resorts, planned around luggage, equipment, and road conditions.",
         },
-        {
-          type: "Tailored itinerary",
-          title: "Medical, education & business visits",
-          description: "Reliable multi-stop travel for clinics, schools, offices, factories, exhibitions and other appointments.",
-        },
-      ],
+      },
       tokyoWards: {
         eyebrow: "Tokyo 23 wards",
         title: "Airport transfer fares by Tokyo ward.",
@@ -334,8 +360,6 @@ const homepageTranslations = {
         airportLabel: "Airport",
         hndLabel: "Haneda (HND)",
         nrtLabel: "Narita (NRT)",
-        wardColumn: "Ward",
-        fareColumn: "From (JPY)",
         sortLabel: "Sort",
         sortAsc: "Lowest price first",
         sortDesc: "Highest price first",
@@ -343,7 +367,7 @@ const homepageTranslations = {
         includes:
           "Includes private vehicle, chauffeur, luggage help, and standard meet-and-greet planning. Airport free waiting: 90 minutes on arrival / 30 minutes on departure.",
         note:
-          "Reference fares for a luxury van (Alphard-class), one-way, daytime. Late-night, extra stops, child seats beyond free allocation, larger vehicles, and exact addresses may change the final price. Confirmed personally before booking.",
+          "Reference fares for a luxury van (Alphard-class), one-way, daytime. Hiace +¥5,000 when needed. Late-night, extra stops, and exact addresses may change the final price. Confirmed personally before booking.",
         direction: "Airport → {{ward}}",
         wards: {
           chiyoda: "Chiyoda",
@@ -765,20 +789,61 @@ const homepageTranslations = {
         "以下只列出部分行程，並非固定套票。提供上車地點、目的地、日期、同行人數及行李資料後，我們會為您準備專屬報價。",
       cta: "查詢此路線",
       from: "起",
+      jpy: "日圓",
+      vehicleNote: "以 Alphard 級豪華商務車為參考；如需更大車型（Hiace），另加 ¥5,000。",
       refNote:
-        "以上為日圓參考價，最終報價視日期、車型、行李及詳細地址而定，確認後方可預約。",
+        "以上為日間單程或全日包車日圓參考價。最終報價視日期、車型、行李及詳細地址而定，確認後方可預約。",
       customTitle: "沒有找到合適路線？日本各地行程均可另行規劃。",
       customText:
         "溫泉旅館、滑雪場、郊外目的地、跨城市行程、醫療預約、升學參訪及商務日程，均可按需要安排。",
       customCta: "規劃專屬行程",
-      items: [
-        { type: "機場接送", title: "羽田／成田機場至東京", description: "由機場前往東京酒店、住宅或下一個目的地的私人接送。" },
-        { type: "全日包車", title: "東京至富士山及箱根", description: "按季節、景點、停靠地點和遊覽步伐，安排專屬一日行程。" },
-        { type: "市內用車", title: "東京、京都及大阪私人接送", description: "往返酒店、車站、餐廳、購物區、景點、活動場地及會議地點。" },
-        { type: "機場接送", title: "關西機場至大阪或京都", description: "抵達或離境時的門到門接送，並按同行人數與行李安排車型。" },
-        { type: "度假村接送", title: "北海道各機場至滑雪度假村", description: "私人接送至二世古及其他度假區，並考慮冬季路況、滑雪裝備與行李。" },
-        { type: "專屬行程", title: "醫療、升學及商務行程", description: "配合診所、學校、辦公室、工廠、展覽及會議時間，安排多站接送。" },
-      ],
+      cards: {
+        "hnd-tokyo": {
+          type: "機場接送",
+          title: "羽田機場 → 東京 23 區",
+          description: "羽田單程至東京各區酒店。起價適用於較近的大田、品川等區。",
+        },
+        "nrt-tokyo": {
+          type: "機場接送",
+          title: "成田機場 → 東京 23 區",
+          description: "成田單程至東京酒店。起價偏向東部區域；市中心各區通常略高。",
+        },
+        "nrt-hnd": {
+          type: "機場接送",
+          title: "成田 ↔ 羽田機場",
+          description: "機場互轉固定參考價，適合趕轉機及行李較多的家庭或團體。",
+        },
+        "hnd-hakone": {
+          type: "度假區接送",
+          title: "羽田機場 → 箱根",
+          description: "私人接送至箱根溫泉旅館及酒店，屬郊區度假區錨定價，而非市區短途。",
+        },
+        "hnd-fuji": {
+          type: "度假區接送",
+          title: "羽田機場 → 富士山／河口湖",
+          description: "私人接送至富士山及河口湖一帶，可作入住或一日行程起點。",
+        },
+        "tokyo-full-day": {
+          type: "全日包車",
+          title: "東京全日私人司機",
+          description: "約 10 小時包車，適合酒店、車站、用餐、購物及多站市內行程。",
+        },
+        "fuji-full-day": {
+          type: "全日包車",
+          title: "東京 ↔ 富士山全日",
+          description: "約 10 小時，由東京出發的富士山一日遊，可按天氣與停靠靈活安排。",
+        },
+        "kix-osaka-kyoto": {
+          type: "機場接送",
+          title: "關西機場 → 大阪或京都",
+          description: "抵達或離境門到門接送，並按同行人數與行李安排車型。",
+        },
+        "cts-niseko": {
+          type: "度假區接送",
+          title: "新千歲 → 二世古一帶",
+          description: "滑雪季私人接送，考慮行李、裝備與冬季路況。",
+        },
+      },
       tokyoWards: {
         eyebrow: "東京 23 區",
         title: "按東京 23 區劃分的機場接送參考價。",
@@ -787,8 +852,6 @@ const homepageTranslations = {
         airportLabel: "機場",
         hndLabel: "羽田機場（HND）",
         nrtLabel: "成田機場（NRT）",
-        wardColumn: "區",
-        fareColumn: "起（日圓）",
         sortLabel: "排序",
         sortAsc: "價格由低至高",
         sortDesc: "價格由高至低",
@@ -796,7 +859,7 @@ const homepageTranslations = {
         includes:
           "包含私人車輛、司機、行李協助及會合安排。接機免費等候 90 分鐘；送機免費等候 30 分鐘。",
         note:
-          "以上為豪華商務車（Alphard 級）單程日間參考價。深夜時段、額外停靠、超出免費配置的兒童座椅、更大車型及精確地址，可能影響最終價格；預訂前會由專人確認。",
+          "以上為豪華商務車（Alphard 級）單程日間參考價。如需 Hiace 更大車型另加 ¥5,000。深夜、額外停靠及精確地址可能影響最終價格；預訂前由專人確認。",
         direction: "機場 → {{ward}}",
         wards: {
           chiyoda: "千代田區",
@@ -1125,20 +1188,61 @@ const homepageTranslations = {
         "هذه المسارات أمثلة وليست باقات ثابتة. أرسل موقع الاستقبال والوجهة والتاريخ وعدد المسافرين والأمتعة لنعد لك عرض سعر مخصصاً.",
       cta: "استفسر عن هذا المسار",
       from: "ابتداء من",
+      jpy: "ين",
+      vehicleNote: "السعر المرجعي لفئة ألفارد. Hiace +¥5,000 عند الحاجة لمركبة أكبر.",
       refNote:
-        "أسعار استرشادية بالين الياباني. يعتمد السعر النهائي على التاريخ والسيارة والأمتعة والعناوين الدقيقة ويؤكد شخصيا قبل الحجز.",
+        "أسعار استرشادية بالين لرحلات ذهاب نهارية أو تأجير ليوم كامل. يعتمد السعر النهائي على التاريخ والسيارة والأمتعة والعناوين الدقيقة ويؤكد شخصيا قبل الحجز.",
       customTitle: "لا تجد مسارك؟ نرتب رحلات خاصة في جميع أنحاء اليابان.",
       customText:
         "يمكننا التخطيط للتنقل إلى الريوكان ومنتجعات التزلج والوجهات الريفية، إضافة إلى الرحلات بين المدن والمواعيد الطبية والزيارات التعليمية وبرامج الأعمال.",
       customCta: "خطط لمسار مخصص",
-      items: [
-        { type: "توصيل من المطار", title: "من مطاري هانيدا أو ناريتا إلى طوكيو", description: "توصيل خاص إلى الفنادق والمساكن ومحطات الرحلة التالية في منطقة طوكيو." },
-        { type: "جولة ليوم كامل", title: "من طوكيو إلى جبل فوجي وهاكونه", description: "رحلة يومية خاصة نرتبها وفق الموسم والمحطات التي تفضلها والوتيرة المناسبة لك." },
-        { type: "تنقل داخل المدن", title: "تنقل خاص في طوكيو وكيوتو وأوساكا", description: "تنقل خاص بين الفنادق والمحطات والمطاعم ومراكز التسوق والمعالم والفعاليات والاجتماعات." },
-        { type: "توصيل من المطار", title: "من مطار كانساي إلى أوساكا أو كيوتو", description: "توصيل من الباب إلى الباب عند الوصول أو المغادرة، بمركبة تناسب عدد المسافرين والأمتعة." },
-        { type: "توصيل إلى منتجع", title: "من مطارات هوكايدو إلى منتجعات التزلج", description: "تنقل خاص إلى نيسيكو وغيرها من المنتجعات مع مراعاة ظروف الشتاء ومعدات التزلج والأمتعة." },
-        { type: "برنامج مخصص", title: "زيارات طبية وتعليمية وتجارية", description: "تنقل موثوق متعدد المحطات للعيادات والمدارس والمكاتب والمصانع والمعارض والمواعيد الأخرى." },
-      ],
+      cards: {
+        "hnd-tokyo": {
+          type: "توصيل من المطار",
+          title: "هانيدا → أحياء طوكيو الـ 23",
+          description: "توصيل خاص ذهاب من هانيدا إلى فنادق طوكيو. السعر الابتدائي للأحياء الأقرب مثل أوتا وشيناغاوا.",
+        },
+        "nrt-tokyo": {
+          type: "توصيل من المطار",
+          title: "ناريتا → أحياء طوكيو الـ 23",
+          description: "توصيل خاص ذهاب من ناريتا إلى فنادق طوكيو. السعر الابتدائي للأحياء الشرقية؛ وسط المدينة عادة أعلى قليلاً.",
+        },
+        "nrt-hnd": {
+          type: "توصيل من المطار",
+          title: "ناريتا ↔ هانيدا",
+          description: "نقل بين المطارين بسعر مرجعي ثابت تقريباً، مناسب للترانزيت والعائلات ذات الأمتعة الكثيرة.",
+        },
+        "hnd-hakone": {
+          type: "توصيل إلى منتجع",
+          title: "هانيدا → هاكونه",
+          description: "توصيل خاص إلى ريوكان وفنادق هاكونه. سعر منطقة منتجع وليس رحلة حضرية قصيرة.",
+        },
+        "hnd-fuji": {
+          type: "توصيل إلى منتجع",
+          title: "هانيدا → فوجي / كاواجوتشيكو",
+          description: "توصيل خاص نحو منطقة جبل فوجي وكاواجوتشيكو للإقامة أو بداية برنامج يومي.",
+        },
+        "tokyo-full-day": {
+          type: "تأجير ليوم كامل",
+          title: "سائق خاص ليوم كامل في طوكيو",
+          description: "حوالي 10 ساعات بمركبة خاصة للفنادق والمحطات والمطاعم والتسوق والبرامج متعددة المحطات.",
+        },
+        "fuji-full-day": {
+          type: "تأجير ليوم كامل",
+          title: "طوكيو ↔ فوجي ليوم كامل",
+          description: "حوالي 10 ساعات لرحلة يومية من طوكيو إلى فوجي وفق الطقس والمحطات والوتيرة المناسبة لك.",
+        },
+        "kix-osaka-kyoto": {
+          type: "توصيل من المطار",
+          title: "كانساي → أوساكا أو كيوتو",
+          description: "توصيل من الباب إلى الباب عند الوصول أو المغادرة، بمركبة تناسب العدد والأمتعة.",
+        },
+        "cts-niseko": {
+          type: "توصيل إلى منتجع",
+          title: "نيو تشيتوس → نيسيكو",
+          description: "توصيل خاص لمنتجعات التزلج مع مراعاة الأمتعة والمعدات وظروف الشتاء.",
+        },
+      },
       tokyoWards: {
         eyebrow: "أحياء طوكيو الـ 23",
         title: "أسعار النقل من المطار حسب أحياء طوكيو.",
@@ -1147,8 +1251,6 @@ const homepageTranslations = {
         airportLabel: "المطار",
         hndLabel: "هانيدا (HND)",
         nrtLabel: "ناريتا (NRT)",
-        wardColumn: "الحي",
-        fareColumn: "ابتداء من (ين)",
         sortLabel: "ترتيب",
         sortAsc: "الأرخص أولاً",
         sortDesc: "الأعلى سعراً أولاً",
@@ -1156,7 +1258,7 @@ const homepageTranslations = {
         includes:
           "يشمل مركبة خاصة وسائقاً ومساعدة الأمتعة وتنسيق اللقاء. الانتظار المجاني في المطار: 90 دقيقة عند الوصول / 30 دقيقة عند المغادرة.",
         note:
-          "أسعار استرشادية لمركبة فاخرة (فئة ألفارد) ذهاب فقط في النهار. قد يتغير السعر النهائي بسبب الليل أو المحطات الإضافية أو مقاعد الأطفال أو المركبات الأكبر أو العناوين الدقيقة. يُؤكد شخصياً قبل الحجز.",
+          "أسعار استرشادية لمركبة فاخرة (فئة ألفارد) ذهاب فقط في النهار. Hiace +¥5,000 عند الحاجة. قد يتغير السعر بسبب الليل أو المحطات الإضافية أو العناوين الدقيقة. يُؤكد شخصياً قبل الحجز.",
         direction: "المطار → {{ward}}",
         wards: {
           chiyoda: "تشيودا",

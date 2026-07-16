@@ -28,16 +28,24 @@ import Seo from "../components/Seo";
 import SiteFooter from "../components/SiteFooter";
 import WhatsAppButton from "../components/WhatsAppButton";
 import WorkflowAiPilot from "../components/WorkflowAiPilot";
-import { formatYen, sortWardsByFare } from "../data/tokyoWards";
+import {
+  formatYen,
+  popularRouteCards,
+  sortWardsByFare,
+} from "../data/routePricing";
 import { localizedPath, pageConfig } from "../pageConfig";
-
-const routeFares = [10000, 60000, 11000, 22000, 35000, 60000];
 
 const includedIcons = [Navigation, Luggage, MapPin, Clock3, Languages, ReceiptText];
 const serviceIcons = [Plane, Car, CalendarCheck];
 const vehicleIcons = [Car, Users, BadgeCheck];
-const routeIcons = [Plane, Mountain, Building2, Plane, Snowflake, Waves];
 const coverageIcons = [Building2, Hotel, Mountain, Snowflake, Waves, Globe2];
+
+const routeIconMap = {
+  plane: Plane,
+  mountain: Mountain,
+  building: Building2,
+  snow: Snowflake,
+};
 
 function PageHero({ language, page }) {
   const { t } = useTranslation();
@@ -190,6 +198,76 @@ function ServicesContent({ language }) {
   );
 }
 
+function FarePrice({ fare }) {
+  const { t } = useTranslation();
+  return (
+    <p className="fare-price">
+      <span className="fare-price-label">{t("routes.from")}</span>
+      <span className="fare-price-value">{formatYen(fare)}</span>
+      <span className="fare-price-unit">{t("routes.jpy")}</span>
+    </p>
+  );
+}
+
+function PopularRouteCards({ language }) {
+  const { t } = useTranslation();
+
+  return (
+    <section className="section-shell bg-white" id="popular-routes">
+      <div className="section-heading max-w-3xl">
+        <p className="eyebrow">{t("routes.eyebrow")}</p>
+        <h2>{t("routes.title")}</h2>
+        <p>{t("routes.subtitle")}</p>
+      </div>
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        {popularRouteCards.map((route) => {
+          const copy = t(`routes.cards.${route.id}`, { returnObjects: true });
+          const Icon = routeIconMap[route.icon] || MapPin;
+          const title = copy?.title || route.id;
+          return (
+            <article key={route.id} className="fare-card">
+              <div className="flex items-center justify-between gap-3">
+                <div className="fare-card-icon">
+                  <Icon className="h-5 w-5 text-gold" aria-hidden="true" />
+                </div>
+                <span className="fare-card-type">{copy?.type}</span>
+              </div>
+              <h2 className="mt-5 text-lg font-semibold leading-snug text-midnight">
+                {title}
+              </h2>
+              <FarePrice fare={route.fare} />
+              <p className="mt-3 flex-1 text-sm leading-7 text-slate-600">
+                {copy?.description}
+              </p>
+              <WhatsAppButton
+                language={language}
+                serviceName={title}
+                label={t("routes.cta")}
+                buttonName="routes_page_whatsapp"
+                className="route-link"
+              >
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </WhatsAppButton>
+            </article>
+          );
+        })}
+      </div>
+      <p className="mt-6 text-center text-sm leading-6 text-slate-500">
+        {t("routes.vehicleNote")}
+      </p>
+      <p className="mt-2 text-center text-sm leading-6 text-slate-500">
+        {t("routes.refNote")}
+      </p>
+      <div className="mt-8 rounded-xl bg-porcelain p-6 text-center">
+        <h2 className="text-xl font-semibold text-midnight">{t("routes.customTitle")}</h2>
+        <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 text-slate-600">
+          {t("routes.customText")}
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function TokyoWardPricing({ language }) {
   const { t } = useTranslation();
   const [airport, setAirport] = useState("hnd");
@@ -213,7 +291,11 @@ function TokyoWardPricing({ language }) {
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             {t("routes.tokyoWards.airportLabel")}
           </p>
-          <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label={t("routes.tokyoWards.airportLabel")}>
+          <div
+            className="mt-2 flex flex-wrap gap-2"
+            role="group"
+            aria-label={t("routes.tokyoWards.airportLabel")}
+          >
             {[
               { id: "hnd", label: t("routes.tokyoWards.hndLabel") },
               { id: "nrt", label: t("routes.tokyoWards.nrtLabel") },
@@ -249,56 +331,38 @@ function TokyoWardPricing({ language }) {
         </label>
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft">
-        <div className="ward-table-scroll">
-          <table className="ward-table">
-            <thead>
-              <tr>
-                <th scope="col">{t("routes.tokyoWards.wardColumn")}</th>
-                <th scope="col">{t("routes.tokyoWards.fareColumn")}</th>
-                <th scope="col" className="ward-table-action">
-                  <span className="sr-only">{t("routes.tokyoWards.cta")}</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {wards.map((ward) => {
-                const wardName = t(`routes.tokyoWards.wards.${ward.id}`);
-                const fare = airport === "nrt" ? ward.nrt : ward.hnd;
-                const airportLabel =
-                  airport === "nrt"
-                    ? t("routes.tokyoWards.nrtLabel")
-                    : t("routes.tokyoWards.hndLabel");
-                const serviceName = `${airportLabel} → ${wardName}`;
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {wards.map((ward) => {
+          const wardName = t(`routes.tokyoWards.wards.${ward.id}`);
+          const fare = airport === "nrt" ? ward.nrt : ward.hnd;
+          const airportLabel =
+            airport === "nrt"
+              ? t("routes.tokyoWards.nrtLabel")
+              : t("routes.tokyoWards.hndLabel");
+          const serviceName = `${airportLabel} → ${wardName}`;
 
-                return (
-                  <tr key={ward.id}>
-                    <td>
-                      <div className="font-semibold text-midnight">{wardName}</div>
-                      <div className="mt-0.5 text-xs text-slate-500">
-                        {t("routes.tokyoWards.direction", { ward: wardName })}
-                      </div>
-                    </td>
-                    <td>
-                      <span className="text-lg font-semibold text-midnight">
-                        {formatYen(fare)}
-                      </span>
-                    </td>
-                    <td className="ward-table-action">
-                      <WhatsAppButton
-                        language={language}
-                        serviceName={serviceName}
-                        label={t("routes.tokyoWards.cta")}
-                        buttonName="tokyo_ward_quote"
-                        className="ward-quote-btn"
-                      />
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+          return (
+            <article key={ward.id} className="ward-fare-card">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <h3 className="text-base font-semibold text-midnight">{wardName}</h3>
+                  <p className="mt-1 text-xs leading-5 text-slate-500">
+                    {t("routes.tokyoWards.direction", { ward: wardName })}
+                  </p>
+                </div>
+                <MapPin className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
+              </div>
+              <FarePrice fare={fare} />
+              <WhatsAppButton
+                language={language}
+                serviceName={serviceName}
+                label={t("routes.tokyoWards.cta")}
+                buttonName="tokyo_ward_quote"
+                className="ward-quote-btn mt-auto w-full justify-center"
+              />
+            </article>
+          );
+        })}
       </div>
 
       <p className="mt-5 text-sm leading-7 text-slate-600">
@@ -313,64 +377,14 @@ function TokyoWardPricing({ language }) {
 
 function RoutesContent({ language }) {
   const { t } = useTranslation();
-  const routes = t("routes.items", { returnObjects: true });
   const coverage = t("coverage.items", { returnObjects: true });
 
   return (
     <>
+      <PopularRouteCards language={language} />
       <TokyoWardPricing language={language} />
 
       <section className="section-shell bg-white">
-        <div className="section-heading max-w-3xl">
-          <p className="eyebrow">{t("routes.eyebrow")}</p>
-          <h2>{t("routes.title")}</h2>
-          <p>{t("routes.subtitle")}</p>
-        </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {routes.map((item, index) => {
-            const Icon = routeIcons[index] || MapPin;
-            return (
-              <article key={item.title} className="route-card">
-                <div className="flex items-center justify-between gap-4">
-                  <Icon className="h-6 w-6 text-gold" aria-hidden="true" />
-                  <span>{item.type}</span>
-                </div>
-                <h2 className="mt-6 text-lg font-semibold text-midnight">{item.title}</h2>
-                {routeFares[index] ? (
-                  <p className="mt-2 text-sm text-slate-500">
-                    {t("routes.from")}{" "}
-                    <span className="text-lg font-semibold text-midnight">
-                      {formatYen(routeFares[index])}
-                    </span>{" "}
-                    JPY
-                  </p>
-                ) : null}
-                <p>{item.description}</p>
-                <WhatsAppButton
-                  language={language}
-                  serviceName={item.title}
-                  label={t("routes.cta")}
-                  buttonName="routes_page_whatsapp"
-                  className="route-link"
-                >
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </WhatsAppButton>
-              </article>
-            );
-          })}
-        </div>
-        <p className="mt-6 text-center text-sm leading-6 text-slate-500">
-          {t("routes.refNote")}
-        </p>
-        <div className="mt-8 rounded-xl bg-porcelain p-6 text-center">
-          <h2 className="text-xl font-semibold text-midnight">{t("routes.customTitle")}</h2>
-          <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 text-slate-600">
-            {t("routes.customText")}
-          </p>
-        </div>
-      </section>
-
-      <section className="section-shell bg-porcelain">
         <div className="section-heading">
           <p className="eyebrow">{t("coverage.eyebrow")}</p>
           <h2>{t("coverage.title")}</h2>
