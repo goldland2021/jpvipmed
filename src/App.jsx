@@ -1,13 +1,23 @@
-import { useEffect, useState } from "react";
+import {
+  createContext,
+  lazy,
+  Suspense,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { supportedLanguages } from "./config";
 import { initAnalytics, trackPageView } from "./lib/analytics";
+import { ensureLanguage } from "./i18n";
 import { persistMarketingParams } from "./lib/marketing";
-import AdminPage from "./pages/AdminPage";
-import ContentPage from "./pages/ContentPage";
 import LandingPage from "./pages/LandingPage";
 import { contentPageSlugs } from "./pageConfig";
+
+const AdminRoutePage = lazy(() => import("./pages/AdminPage"));
+const ContentRoutePage = lazy(() => import("./pages/ContentPage"));
+const RoutePagesContext = createContext(null);
 
 function RouteAnalytics() {
   const location = useLocation();
@@ -31,6 +41,7 @@ function RouteAnalytics() {
 
 function LanguageRoute() {
   const { lang, page = "" } = useParams();
+  const routePages = useContext(RoutePagesContext);
   const { i18n } = useTranslation();
   const [ready, setReady] = useState(i18n.resolvedLanguage === lang);
 
@@ -38,7 +49,7 @@ function LanguageRoute() {
     let active = true;
     if (!supportedLanguages.includes(lang)) return undefined;
     setReady(false);
-    i18n.changeLanguage(lang).then(() => {
+    ensureLanguage(lang).then(() => {
       if (active) setReady(true);
     });
     return () => {
@@ -59,24 +70,38 @@ function LanguageRoute() {
   }
 
   if (!ready) return null;
+  const Page = routePages?.ContentPage || ContentRoutePage;
   return page ? (
-    <ContentPage language={lang} page={page} />
+    <Suspense fallback={null}>
+      <Page language={lang} page={page} />
+    </Suspense>
   ) : (
     <LandingPage language={lang} />
   );
 }
 
-export default function App() {
+function AdminRoute() {
+  const routePages = useContext(RoutePagesContext);
+  const Page = routePages?.AdminPage || AdminRoutePage;
+
   return (
-    <>
+    <Suspense fallback={null}>
+      <Page />
+    </Suspense>
+  );
+}
+
+export default function App({ routePages = null }) {
+  return (
+    <RoutePagesContext.Provider value={routePages}>
       <RouteAnalytics />
       <Routes>
         <Route path="/" element={<Navigate to="/en" replace />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin" element={<AdminRoute />} />
         <Route path="/:lang" element={<LanguageRoute />} />
         <Route path="/:lang/:page" element={<LanguageRoute />} />
         <Route path="*" element={<Navigate to="/en" replace />} />
       </Routes>
-    </>
+    </RoutePagesContext.Provider>
   );
 }

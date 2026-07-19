@@ -6,6 +6,9 @@ const WIDGET_EMBED_VERSION = "2026-07-14-hitbox";
 export default function WorkflowAiPilot() {
   useEffect(() => {
     if (!siteConfig.workflowAiWidgetSrc) return undefined;
+    if (new URLSearchParams(window.location.search).get("workflowai") !== "pilot") {
+      return undefined;
+    }
     if (document.querySelector('script[data-workflowai-assistant="true"]')) return undefined;
 
     const script = document.createElement("script");

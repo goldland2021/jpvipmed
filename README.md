@@ -18,6 +18,11 @@ Multilingual React/Vite landing site for Japan premium private charter consultat
 5. Create at least one Supabase Auth user for `/admin`.
 6. Run `npm run dev`.
 
+For an existing Supabase project, also run
+`supabase/migrations/001_lead_admins_and_rls.sql` and
+`supabase/migrations/002_lead_rate_limit.sql`, then insert the UUID of each
+authorized lead-admin user into `public.lead_admins`.
+
 ## Lead Capture
 
 The public form validates inputs, applies a honeypot and minimum-time spam check, optionally executes reCAPTCHA v3, saves to Supabase, tracks conversion events, then redirects to WhatsApp with a prefilled message.
@@ -34,6 +39,21 @@ The edge function expects:
 ```env
 RECAPTCHA_SECRET_KEY=your_secret_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+LEAD_RATE_LIMIT_SALT=long_random_secret
+LEAD_RATE_LIMIT_PER_MINUTE=5
+```
+
+For production, also configure the Edge Function with
+`RECAPTCHA_REQUIRED=true` and
+`ALLOWED_ORIGINS=https://www.jpairport.jp,https://jpairport.jp`. Add the first
+authorized lead-admin user after creating it in Supabase Auth:
+
+`LEAD_RATE_LIMIT_REQUIRED=true` makes the endpoint fail closed if the rate-limit
+salt or migration is missing.
+
+```sql
+insert into public.lead_admins (user_id)
+values ('AUTH_USER_UUID');
 ```
 
 ## Analytics Events
@@ -52,6 +72,6 @@ Deploy to Vercel as a Vite app. Add the same environment variables in Vercel pro
 
 ## WorkflowAI assistant
 
-Set `VITE_WORKFLOWAI_WIDGET_SRC` to the signed embed script generated in WorkflowAI. The widget loads on every public language landing page and starts in its closed state.
+Set `VITE_WORKFLOWAI_WIDGET_SRC` to the signed embed script generated in WorkflowAI. The widget loads only when the page URL includes `?workflowai=pilot` and starts in its closed state.
 
 The public banner asks visitors not to enter payment details or sensitive personal information. Routes, vehicle availability, and prices continue to require human confirmation.

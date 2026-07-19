@@ -1,6 +1,5 @@
 import { isSupabaseConfigured, siteConfig } from "../config";
 import { getLeadSource, getMarketingParams } from "./marketing";
-import { supabase } from "./supabase";
 
 export const STATUS_OPTIONS = [
   "new",
@@ -31,9 +30,12 @@ export function normalizeLead(formData, language) {
 }
 
 export async function saveLead(lead, recaptchaToken) {
-  if (!isSupabaseConfigured || !supabase) {
+  if (!isSupabaseConfigured) {
     throw new Error("Supabase is not configured yet.");
   }
+
+  const { supabase } = await import("./supabase");
+  if (!supabase) throw new Error("Supabase is not configured yet.");
 
   if (siteConfig.leadFunctionName) {
     const { data, error } = await supabase.functions.invoke(
@@ -46,12 +48,8 @@ export async function saveLead(lead, recaptchaToken) {
     return data;
   }
 
-  const { data, error } = await supabase
-    .from("leads")
-    .insert(lead)
-    .select()
-    .single();
+  const { error } = await supabase.from("leads").insert(lead);
 
   if (error) throw error;
-  return data;
+  return { ok: true };
 }

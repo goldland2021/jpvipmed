@@ -1,4 +1,7 @@
 {
+  "env": {
+    "VITE_SITE_URL": "https://www.jpairport.jp"
+  },
   "redirects": [
     {
       "source": "/:lang(en|zh-hk|ar)/how-it-works",
@@ -25,7 +28,7 @@
       "destination": "/ar/index.html"
     },
     {
-      "source": "/:lang(en|zh-hk|ar)/:page(services|routes|faq|request-quote)",
+      "source": "/:lang(en|zh-hk|ar)/:page(services|routes|faq|request-quote|privacy|terms)",
       "destination": "/:lang/:page/index.html"
     },
     {

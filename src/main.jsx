@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import i18n from "./i18n";
+import { ensureLanguage } from "./i18n";
 import App from "./App";
 import { supportedLanguages } from "./config";
 import "./index.css";
@@ -11,7 +11,7 @@ async function mountApp() {
   const routeLanguage = window.location.pathname.split("/")[1];
 
   if (supportedLanguages.includes(routeLanguage)) {
-    await i18n.changeLanguage(routeLanguage);
+    await ensureLanguage(routeLanguage);
   }
 
   const app = (

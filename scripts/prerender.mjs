@@ -1,10 +1,17 @@
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import {
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { contentPageSlugs } from "../src/pageConfig.js";
 
 const root = resolve(import.meta.dirname, "..");
 const template = readFileSync(resolve(root, "dist/index.html"), "utf8");
+const assetFiles = readdirSync(resolve(root, "dist/assets"));
 const serverEntryUrl = pathToFileURL(
   resolve(root, "dist/server/entry-server.js")
 ).href;
@@ -17,6 +24,16 @@ const languages = [
   { lang: "zh-hk", htmlLang: "zh-HK", dir: "ltr", locale: "zh_HK", hreflang: "zh-HK" },
   { lang: "ar", htmlLang: "ar", dir: "rtl", locale: "ar_AR", hreflang: "ar" },
 ];
+
+const localeAssets = Object.fromEntries(
+  languages.map(({ lang }) => {
+    const filename = assetFiles.find(
+      (file) => file.startsWith(`locale-${lang}-`) && file.endsWith(".js")
+    );
+    if (!filename) throw new Error(`Missing client locale asset for ${lang}`);
+    return [lang, filename];
+  })
+);
 
 const routes = ["", ...contentPageSlugs];
 
@@ -44,7 +61,11 @@ for (const page of routes) {
     const pathname = routePath(language.lang, page);
     const url = `${siteUrl}${pathname}`;
 
-    const out = template
+    const localizedTemplate = template.replace(
+      /\/assets\/locale-en-[^"]+\.js/g,
+      `/assets/${localeAssets[language.lang]}`
+    );
+    const out = localizedTemplate
       .replace(
         /<html lang="[^"]*" dir="[^"]*">/,
         `<html lang="${language.htmlLang}" dir="${language.dir}">`
