@@ -1,11 +1,11 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { supportedLanguages } from "./config";
-import enTranslation from "./locales/en";
+import enTranslation from "./locales/en.js";
 
 const languageLoaders = {
-  "zh-hk": () => import("./locales/zh-hk"),
-  ar: () => import("./locales/ar"),
+  "zh-hk": () => import("./locales/zh-hk.js"),
+  ar: () => import("./locales/ar.js"),
 };
 
 const pendingLanguages = new Map();
