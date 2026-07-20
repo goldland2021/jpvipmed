@@ -416,30 +416,6 @@ export default function LandingPage({ language }) {
             </p>
           </section>
 
-          <section className="section-shell bg-white">
-            <div className="flex flex-col items-center justify-between gap-6 rounded-2xl bg-midnight p-7 text-center text-white sm:p-10 lg:flex-row lg:text-start">
-              <div className="max-w-3xl">
-                <p className="eyebrow text-gold">{t("form.eyebrow")}</p>
-                <h2 className="mt-3 text-2xl font-semibold sm:text-3xl">{t("form.title")}</h2>
-                <p className="mt-4 leading-7 text-white/70">{t("form.subtitle")}</p>
-              </div>
-              <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
-                <Link
-                  to={localizedPath(language, "request-quote")}
-                  className="btn-primary justify-center"
-                >
-                  <span>{t("pageLinks.quote")}</span>
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-                <WhatsAppButton
-                  language={language}
-                  label={t("cta.whatsappShort")}
-                  buttonName="home_final_whatsapp"
-                  className="btn-secondary-dark justify-center"
-                />
-              </div>
-            </div>
-          </section>
         </main>
         <SiteFooter />
       </div>
