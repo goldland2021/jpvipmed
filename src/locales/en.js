@@ -223,7 +223,7 @@ export default {
       "title": "Private Chauffeur Services in Japan"
     },
     "routes": {
-      "title": "Tokyo 23-Ward Airport Fares & Private Routes in Japan"
+      "title": "Tokyo 23-Ward Airport Fares & Private Routes"
     },
     "faq": {
       "title": "Private Chauffeur FAQs for Japan"

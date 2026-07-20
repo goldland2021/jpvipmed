@@ -7,6 +7,7 @@ import {
 } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
+import { buildSeoSchema } from "../src/lib/seoSchema.js";
 import { contentPageSlugs } from "../src/pageConfig.js";
 
 const root = resolve(import.meta.dirname, "..");
@@ -18,6 +19,7 @@ const serverEntryUrl = pathToFileURL(
 const { render } = await import(serverEntryUrl);
 
 const siteUrl = process.env.VITE_SITE_URL || "https://www.jpairport.jp";
+const imageUrl = `${siteUrl}/images/hero-charter-japan.jpg`;
 
 const languages = [
   { lang: "en", htmlLang: "en", dir: "ltr", locale: "en_US", hreflang: "en" },
@@ -60,6 +62,17 @@ for (const page of routes) {
     const { html, title, description } = await render(language.lang, page);
     const pathname = routePath(language.lang, page);
     const url = `${siteUrl}${pathname}`;
+    const schema = buildSeoSchema({
+      siteUrl,
+      url,
+      homeUrl: `${siteUrl}/${language.lang}`,
+      imageUrl,
+      title,
+      description,
+      language: language.htmlLang,
+      page,
+    });
+    const jsonLd = JSON.stringify(schema).replaceAll("<", "\\u003c");
 
     const localizedTemplate = template.replace(
       /\/assets\/locale-en-[^"]+\.js/g,
@@ -85,8 +98,16 @@ for (const page of routes) {
       )
       .replace(/<meta property="og:url"[\s\S]*?\/>/, `<meta property="og:url" content="${url}" />`)
       .replace(
+        /<meta\s+name="twitter:title"[\s\S]*?\/>/,
+        `<meta name="twitter:title" content="${escapeAttr(title)}" />`
+      )
+      .replace(
+        /<meta\s+name="twitter:description"[\s\S]*?\/>/,
+        `<meta name="twitter:description" content="${escapeAttr(description)}" />`
+      )
+      .replace(
         "</head>",
-        `  <meta property="og:locale" content="${language.locale}" />\n    <link rel="canonical" href="${url}" data-jpvip-seo="true" />\n    ${hreflangLinks}\n  </head>`
+        `  <meta property="og:locale" content="${language.locale}" />\n    <link rel="canonical" href="${url}" data-jpvip-seo="true" />\n    ${hreflangLinks}\n    <script type="application/ld+json" data-jpvip-schema="true">${jsonLd}</script>\n  </head>`
       )
       .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
 

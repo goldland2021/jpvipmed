@@ -140,6 +140,13 @@ export default function AdminPage() {
     document.title = "Lead Admin | JP VIP Charter";
     document.documentElement.dir = "ltr";
     document.documentElement.lang = "en";
+
+    const robots = document.createElement("meta");
+    robots.name = "robots";
+    robots.content = "noindex, nofollow, noarchive";
+    document.head.appendChild(robots);
+
+    return () => robots.remove();
   }, []);
 
   useEffect(() => {

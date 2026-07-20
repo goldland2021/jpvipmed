@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { siteConfig, supportedLanguages } from "../config";
+import { buildSeoSchema } from "../lib/seoSchema";
 import { localizedPath } from "../pageConfig";
 
 const hrefLang = {
@@ -69,6 +70,18 @@ export default function Seo({
     const description = t(descriptionKey);
     const url = `${siteConfig.siteUrl}${localizedPath(language, page)}`;
     const imageUrl = `${siteConfig.siteUrl}/images/hero-charter-japan.jpg`;
+    const homeUrl = `${siteConfig.siteUrl}${localizedPath(language)}`;
+    const schemaData = buildSeoSchema({
+      siteUrl: siteConfig.siteUrl,
+      url,
+      homeUrl,
+      imageUrl,
+      title,
+      description,
+      language: language === "zh-hk" ? "zh-HK" : language,
+      page,
+      brandName: t("brand.name"),
+    });
 
     document.title = title;
     document.documentElement.lang = language === "zh-hk" ? "zh-HK" : language;
@@ -98,6 +111,10 @@ export default function Seo({
       property: "og:image",
       content: imageUrl,
     });
+    upsertMeta('meta[property="og:image:alt"]', {
+      property: "og:image:alt",
+      content: `${t("brand.name")} private chauffeur service in Japan`,
+    });
     upsertMeta('meta[property="og:site_name"]', {
       property: "og:site_name",
       content: t("brand.name"),
@@ -110,6 +127,18 @@ export default function Seo({
       name: "twitter:card",
       content: "summary_large_image",
     });
+    upsertMeta('meta[name="twitter:title"]', {
+      name: "twitter:title",
+      content: title,
+    });
+    upsertMeta('meta[name="twitter:description"]', {
+      name: "twitter:description",
+      content: description,
+    });
+    upsertMeta('meta[name="twitter:image"]', {
+      name: "twitter:image",
+      content: imageUrl,
+    });
 
     setManagedLinks(language, page);
 
@@ -117,31 +146,11 @@ export default function Seo({
       .querySelectorAll("script[data-jpvip-schema]")
       .forEach((element) => element.remove());
 
-    const schema = document.createElement("script");
-    schema.type = "application/ld+json";
-    schema.dataset.jpvipSchema = "true";
-    schema.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      name: t("brand.name"),
-      url,
-      image: imageUrl,
-      description,
-      serviceType:
-        "Japan private chauffeur, airport transfer, hotel and station pickup, Mount Fuji day charter, business travel, and custom itinerary transportation",
-      areaServed: [
-        "Hong Kong",
-        "Taiwan",
-        "Singapore",
-        "Malaysia",
-        "Saudi Arabia",
-        "United Arab Emirates",
-        "Qatar",
-        "Kuwait",
-      ],
-      availableLanguage: ["English", "Traditional Chinese", "Arabic"],
-    });
-    document.head.appendChild(schema);
+    const schemaElement = document.createElement("script");
+    schemaElement.type = "application/ld+json";
+    schemaElement.dataset.jpvipSchema = "true";
+    schemaElement.text = JSON.stringify(schemaData).replaceAll("<", "\\u003c");
+    document.head.appendChild(schemaElement);
   }, [descriptionKey, language, page, t, titleKey]);
 
   return null;
